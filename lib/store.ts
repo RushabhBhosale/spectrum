@@ -10,7 +10,7 @@ const remote = () => {
   return token && repo ? gitHub({ token, repo, branch: branch || undefined }) : null;
 };
 
-const onDisk = (file: string) => path.join(process.cwd(), file);
+const onDisk = (file: string) => path.join(process.cwd(), 'data', path.basename(file));
 
 export async function readStore(): Promise<Store> {
   const github = remote();

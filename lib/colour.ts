@@ -41,6 +41,13 @@ export function colourName(hex: string) {
   return NAMES.find(([limit]) => h < limit)![1];
 }
 
+/** A version of a title's colour bold enough to fill a whole screen. */
+export function punch(hex: string) {
+  const { h, s, l } = hexToHsl(hex);
+  if (s < NEUTRAL) return hslToHex(h, 8, 32);
+  return hslToHex(h, Math.max(s, 66), Math.max(34, Math.min(46, l)));
+}
+
 export const stripes = (colours: string[], direction = '90deg') =>
   `linear-gradient(${direction},${colours
     .map((c, i) => `${c} ${((i / colours.length) * 100).toFixed(2)}% ${(((i + 1) / colours.length) * 100).toFixed(2)}%`)

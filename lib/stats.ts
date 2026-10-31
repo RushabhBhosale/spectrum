@@ -86,25 +86,3 @@ export function superlatives(titles: Title[]): Superlative[] {
   ];
   return list.filter((s): s is Superlative => s !== null);
 }
-
-export type OrderKey = 'colour' | 'year' | 'rating' | 'category';
-type Order = { label: string; sort: (a: Title, b: Title) => number; group?: (t: Title) => string };
-
-export const ORDERS: Record<OrderKey, Order> = {
-  colour: { label: 'Colour', sort: byHue },
-  year: {
-    label: 'Release year',
-    sort: (a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.name.localeCompare(b.name),
-    group: (t) => (t.year ? String(t.year) : 'Unknown'),
-  },
-  rating: {
-    label: 'Rating',
-    sort: (a, b) => (b.rating ?? -1) - (a.rating ?? -1) || byHue(a, b),
-    group: (t) => (t.rating === null ? 'Unrated' : `${Math.floor(t.rating)}+`),
-  },
-  category: {
-    label: 'Category',
-    sort: (a, b) => CATEGORIES.indexOf(a.type) - CATEGORIES.indexOf(b.type) || byHue(a, b),
-    group: (t) => t.type,
-  },
-};

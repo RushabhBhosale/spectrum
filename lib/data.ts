@@ -12,7 +12,7 @@ const TYPICAL_HOURS: Record<Category, number> = {
   Anime: 5, 'K-drama': 16, 'C-drama': 24, 'J-drama': 8, 'Web series': 40, 'Hindi series': 7,
 };
 
-function estimateHours(entry: Entry) {
+export function estimateHours(entry: Entry) {
   if (entry.tmdbKind === 'movie') return FILM_HOURS;
   if (entry.episodes) return Math.max(1, Math.round((entry.episodes * EPISODE_MINUTES[entry.type]) / 60));
   return TYPICAL_HOURS[entry.type];
@@ -47,6 +47,8 @@ export function loadTitles(): { titles: Title[]; placeholders: number } {
       genres: found?.genres ?? [],
       poster: found?.poster,
       backdrop: found?.backdrop,
+      stills: found?.stills?.length ? found.stills : found?.backdrop ? [found.backdrop] : [],
+      logo: found?.logo,
       year: found?.year,
     };
   });

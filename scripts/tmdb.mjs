@@ -57,6 +57,12 @@ export function chooseImages(images, limit = 8) {
   return chosen.map((image) => image.file_path);
 }
 
+/** Prefers an English logo, then any logo at all. SVGs are skipped so every logo can be sized the same way. */
+export function chooseLogo(images) {
+  const usable = [...(images.logos ?? [])].filter((logo) => logo.file_path?.endsWith('.png')).sort((a, b) => (b.vote_count ?? 0) - (a.vote_count ?? 0));
+  return (usable.find((logo) => logo.iso_639_1 === 'en') ?? usable[0])?.file_path ?? null;
+}
+
 export function client(key) {
   // v4 read tokens are long JWTs sent as a header; v3 keys go in the query string.
   const isToken = key.includes('.');

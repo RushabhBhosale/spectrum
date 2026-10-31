@@ -23,6 +23,10 @@ export type Title = {
   genres: string[];
   poster?: string;
   backdrop?: string;
+  /** Film stills for montages. */
+  stills: string[];
+  /** The show's official transparent logo. */
+  logo?: string;
 };
 
 /** A line in data/titles.json. */
@@ -54,6 +58,8 @@ export type Generated = {
   genres?: string[];
   poster?: string;
   backdrop?: string;
+  stills?: string[];
+  logo?: string;
 };
 
 export const entryKey = (entry: Pick<Entry, 'title' | 'type'>) => `${entry.type}:${entry.title}`;

@@ -1,9 +1,13 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useMemo, useState, useTransition } from 'react';
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { addTitle, removeTitle, searchTitles, signOut, updateTitle, type Draft, type Match, type Result } from '@/app/studio/actions';
+import { SITE_NAME } from '@/lib/site';
+import { countWith, isFiltered, matches as matchesFilters, NO_FILTERS, NOTE_OPTIONS, RATING_OPTIONS, SORTS, sortTitles, STATUS_OPTIONS, type Filters, type ListedTitle } from '@/lib/title-list';
 import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib/types';
+
+const STACKED_WIDTH = 860;
 
 const blank = (title: string, type: Category): Draft => ({ title, type, rating: '', status: 'Finished', episodes: '', quote: '', quoteBy: '', review: '' });
 
@@ -20,21 +24,32 @@ const fromEntry = (entry: Entry): Draft => ({
 
 type Editing = { key: string | null; draft: Draft };
 
-export default function Studio({ titles }: { titles: Entry[] }) {
+export default function Studio({ titles }: { titles: ListedTitle[] }) {
   const router = useRouter();
+  const workspace = useRef<HTMLElement>(null);
+  const list = useRef<HTMLDivElement>(null);
   const [editing, setEditing] = useState<Editing | null>(null);
   const [query, setQuery] = useState('');
   const [matches, setMatches] = useState<Match[] | null>(null);
-  const [filter, setFilter] = useState('');
+  const [filters, setFilters] = useState<Filters>(NO_FILTERS);
+  const [sort, setSort] = useState(SORTS[0].id);
   const [notice, setNotice] = useState<Result | null>(null);
   const [confirming, setConfirming] = useState(false);
   const [busy, start] = useTransition();
 
-  const owned = useMemo(() => {
-    const text = filter.trim().toLowerCase();
-    const found = text ? titles.filter((t) => t.title.toLowerCase().includes(text)) : titles;
-    return found.slice(0, 40);
-  }, [titles, filter]);
+  const owned = useMemo(() => sortTitles(titles.filter((title) => matchesFilters(title, filters)), sort), [titles, filters, sort]);
+  const filtered = isFiltered(filters);
+  const editingKey = editing?.key;
+
+  useEffect(() => { list.current?.scrollTo({ top: 0 }); }, [filters, sort]);
+
+  // On a phone the editor sits above the list, so bring it into view.
+  useEffect(() => {
+    if (editingKey && innerWidth <= STACKED_WIDTH) workspace.current?.scrollIntoView();
+  }, [editingKey]);
+
+  const filterBy = (change: Partial<Filters>) => setFilters((current) => ({ ...current, ...change }));
+  const optionLabel = (label: string, change: Partial<Filters>) => `${label} (${countWith(titles, filters, change)})`;
 
   const set = <K extends keyof Draft>(field: K, value: Draft[K]) =>
     setEditing((current) => current && { ...current, draft: { ...current.draft, [field]: value } });
@@ -86,50 +101,87 @@ export default function Studio({ titles }: { titles: Entry[] }) {
   return (
     <main className="wrap studio">
       <header className="studio-head">
-        <a className="label" href="/">Back to Spectrum</a>
+        <a className="label" href="/">Back to {SITE_NAME}</a>
         <button className="label" onClick={() => start(async () => { await signOut(); router.refresh(); })}>Sign out</button>
       </header>
-      <h1>Studio</h1>
-      {notice && <p className={`notice ${notice.ok ? '' : 'bad'}`} role="status">{notice.message}</p>}
+      <div className="studio-title">
+        <h1>Studio</h1>
+        <div className="studio-overview">
+          <button aria-pressed={!filtered} onClick={() => setFilters(NO_FILTERS)}><strong>{titles.length}</strong> titles</button>
+          <button aria-pressed={filters.rating === 'none'} onClick={() => filterBy({ rating: filters.rating === 'none' ? '' : 'none' })}><strong>{titles.filter((t) => t.rating === null).length}</strong> unrated</button>
+          <button aria-pressed={filters.notes === 'review'} onClick={() => filterBy({ notes: filters.notes === 'review' ? '' : 'review' })}><strong>{titles.filter((t) => t.review).length}</strong> reviews</button>
+          <button aria-pressed={filters.notes === 'quote'} onClick={() => filterBy({ notes: filters.notes === 'quote' ? '' : 'quote' })}><strong>{titles.filter((t) => t.quote).length}</strong> quotes</button>
+        </div>
+      </div>
 
       <div className="studio-grid">
-        <section>
-          <h2>Add a series</h2>
-          <form className="search" onSubmit={(e) => { e.preventDefault(); search(); }}>
-            <input id="tmdb-search" aria-label="Search for a series or film" placeholder="The Glory" value={query} onChange={(e) => setQuery(e.target.value)} />
-            <button className="solid" disabled={busy || !query.trim()}>Search</button>
-          </form>
-          {matches?.length === 0 && <p className="notice">Nothing found. Try the English or original title.</p>}
-          {matches && matches.length > 0 && (
-            <div className="matches">
-              {matches.map((match) => (
-                <button key={`${match.kind}-${match.id}`} onClick={() => choose(match)}>
-                  {match.poster ? <img src={match.poster} alt="" loading="lazy" /> : <span className="no-poster" />}
-                  <span>
-                    <strong>{match.name}</strong>
-                    <small>{[match.type, match.year, match.kind === 'movie' ? 'Film' : null].filter(Boolean).join(' · ')}</small>
-                  </span>
-                </button>
-              ))}
-            </div>
-          )}
-
-          <h2>Your titles</h2>
-          <input id="owned-filter" aria-label="Find one of your titles" placeholder="Find a title to add a quote" value={filter} onChange={(e) => setFilter(e.target.value)} />
-          <div className="owned">
-            {owned.map((entry) => (
-              <button key={entryKey(entry)} onClick={() => open(entry)} aria-pressed={editing?.key === entryKey(entry)}>
-                <span>{entry.title}</span>
-                <small>{entry.quote ? 'Has quote · ' : ''}{entry.rating?.toFixed(1) ?? 'Unrated'}</small>
-              </button>
+        <section className="studio-list">
+          <div className="studio-list-head">
+            <h2>Your titles</h2>
+            <p role="status">{filtered ? `${owned.length} of ${titles.length}` : `${titles.length} titles`}</p>
+            {filtered && <button className="studio-clear" onClick={() => setFilters(NO_FILTERS)}>Clear filters</button>}
+          </div>
+          <input id="owned-filter" type="search" aria-label="Find one of your titles" placeholder="Find a title" value={filters.text} onChange={(e) => filterBy({ text: e.target.value })} />
+          <div className="studio-tabs" role="group" aria-label="Category">
+            <button aria-pressed={!filters.category} onClick={() => filterBy({ category: '' })}>All <small>{countWith(titles, filters, { category: '' })}</small></button>
+            {CATEGORIES.map((category) => (
+              <button key={category} aria-pressed={filters.category === category} onClick={() => filterBy({ category })}>{category} <small>{countWith(titles, filters, { category })}</small></button>
             ))}
+          </div>
+          <div className="studio-selects">
+            <label><span className="label">Status</span>
+              <select id="filter-status" value={filters.status} onChange={(e) => filterBy({ status: e.target.value })}>
+                <option value="">Any status</option>
+                {STATUS_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { status: id })}</option>)}
+              </select>
+            </label>
+            <label><span className="label">Rating</span>
+              <select id="filter-rating" value={filters.rating} onChange={(e) => filterBy({ rating: e.target.value })}>
+                <option value="">Any rating</option>
+                {RATING_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { rating: id })}</option>)}
+              </select>
+            </label>
+            <label><span className="label">Notes</span>
+              <select id="filter-notes" value={filters.notes} onChange={(e) => filterBy({ notes: e.target.value })}>
+                <option value="">Any notes</option>
+                {NOTE_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { notes: id })}</option>)}
+              </select>
+            </label>
+            <label><span className="label">Sort by</span>
+              <select id="sort-titles" value={sort} onChange={(e) => setSort(e.target.value)}>
+                {SORTS.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+              </select>
+            </label>
+          </div>
+          <div className="owned" ref={list}>
+            {owned.map((entry) => {
+              return (
+                <button key={entryKey(entry)} onClick={() => open(entry)} aria-pressed={editingKey === entryKey(entry)}>
+                  {entry.poster ? <img src={entry.poster.replace('/w342/', '/w92/')} alt="" loading="lazy" decoding="async" /> : <span className="no-poster" />}
+                  <span className="owned-name">
+                    <span>{entry.title}</span>
+                    <small>{[entry.type, entry.year, `${entry.hours.toLocaleString('en-US')} h`, entry.status === 'Finished' ? null : entry.status].filter(Boolean).join(' · ')}</small>
+                  </span>
+                  {(entry.review || entry.quote) && <small className="owned-notes">{[entry.review && 'Review', entry.quote && 'Quote'].filter(Boolean).join(' · ')}</small>}
+                  <b className={entry.rating === null ? 'unrated' : undefined}>{entry.rating?.toFixed(1) ?? '–'}</b>
+                </button>
+              );
+            })}
+            {owned.length === 0 && (
+              <div className="studio-none">
+                <p>No titles match these filters.</p>
+                <button onClick={() => setFilters(NO_FILTERS)}>Clear filters</button>
+              </div>
+            )}
           </div>
         </section>
 
-        <section>
+        <section className="studio-work" ref={workspace}>
+          {notice && <p className={`notice ${notice.ok ? '' : 'bad'}`} role="status">{notice.message}</p>}
           {editing ? (
             <form className="editor" onSubmit={(e) => { e.preventDefault(); save(); }}>
               <h2>{editing.key ? 'Edit title' : 'New title'}</h2>
+              <p className="editor-note">Reviews and quotes are optional. You can come back and add them any time.</p>
               <label className="field"><span className="label">Title</span>
                 <input id="edit-title" value={editing.draft.title} onChange={(e) => set('title', e.target.value)} required />
               </label>
@@ -159,18 +211,40 @@ export default function Studio({ titles }: { titles: Entry[] }) {
               <label className="field"><span className="label">Said by</span>
                 <input id="edit-quote-by" placeholder="Character name" value={editing.draft.quoteBy} onChange={(e) => set('quoteBy', e.target.value)} />
               </label>
-              <label className="field"><span className="label">Your take</span>
-                <textarea id="edit-review" rows={3} maxLength={1000} value={editing.draft.review} onChange={(e) => set('review', e.target.value)} />
+              <label className="field"><span className="label">Your review</span>
+                <textarea id="edit-review" rows={5} maxLength={1000} placeholder="What worked for you? What stayed with you?" value={editing.draft.review} onChange={(e) => set('review', e.target.value)} />
+                <span className="editor-note">{editing.draft.review.length} / 1,000 characters</span>
               </label>
               <div className="editor-actions">
-                <button className="solid" disabled={busy}>{busy ? 'Saving…' : editing.key ? 'Save changes' : 'Add to Spectrum'}</button>
+                <button className="solid" disabled={busy}>{busy ? 'Saving…' : editing.key ? 'Save changes' : 'Add to the collection'}</button>
                 <button type="button" onClick={() => setEditing(null)}>Cancel</button>
                 {editing.key && !confirming && <button type="button" className="danger" onClick={() => setConfirming(true)}>Remove</button>}
                 {editing.key && confirming && <button type="button" className="danger" disabled={busy} onClick={remove}>Yes, remove it</button>}
               </div>
             </form>
           ) : (
-            <p className="notice studio-empty">Search for a series to add it, or pick one of your titles to add a quote.</p>
+            <>
+              <h2>Add your next watch</h2>
+              <p className="editor-note">Pick a title on the left to rate it, track episodes, write a review or save a quote. Artwork, release year and colours are fetched when you add one here.</p>
+              <form className="search" onSubmit={(e) => { e.preventDefault(); search(); }}>
+                <input id="tmdb-search" aria-label="Search for a series or film" placeholder="The Glory" value={query} onChange={(e) => setQuery(e.target.value)} />
+                <button className="solid" disabled={busy || !query.trim()}>Search</button>
+              </form>
+              {matches?.length === 0 && <p className="notice">Nothing found. Try the English or original title.</p>}
+              {matches && matches.length > 0 && (
+                <div className="matches">
+                  {matches.map((match) => (
+                    <button key={`${match.kind}-${match.id}`} onClick={() => choose(match)}>
+                      {match.poster ? <img src={match.poster} alt="" loading="lazy" /> : <span className="no-poster" />}
+                      <span>
+                        <strong>{match.name}</strong>
+                        <small>{[match.type, match.year, match.kind === 'movie' ? 'Film' : null].filter(Boolean).join(' · ')}</small>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </section>
       </div>

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { extractPalette, oklabToHex, rgbToOklab } from './palette.mjs';
-import { chooseImages, guessType, pickMatch, releaseYear, runtimeHours } from './tmdb.mjs';
+import { chooseImages, chooseLogo, guessType, pickMatch, releaseYear, runtimeHours } from './tmdb.mjs';
 
 const image = (...runs) => {
   const bytes = [];
@@ -121,6 +121,18 @@ test('reads the release year from shows and films', () => {
   assert.equal(releaseYear({ first_air_date: '2016-11-06' }), 2016);
   assert.equal(releaseYear({ release_date: '2019-05-30' }), 2019);
   assert.equal(releaseYear({ first_air_date: '' }), undefined);
+});
+
+test('picks an English PNG logo, then any PNG, then nothing', () => {
+  const logos = [
+    { file_path: '/ja.png', iso_639_1: 'ja', vote_count: 9 },
+    { file_path: '/en.svg', iso_639_1: 'en', vote_count: 9 },
+    { file_path: '/en.png', iso_639_1: 'en', vote_count: 1 },
+  ];
+  assert.equal(chooseLogo({ logos }), '/en.png');
+  assert.equal(chooseLogo({ logos: logos.slice(0, 2) }), '/ja.png');
+  assert.equal(chooseLogo({ logos: [logos[1]] }), null);
+  assert.equal(chooseLogo({}), null);
 });
 
 test('prefers well-voted stills and falls back to the poster', () => {

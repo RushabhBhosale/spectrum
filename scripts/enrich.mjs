@@ -1,9 +1,10 @@
 // Looks a title up on TMDB and builds everything the site stores about it.
 import sharp from 'sharp';
 import { extractPalette } from './palette.mjs';
-import { IMAGES, chooseImages, pickMatch, releaseYear, runtimeHours } from './tmdb.mjs';
+import { IMAGES, chooseImages, chooseLogo, pickMatch, releaseYear, runtimeHours } from './tmdb.mjs';
 
 const ANIMATION = 'Animation';
+const MONTAGE_STILLS = 6;
 
 async function find(get, entry) {
   if (entry.tmdbId) return { id: entry.tmdbId, kind: entry.tmdbKind ?? 'tv' };
@@ -45,6 +46,8 @@ export async function enrich(get, entry) {
     genres: (detail.genres ?? []).map((g) => g.name).filter((name) => name !== ANIMATION),
     poster: detail.poster_path ? `${IMAGES}/w342${detail.poster_path}` : undefined,
     backdrop: detail.backdrop_path ? `${IMAGES}/w1280${detail.backdrop_path}` : undefined,
+    stills: chooseImages({ backdrops: images.backdrops }, MONTAGE_STILLS).map((path) => `${IMAGES}/w1280${path}`),
+    logo: chooseLogo(images) ? `${IMAGES}/w500${chooseLogo(images)}` : undefined,
     colours,
     accent,
   };

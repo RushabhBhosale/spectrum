@@ -1,6 +1,8 @@
-# Spectrum
+# One More Episode
 
-Everything I've watched, as one wall of colour. Each title is a stripe made from its own film stills, and a stripe's height is my rating.
+Everything I've watched: an opening trailer, my perfect tens as graded cards on a table, a flight through the shows I rated nine and above, every title full screen in colour order, and the full collection with my ratings and quotes.
+
+The site's name lives in `lib/site.ts`.
 
 ## Run it
 

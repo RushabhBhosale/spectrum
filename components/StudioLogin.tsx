@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useActionState, useEffect } from 'react';
 import { signIn, type Result } from '@/app/studio/actions';
+import { SITE_NAME } from '@/lib/site';
 
 export default function StudioLogin({ ready }: { ready: boolean }) {
   const router = useRouter();
@@ -14,8 +15,9 @@ export default function StudioLogin({ ready }: { ready: boolean }) {
 
   return (
     <main className="wrap login">
-      <a className="label" href="/">Spectrum</a>
+      <a className="label" href="/">{SITE_NAME}</a>
       <h1>Studio</h1>
+      <p>Your private space to add titles, write reviews and collect quotes.</p>
       {ready ? (
         <form action={action}>
           <label className="field">

@@ -1,7 +1,7 @@
-import Spectrum from '@/components/Spectrum';
+import Site from '@/components/Site';
 import { loadTitles } from '@/lib/data';
 
 export default function Page() {
   const { titles, placeholders } = loadTitles();
-  return <Spectrum titles={titles} placeholders={placeholders} />;
+  return <Site titles={titles} placeholders={placeholders} />;
 }
