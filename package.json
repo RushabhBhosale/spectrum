@@ -1,0 +1,24 @@
+{
+  "name": "spectrum",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3200",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test scripts/*.test.mjs",
+    "colours": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/fetch-colours.mjs"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2"
+  }
+}
