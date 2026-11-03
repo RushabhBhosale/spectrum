@@ -12,6 +12,7 @@ const ROWS = 5;
 const WALL_SECONDS = 1.75;
 const WARP_SECONDS = 0.62;
 const WARP_CUTS = 6;
+const SESSION_KEY = 'one-more-episode-intro-seen';
 
 export type GateShot = { src: string; logo?: string; accent: string };
 
@@ -30,17 +31,28 @@ function imageReady(image: HTMLImageElement) {
 export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot[]; wall: string[]; total: number; onReveal: () => void }) {
   const root = useRef<HTMLDivElement>(null);
   const counter = useRef<HTMLSpanElement>(null);
+  const [ready, setReady] = useState(false);
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
+    let seen = false;
+    try { seen = sessionStorage.getItem(SESSION_KEY) === '1'; } catch { /* Storage may be unavailable. */ }
+    if (seen || prefersReducedMotion() || new URLSearchParams(location.search).has('title') || !shots.length) {
+      onReveal();
+      return;
+    }
+    setReady(true);
+  }, [shots.length, onReveal]);
+
+  useEffect(() => {
+    if (!ready) return;
     const element = root.current;
     if (!element) return;
     const finish = () => setGone(true);
-    if (prefersReducedMotion() || new URLSearchParams(location.search).has('title') || !shots.length) {
+    const reveal = () => {
+      try { sessionStorage.setItem(SESSION_KEY, '1'); } catch { /* Continue when storage is unavailable. */ }
       onReveal();
-      finish();
-      return;
-    }
+    };
 
     const q = gsap.utils.selector(element);
     const cuts = q('.gate-shot');
@@ -97,20 +109,20 @@ export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot
     at += TITLE_LANDS_SECONDS + TITLE_HOLD_SECONDS;
 
     // Blinds open from the middle onto the real page.
-    timeline.call(onReveal, [], at);
+    timeline.call(reveal, [], at);
     timeline.to(q('.gate-slam'), { opacity: 0, scale: 1.08, duration: 0.4, ease: 'power3.in' }, at);
     timeline.to(q('.gate-blind'), { scaleY: 0, duration: 0.95, ease: 'expo.inOut', stagger: { amount: 0.34, from: 'center' } }, at + 0.12);
 
     let cancelled = false;
     const images = [...element.querySelectorAll('img')];
     let loaded = 0;
-    const ready = images.map((image) => imageReady(image).then(() => {
+    const imagesReady = images.map((image) => imageReady(image).then(() => {
       loaded++;
       if (cancelled) return;
       count.n = (loaded / images.length) * total * 0.08;
       paint();
     }));
-    Promise.race([Promise.all(ready), new Promise((resolve) => setTimeout(resolve, MAX_WAIT_MS))]).then(() => {
+    Promise.race([Promise.all(imagesReady), new Promise((resolve) => setTimeout(resolve, MAX_WAIT_MS))]).then(() => {
       if (!cancelled) timeline.play();
     });
 
@@ -125,9 +137,9 @@ export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot
       removeEventListener('keydown', hurry);
       removeEventListener('wheel', hurry);
     };
-  }, [shots, total, onReveal]);
+  }, [ready, shots, total, onReveal]);
 
-  if (gone) return null;
+  if (!ready || gone) return null;
   const perRow = Math.ceil(wall.length / ROWS);
   return (
     <div className="gate" ref={root} aria-hidden="true">
