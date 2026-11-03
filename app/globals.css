@@ -196,9 +196,7 @@ textarea { resize: vertical; }
 .sheet-facts { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin: 0; padding: 20px 32px 32px; }
 .sheet-facts dt { color: var(--muted); font-size: 14px; margin-bottom: 7px; }
 .sheet-facts dd { margin: 0; }
-.sheet-palette-heading { display: flex; justify-content: space-between; align-items: center; padding: 10px 32px; gap: 20px; background: var(--bg); font-size: 14px; }
-.sheet-palette { display: flex; height: 50px; }
-.sheet-palette i { flex: 1; }
+.sheet-share { padding: 10px 32px; font-size: 14px; }
 .sheet-copy-error { padding: 12px 32px; }
 /* Every entrance leaves content visible when scripts are unavailable. */
 @media (prefers-reduced-motion: no-preference) {
@@ -294,8 +292,7 @@ textarea { resize: vertical; }
   .sheet-writing { padding-inline: 20px; }
   .sheet-quote { margin-inline: 20px; padding: 20px; font-size: 21px; }
   .sheet-facts { grid-template-columns: 1fr; padding: 8px 20px 24px; gap: 20px; }
-  .sheet-palette-heading { padding-inline: 20px; gap: 12px; font-size: 13px; }
-  .sheet-palette { height: 40px; }
+  .sheet-share { padding-inline: 20px; font-size: 13px; }
 }
 @media (max-width: 360px) {
   .nav { padding-inline: 16px; gap: 10px; }

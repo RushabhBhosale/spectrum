@@ -104,9 +104,8 @@ export default function TitleSheet({ title, paused, onClose }: { title: Title | 
                 <div><dt>Time in this world</dt><dd>{title.hours.toLocaleString('en-US')} hours</dd></div>
                 {title.genres.length > 0 && <div><dt>Genres</dt><dd>{title.genres.join(' · ')}</dd></div>}
               </dl>
-              <div className="sheet-palette-heading"><span>Colours from the screen</span><button className="text-link" onClick={share}>{copied ? 'Link copied' : 'Copy title link ↗'}</button></div>
+              <div className="sheet-share"><button className="text-link" onClick={share}>{copied ? 'Link copied' : 'Copy title link ↗'}</button></div>
               {copyError && <p className="sheet-copy-error" role="status">Copy the address from your browser to share this title.</p>}
-              <div className="sheet-palette" aria-label="Title colour palette">{title.colours.map((colour, index) => <i key={`${colour}-${index}`} style={{ background: colour }} title={colour} />)}</div>
             </div>
           </div>
         </article>
