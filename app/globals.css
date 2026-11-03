@@ -91,9 +91,6 @@ h3 { font-size: clamp(25px, 3vw, 42px); }
 .poster-frame { display: block; position: relative; aspect-ratio: 2 / 3; overflow: hidden; }
 .poster-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .quotes-section { padding-block: 112px; background: var(--surface); }
-.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
-.quotes blockquote { font-size: 28px; line-height: 1.3; letter-spacing: -.02em; margin: 0 0 28px; }
-.quotes button > span { color: var(--muted); }
 .habits { padding-block: 124px; }
 .habits-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 10vw; }
 .stat-lines { display: flex; flex-direction: column; gap: 26px; }
@@ -245,8 +242,6 @@ textarea { resize: vertical; }
   .shelf { gap: 14px; }
   .shelf > button { flex-basis: 120px; }
   .quotes-section { padding-block: 70px; }
-  .quotes { grid-template-columns: 1fr; gap: 40px; }
-  .quotes blockquote { font-size: 24px; }
   .habits { padding-block: 76px; }
   .habits-grid { grid-template-columns: 1fr; gap: 44px; }
   .stat-lines > div { grid-template-columns: 90px 1fr; gap: 16px; }

@@ -16,6 +16,7 @@ import Library from './Library';
 import Menu from './Menu';
 import { holdScroll, prefersReducedMotion, scrollToSection, ScrollTrigger, startSmoothScroll } from './motion';
 import PerfectTens from './PerfectTens';
+import QuoteReel from './QuoteReel';
 import Ratings from './Ratings';
 import Ticket from './Ticket';
 import TitleSheet from './TitleSheet';
@@ -167,7 +168,7 @@ export default function Site({ titles, placeholders }: { titles: Title[]; placeh
         {quotes.length > 0 && (
           <section className="quotes-section wrap" id="quotes">
             <RiseText as="h2" className="display" lines={['Words', 'that stay']} />
-            <div className="quotes">{quotes.map((title) => <button key={title.id} onClick={() => openTitle(title)}><blockquote>“{title.quote}”</blockquote><span>{[title.quoteBy, title.name].filter(Boolean).join(' — ')}</span></button>)}</div>
+            <QuoteReel titles={quotes} onOpen={openTitle} />
           </section>
         )}
 
