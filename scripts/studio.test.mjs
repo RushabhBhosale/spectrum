@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { mongoStore } from './mongo-store.mjs';
+import { mongoConnection } from './mongo-connection.mjs';
 import { fitRoster } from '../lib/roster.ts';
 import { NO_FILTERS, RATING_OPTIONS, STATUS_OPTIONS, countWith, isFiltered, matches, sortTitles } from '../lib/title-list.ts';
 import { createSession, passwordMatches, sessionIsValid } from './session.mjs';
@@ -57,6 +58,23 @@ test('initialises and atomically updates the collection, rejecting stale edits',
   await store.write({ ...current, titles: [{ title: 'B' }] });
   await assert.rejects(store.write(current), /changed while you were editing/);
   assert.deepEqual((await store.read()).titles, [{ title: 'B' }]);
+});
+
+test('shares connection attempts and replaces a client after connection failure', async () => {
+  let created = 0;
+  const manager = mongoConnection(() => {
+    const number = ++created;
+    return { connect: async () => { if (number === 1) throw new Error('connection failed'); } };
+  });
+  const failures = await Promise.allSettled([manager.get('uri'), manager.get('uri')]);
+  assert.equal(created, 1);
+  assert.ok(failures.every((result) => result.status === 'rejected'));
+  const client = await manager.get('uri');
+  assert.equal(await manager.get('uri'), client);
+  assert.equal(created, 2);
+  manager.discard(client);
+  assert.notEqual(await manager.get('uri'), client);
+  assert.equal(created, 3);
 });
 
 const shelf = [
