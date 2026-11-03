@@ -1,35 +1,39 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { gitHub, GENERATED_PATH, serialiseGenerated, serialiseTitles, TITLES_PATH } from '@/scripts/github.mjs';
+import { MongoClient } from 'mongodb';
+import { mongoStore } from '@/scripts/mongo-store.mjs';
 import type { Entry, Generated } from './types';
 
-export type Store = { titles: Entry[]; generated: Record<string, Generated> };
+export type Store = { titles: Entry[]; generated: Record<string, Generated>; version?: number };
+const dataPath = (file: string) => path.join(process.cwd(), 'data', file);
+let connection: { uri: string; client: MongoClient } | undefined;
 
-const remote = () => {
-  const { GITHUB_TOKEN: token, GITHUB_REPO: repo, GITHUB_BRANCH: branch } = process.env;
-  return token && repo ? gitHub({ token, repo, branch: branch || undefined }) : null;
-};
+async function collection() {
+  const uri = process.env.MONGODB_URI;
+  if (!uri) return null;
+  if (!connection || connection.uri !== uri) connection = { uri, client: new MongoClient(uri) };
+  return connection.client.db(process.env.MONGODB_DB || 'spectrum').collection('collection');
+}
 
-const onDisk = (file: string) => path.join(process.cwd(), 'data', path.basename(file));
-
-export async function readStore(): Promise<Store> {
-  const github = remote();
-  if (github) return github.read();
-  const [titles, generated] = await Promise.all([readFile(onDisk(TITLES_PATH), 'utf8'), readFile(onDisk(GENERATED_PATH), 'utf8')]);
+async function initialStore(): Promise<Store> {
+  const [titles, generated] = await Promise.all([readFile(dataPath('titles.json'), 'utf8'), readFile(dataPath('generated.json'), 'utf8')]);
   return { titles: JSON.parse(titles), generated: JSON.parse(generated) };
 }
 
-/** Saves to the repo when GitHub is set up, otherwise to the local data files. */
-export async function writeStore(store: Store, message: string) {
-  const github = remote();
-  if (github) {
-    await github.write(store, message);
-    return 'live' as const;
+export async function readStore(): Promise<Store> {
+  const db = await collection();
+  return db ? mongoStore(db).read(initialStore) : initialStore();
+}
+
+export async function writeStore(store: Store) {
+  const db = await collection();
+  if (db) {
+    await mongoStore(db).write({ ...store, version: store.version ?? 0 });
+    return;
   }
-  if (process.env.VERCEL) throw new Error('Saving needs GITHUB_TOKEN and GITHUB_REPO on Vercel');
+  if (process.env.VERCEL) throw new Error('Set MONGODB_URI to save titles on Vercel.');
   await Promise.all([
-    writeFile(onDisk(TITLES_PATH), serialiseTitles(store.titles)),
-    writeFile(onDisk(GENERATED_PATH), serialiseGenerated(store.generated)),
+    writeFile(dataPath('titles.json'), '[\n' + store.titles.map((title) => '  ' + JSON.stringify(title)).join(',\n') + '\n]\n'),
+    writeFile(dataPath('generated.json'), JSON.stringify(store.generated, null, 2) + '\n'),
   ]);
-  return 'local' as const;
 }

@@ -124,9 +124,6 @@ function toEntry(draft: Draft, previous?: Entry): Entry | string {
   return entry;
 }
 
-const saved = (where: 'live' | 'local', message: string) =>
-  where === 'live' ? `${message} It goes live in about a minute.` : message;
-
 export async function addTitle(draft: Draft): Promise<Result> {
   try {
     await requireSession();
@@ -139,11 +136,8 @@ export async function addTitle(draft: Draft): Promise<Result> {
     }
     const details = await enrich(tmdb(), entry);
     if (!details) return { ok: false, message: "TMDB doesn't have images for that title." };
-    const where = await writeStore(
-      { titles: [entry, ...store.titles], generated: { ...store.generated, [key]: details } },
-      `Add ${entry.title}`,
-    );
-    return { ok: true, key, message: saved(where, `${entry.title} added.`) };
+    await writeStore({ titles: [entry, ...store.titles], generated: { ...store.generated, [key]: details }, version: store.version });
+    return { ok: true, key, message: `${entry.title} added.` };
   } catch (error) {
     return { ok: false, message: (error as Error).message };
   }
@@ -173,8 +167,8 @@ export async function updateTitle(key: string, draft: Draft): Promise<Result> {
 
     const titles = [...store.titles];
     titles[index] = entry;
-    const where = await writeStore({ titles, generated }, `Update ${entry.title}`);
-    return { ok: true, key: nextKey, message: saved(where, `${entry.title} saved.`) };
+    await writeStore({ titles, generated, version: store.version });
+    return { ok: true, key: nextKey, message: `${entry.title} saved.` };
   } catch (error) {
     return { ok: false, message: (error as Error).message };
   }
@@ -188,8 +182,8 @@ export async function removeTitle(key: string): Promise<Result> {
     if (!entry) return { ok: false, message: "That title isn't in your list any more." };
     const generated = { ...store.generated };
     delete generated[key];
-    const where = await writeStore({ titles: store.titles.filter((t) => t !== entry), generated }, `Remove ${entry.title}`);
-    return { ok: true, message: saved(where, `${entry.title} removed.`) };
+    await writeStore({ titles: store.titles.filter((t) => t !== entry), generated, version: store.version });
+    return { ok: true, message: `${entry.title} removed.` };
   } catch (error) {
     return { ok: false, message: (error as Error).message };
   }

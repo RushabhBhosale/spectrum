@@ -15,7 +15,7 @@ The site opens on http://localhost:3200.
 
 ## Add titles
 
-Add a line to `data/titles.json`:
+Use `/studio` to add titles. Before MongoDB is configured you can also add a line to `data/titles.json`:
 
 ```json
 { "title": "Frieren: Beyond Journey's End", "type": "Anime", "rating": 9, "episodes": 28 }
@@ -40,7 +40,7 @@ Then fetch colours, release years, hours and posters:
 npm run colours
 ```
 
-This needs a free key from https://www.themoviedb.org/settings/api in `.env` or `.env.local` (see `.env.example`). It only processes new titles; add `-- --force` to redo them all. Commit `data/generated.json`, because the site reads colours from that file and never calls TMDB while running.
+This needs a free key from https://www.themoviedb.org/settings/api in `.env` or `.env.local` (see `.env.example`). It only processes new titles; add `-- --force` to redo them all. The JSON files are the starting data for an empty database. Once MongoDB has been initialised, use Studio to make changes; running this script does not update the database.
 
 Check the printed `title -> TMDB name` lines. Search takes the best-known match, so a short title can land on the wrong show. Add its `tmdbId`, delete its entry from `data/generated.json`, and run the script again.
 
@@ -56,9 +56,9 @@ With `episodes`, hours are episodes × runtime. Without it, TMDB's full episode 
 
 ## Studio
 
-`/studio` is a private page for adding series and quotes. Add `ADMIN_PASSWORD` to `.env` to turn it on. Locally it saves to the `data` files.
+`/studio` is a private page for adding series and quotes. Set `ADMIN_PASSWORD`, `TMDB_API_KEY` and `MONGODB_URI` in `.env.local`. Optionally set `MONGODB_DB` to choose a database name (the default is `spectrum`). The database user needs read and write access and Atlas must allow connections from the deployment. With no MongoDB URI, local Studio saves to the `data` files instead.
 
-On Vercel, set `ADMIN_PASSWORD`, `TMDB_API_KEY`, `GITHUB_TOKEN` (with contents write access to this repo) and `GITHUB_REPO` (`owner/name`). Saves become a commit, and the site redeploys in about a minute.
+Set the same variables for the Vercel Production environment and redeploy. The initial collection comes from the bundled JSON files; the first successful Studio save writes it to MongoDB. Later changes appear on the site without a redeployment. Keep database credentials private and back up the database regularly.
 
 ## Good to know
 
@@ -66,7 +66,7 @@ Stop `npm run dev` before running `npm run build`. They share the `.next` folder
 
 ## Deploy
 
-Import the repo into Vercel with the default Next.js settings. No environment variables are needed.
+Import the repo into Vercel with the default Next.js settings and configure the Studio variables above.
 
 ## Test
 

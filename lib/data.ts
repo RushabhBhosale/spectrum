@@ -1,5 +1,3 @@
-import generated from '@/data/generated.json';
-import entries from '@/data/titles.json';
 import { placeholderColours } from './placeholder';
 import { entryKey, type Category, type Entry, type Generated, type Title } from './types';
 
@@ -20,11 +18,10 @@ export function estimateHours(entry: Entry) {
 
 const slug = (text: string) => text.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-export function loadTitles(): { titles: Title[]; placeholders: number } {
-  const extra = generated as unknown as Record<string, Generated>;
+export function loadTitles(entries: Entry[], extra: Record<string, Generated>): { titles: Title[]; placeholders: number } {
   const used = new Set<string>();
   let placeholders = 0;
-  const titles = (entries as unknown as Entry[]).map((entry) => {
+  const titles = entries.map((entry) => {
     const found = extra[entryKey(entry)];
     const colours = entry.colours ?? found?.colours;
     if (!colours) placeholders++;
