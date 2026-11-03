@@ -9,7 +9,7 @@ import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib
 
 const STACKED_WIDTH = 860;
 
-const blank = (title: string, type: Category): Draft => ({ title, type, rating: '', status: 'Finished', episodes: '', quote: '', quoteBy: '', review: '' });
+const blank = (title: string, type: Category): Draft => ({ title, type, rating: '', status: 'Finished', episodes: '', quote: '' });
 
 const fromEntry = (entry: Entry): Draft => ({
   title: entry.title,
@@ -18,8 +18,6 @@ const fromEntry = (entry: Entry): Draft => ({
   status: entry.status ?? 'Finished',
   episodes: entry.episodes ? String(entry.episodes) : '',
   quote: entry.quote ?? '',
-  quoteBy: entry.quoteBy ?? '',
-  review: entry.review ?? '',
 });
 
 type Editing = { key: string | null; draft: Draft };
@@ -109,7 +107,6 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
         <div className="studio-overview">
           <button aria-pressed={!filtered} onClick={() => setFilters(NO_FILTERS)}><strong>{titles.length}</strong> titles</button>
           <button aria-pressed={filters.rating === 'none'} onClick={() => filterBy({ rating: filters.rating === 'none' ? '' : 'none' })}><strong>{titles.filter((t) => t.rating === null).length}</strong> unrated</button>
-          <button aria-pressed={filters.notes === 'review'} onClick={() => filterBy({ notes: filters.notes === 'review' ? '' : 'review' })}><strong>{titles.filter((t) => t.review).length}</strong> reviews</button>
           <button aria-pressed={filters.notes === 'quote'} onClick={() => filterBy({ notes: filters.notes === 'quote' ? '' : 'quote' })}><strong>{titles.filter((t) => t.quote).length}</strong> quotes</button>
         </div>
       </div>
@@ -141,9 +138,9 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
                 {RATING_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { rating: id })}</option>)}
               </select>
             </label>
-            <label><span className="label">Notes</span>
+            <label><span className="label">Quotes</span>
               <select id="filter-notes" value={filters.notes} onChange={(e) => filterBy({ notes: e.target.value })}>
-                <option value="">Any notes</option>
+                <option value="">Any quote status</option>
                 {NOTE_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { notes: id })}</option>)}
               </select>
             </label>
@@ -162,7 +159,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
                     <span>{entry.title}</span>
                     <small>{[entry.type, entry.year, `${entry.hours.toLocaleString('en-US')} h`, entry.status === 'Finished' ? null : entry.status].filter(Boolean).join(' · ')}</small>
                   </span>
-                  {(entry.review || entry.quote) && <small className="owned-notes">{[entry.review && 'Review', entry.quote && 'Quote'].filter(Boolean).join(' · ')}</small>}
+                  {entry.quote && <small className="owned-notes">Quote</small>}
                   <b className={entry.rating === null ? 'unrated' : undefined}>{entry.rating?.toFixed(1) ?? '–'}</b>
                 </button>
               );
@@ -181,7 +178,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
           {editing ? (
             <form className="editor" onSubmit={(e) => { e.preventDefault(); save(); }}>
               <h2>{editing.key ? 'Edit title' : 'New title'}</h2>
-              <p className="editor-note">Reviews and quotes are optional. You can come back and add them any time.</p>
+              <p className="editor-note">A quote is optional. You can come back and add one any time.</p>
               <label className="field"><span className="label">Title</span>
                 <input id="edit-title" value={editing.draft.title} onChange={(e) => set('title', e.target.value)} required />
               </label>
@@ -208,13 +205,6 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
               <label className="field"><span className="label">Quote</span>
                 <textarea id="edit-quote" rows={3} maxLength={400} placeholder="The line that stayed with you" value={editing.draft.quote} onChange={(e) => set('quote', e.target.value)} />
               </label>
-              <label className="field"><span className="label">Said by</span>
-                <input id="edit-quote-by" placeholder="Character name" value={editing.draft.quoteBy} onChange={(e) => set('quoteBy', e.target.value)} />
-              </label>
-              <label className="field"><span className="label">Your review</span>
-                <textarea id="edit-review" rows={5} maxLength={1000} placeholder="What worked for you? What stayed with you?" value={editing.draft.review} onChange={(e) => set('review', e.target.value)} />
-                <span className="editor-note">{editing.draft.review.length} / 1,000 characters</span>
-              </label>
               <div className="editor-actions">
                 <button className="solid" disabled={busy}>{busy ? 'Saving…' : editing.key ? 'Save changes' : 'Add to the collection'}</button>
                 <button type="button" onClick={() => setEditing(null)}>Cancel</button>
@@ -225,7 +215,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
           ) : (
             <>
               <h2>Add your next watch</h2>
-              <p className="editor-note">Pick a title on the left to rate it, track episodes, write a review or save a quote. Artwork, release year and colours are fetched when you add one here.</p>
+              <p className="editor-note">Pick a title on the left to rate it, track episodes or save a quote. Artwork, release year and colours are fetched when you add one here.</p>
               <form className="search" onSubmit={(e) => { e.preventDefault(); search(); }}>
                 <input id="tmdb-search" aria-label="Search for a series or film" placeholder="The Glory" value={query} onChange={(e) => setQuery(e.target.value)} />
                 <button className="solid" disabled={busy || !query.trim()}>Search</button>

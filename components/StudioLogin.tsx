@@ -17,7 +17,7 @@ export default function StudioLogin({ ready }: { ready: boolean }) {
     <main className="wrap login">
       <a className="label" href="/">{SITE_NAME}</a>
       <h1>Studio</h1>
-      <p>Your private space to add titles, write reviews and collect quotes.</p>
+      <p>Your private space to add titles and collect quotes.</p>
       {ready ? (
         <form action={action}>
           <label className="field">

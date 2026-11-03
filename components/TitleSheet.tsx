@@ -98,8 +98,7 @@ export default function TitleSheet({ title, paused, onClose }: { title: Title | 
           <div className="sheet-details">
             <div className="sheet-side"><Poster title={title} /></div>
             <div className="sheet-text">
-              {title.quote && <blockquote className="sheet-quote">“{title.quote}”{title.quoteBy && <cite>— {title.quoteBy}</cite>}</blockquote>}
-              {title.review && <section className="sheet-writing"><h3>My take</h3><p>{title.review}</p></section>}
+              {title.quote && <blockquote className="sheet-quote">“{title.quote}”</blockquote>}
               <dl className="sheet-facts">
                 <div><dt>Time in this world</dt><dd>{title.hours.toLocaleString('en-US')} hours</dd></div>
                 {title.genres.length > 0 && <div><dt>Genres</dt><dd>{title.genres.join(' · ')}</dd></div>}

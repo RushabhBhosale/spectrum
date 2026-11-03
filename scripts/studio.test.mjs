@@ -95,7 +95,7 @@ test('filters by name, category, status, rating and notes together', () => {
   assert.deepEqual(found({ rating: '8' }), ['beta']);
   assert.deepEqual(found({ rating: 'low' }), ['Delta']);
   assert.deepEqual(found({ notes: 'quote' }), ['Gamma']);
-  assert.deepEqual(found({ notes: 'no-review', category: 'Anime', rating: '10' }), ['Alpha']);
+  assert.deepEqual(found({ notes: 'no-quote', category: 'Anime', rating: '10' }), ['Alpha']);
 });
 
 test('every title lands in exactly one status and one rating band', () => {

@@ -9,7 +9,6 @@ import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib
 
 const COOKIE = 'spectrum_session';
 const MAX_QUOTE = 400;
-const MAX_REVIEW = 1000;
 const MAX_NAME = 120;
 const FAILED_LOGIN_DELAY_MS = 800;
 
@@ -20,8 +19,6 @@ export type Draft = {
   status: string;
   episodes: string;
   quote: string;
-  quoteBy: string;
-  review: string;
   tmdbId?: number;
   tmdbKind?: 'tv' | 'movie';
 };
@@ -108,15 +105,13 @@ function toEntry(draft: Draft, previous?: Entry): Entry | string {
   if (draft.status && !(STATUSES as readonly string[]).includes(draft.status) && draft.status !== previous?.status) return 'Pick a status.';
 
   const entry: Entry = { ...previous, title, type: draft.type, rating };
-  const setText = (field: 'status' | 'quote' | 'quoteBy' | 'review', value: string, limit: number) => {
+  const setText = (field: 'status' | 'quote', value: string, limit: number) => {
     const text = value.trim().slice(0, limit);
     if (text) entry[field] = text;
     else delete entry[field];
   };
   setText('status', draft.status === 'Finished' ? '' : draft.status, MAX_NAME);
   setText('quote', draft.quote, MAX_QUOTE);
-  setText('quoteBy', draft.quote.trim() ? draft.quoteBy : '', MAX_NAME);
-  setText('review', draft.review, MAX_REVIEW);
   if (episodes) entry.episodes = episodes;
   else delete entry.episodes;
   if (draft.tmdbId) entry.tmdbId = draft.tmdbId;

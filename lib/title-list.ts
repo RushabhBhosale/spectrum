@@ -3,7 +3,7 @@ import type { Category, Entry } from './types';
 /** A title as the studio lists it, with the details that live outside titles.json. */
 export type ListedTitle = Entry & { hours: number; poster?: string; year?: number };
 
-type Listed = Pick<ListedTitle, 'title' | 'type' | 'rating' | 'status' | 'review' | 'quote' | 'hours' | 'year'>;
+type Listed = Pick<ListedTitle, 'title' | 'type' | 'rating' | 'status' | 'quote' | 'hours' | 'year'>;
 type Option = { id: string; label: string; test: (title: Listed) => boolean };
 
 const rated = (title: Listed, from: number, below = Infinity) => title.rating !== null && title.rating >= from && title.rating < below;
@@ -27,9 +27,7 @@ export const RATING_OPTIONS: Option[] = [
 ];
 
 export const NOTE_OPTIONS: Option[] = [
-  { id: 'review', label: 'Has a review', test: (title) => Boolean(title.review) },
   { id: 'quote', label: 'Has a quote', test: (title) => Boolean(title.quote) },
-  { id: 'no-review', label: 'No review yet', test: (title) => !title.review },
   { id: 'no-quote', label: 'No quote yet', test: (title) => !title.quote },
 ];
 
