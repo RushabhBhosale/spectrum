@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { addTitle, removeTitle, searchTitles, signOut, updateTitle, type Draft, type Match, type Result } from '@/app/studio/actions';
 import { SITE_NAME } from '@/lib/site';
-import { countWith, isFiltered, matches as matchesFilters, NO_FILTERS, NOTE_OPTIONS, RATING_OPTIONS, SORTS, sortTitles, STATUS_OPTIONS, type Filters, type ListedTitle } from '@/lib/title-list';
+import { countWith, isFiltered, matches as matchesFilters, NO_FILTERS, NOTE_OPTIONS, RATING_OPTIONS, SORTS, sortTitles, statusOf, STATUS_OPTIONS, type Filters, type ListedTitle } from '@/lib/title-list';
 import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib/types';
 
 const STACKED_WIDTH = 860;
@@ -20,7 +20,7 @@ const fromEntry = (entry: Entry): Draft => ({
   quote: entry.quote ?? '',
 });
 
-type Editing = { key: string | null; draft: Draft };
+type Editing = { key: string | null; draft: Draft; poster?: string; year?: number };
 
 export default function Studio({ titles }: { titles: ListedTitle[] }) {
   const router = useRouter();
@@ -87,13 +87,13 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
 
   const choose = (match: Match) => {
     setNotice(null);
-    setEditing({ key: null, draft: { ...blank(match.name, match.type), tmdbId: match.id, tmdbKind: match.kind } });
+    setEditing({ key: null, draft: { ...blank(match.name, match.type), tmdbId: match.id, tmdbKind: match.kind }, poster: match.poster, year: match.year });
   };
 
-  const open = (entry: Entry) => {
+  const open = (entry: ListedTitle) => {
     setNotice(null);
     setConfirming(false);
-    setEditing({ key: entryKey(entry), draft: fromEntry(entry) });
+    setEditing({ key: entryKey(entry), draft: fromEntry(entry), poster: entry.poster, year: entry.year });
   };
 
   return (
@@ -103,7 +103,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
         <button className="label" onClick={() => start(async () => { await signOut(); router.refresh(); })}>Sign out</button>
       </header>
       <div className="studio-title">
-        <h1>Studio</h1>
+        <div><h1>Studio</h1><p className="studio-subtitle">Your watchlist, all in one place.</p></div>
         <div className="studio-overview">
           <button aria-pressed={!filtered} onClick={() => setFilters(NO_FILTERS)}><strong>{titles.length}</strong> titles</button>
           <button aria-pressed={filters.rating === 'none'} onClick={() => filterBy({ rating: filters.rating === 'none' ? '' : 'none' })}><strong>{titles.filter((t) => t.rating === null).length}</strong> unrated</button>
@@ -114,9 +114,16 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
       <div className="studio-grid">
         <section className="studio-list">
           <div className="studio-list-head">
-            <h2>Your titles</h2>
+            <h2>My list</h2>
             <p role="status">{filtered ? `${owned.length} of ${titles.length}` : `${titles.length} titles`}</p>
             {filtered && <button className="studio-clear" onClick={() => setFilters(NO_FILTERS)}>Clear filters</button>}
+            <button className="studio-add" onClick={() => { setEditing(null); setNotice(null); requestAnimationFrame(() => workspace.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })); }}>+ Add title</button>
+          </div>
+          <div className="studio-status-tabs" role="group" aria-label="Watch status">
+            <button aria-pressed={!filters.status} onClick={() => filterBy({ status: '' })}>All <span>{countWith(titles, filters, { status: '' })}</span></button>
+            {STATUS_OPTIONS.map(({ id, label }) => (
+              <button key={id} aria-pressed={filters.status === id} onClick={() => filterBy({ status: id })}>{label} <span>{countWith(titles, filters, { status: id })}</span></button>
+            ))}
           </div>
           <input id="owned-filter" type="search" aria-label="Find one of your titles" placeholder="Find a title" value={filters.text} onChange={(e) => filterBy({ text: e.target.value })} />
           <div className="studio-tabs" role="group" aria-label="Category">
@@ -126,12 +133,6 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
             ))}
           </div>
           <div className="studio-selects">
-            <label><span className="label">Status</span>
-              <select id="filter-status" value={filters.status} onChange={(e) => filterBy({ status: e.target.value })}>
-                <option value="">Any status</option>
-                {STATUS_OPTIONS.map(({ id, label }) => <option key={id} value={id}>{optionLabel(label, { status: id })}</option>)}
-              </select>
-            </label>
             <label><span className="label">Rating</span>
               <select id="filter-rating" value={filters.rating} onChange={(e) => filterBy({ rating: e.target.value })}>
                 <option value="">Any rating</option>
@@ -150,6 +151,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
               </select>
             </label>
           </div>
+          <div className="owned-head" aria-hidden="true"><span>Title</span><span>Progress</span><span>Score</span></div>
           <div className="owned" ref={list}>
             {owned.map((entry) => {
               return (
@@ -157,10 +159,10 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
                   {entry.poster ? <img src={entry.poster.replace('/w342/', '/w92/')} alt="" loading="lazy" decoding="async" /> : <span className="no-poster" />}
                   <span className="owned-name">
                     <span>{entry.title}</span>
-                    <small>{[entry.type, entry.year, `${entry.hours.toLocaleString('en-US')} h`, entry.status === 'Finished' ? null : entry.status].filter(Boolean).join(' · ')}</small>
+                    <small>{[entry.type, entry.year, statusOf(entry)].filter(Boolean).join(' · ')}</small>
                   </span>
-                  {entry.quote && <small className="owned-notes">Quote</small>}
-                  <b className={entry.rating === null ? 'unrated' : undefined}>{entry.rating?.toFixed(1) ?? '–'}</b>
+                  <span className="owned-progress"><span className="owned-mobile-label">Progress </span>{entry.episodes ? `${entry.episodes} ep` : '—'}</span>
+                  <b className={entry.rating === null ? 'unrated' : undefined}><span className="owned-mobile-label">Score </span>{entry.rating?.toFixed(1) ?? '—'}</b>
                 </button>
               );
             })}
@@ -177,8 +179,11 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
           {notice && <p className={`notice ${notice.ok ? '' : 'bad'}`} role="status">{notice.message}</p>}
           {editing ? (
             <form className="editor" onSubmit={(e) => { e.preventDefault(); save(); }}>
-              <h2>{editing.key ? 'Edit title' : 'New title'}</h2>
-              <p className="editor-note">A quote is optional. You can come back and add one any time.</p>
+              <div className="editor-heading"><div><h2>{editing.key ? 'Edit title' : 'Add to your list'}</h2><p className="editor-note">Update your progress, rating and notes.</p></div></div>
+              <div className="editor-selection">
+                {editing.poster ? <img src={editing.poster} alt={`Poster for ${editing.draft.title}`} /> : <span className="editor-no-poster">No poster available</span>}
+                <div><span className="label">{editing.key ? 'Editing' : 'Adding'}</span><strong>{editing.draft.title}</strong><small>{[editing.draft.type, editing.year].filter(Boolean).join(' · ')}</small></div>
+              </div>
               <label className="field"><span className="label">Title</span>
                 <input id="edit-title" value={editing.draft.title} onChange={(e) => set('title', e.target.value)} required />
               </label>
@@ -214,8 +219,8 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
             </form>
           ) : (
             <>
-              <h2>Add your next watch</h2>
-              <p className="editor-note">Pick a title on the left to rate it, track episodes or save a quote. Artwork, release year and colours are fetched when you add one here.</p>
+              <h2>Add a title</h2>
+              <p className="editor-note">Search for a series or film, then choose the matching poster. Select a title from your list to edit it.</p>
               <form className="search" onSubmit={(e) => { e.preventDefault(); search(); }}>
                 <input id="tmdb-search" aria-label="Search for a series or film" placeholder="The Glory" value={query} onChange={(e) => setQuery(e.target.value)} />
                 <button className="solid" disabled={busy || !query.trim()}>Search</button>

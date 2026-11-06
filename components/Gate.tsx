@@ -38,6 +38,7 @@ export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot
     let seen = false;
     try { seen = sessionStorage.getItem(SESSION_KEY) === '1'; } catch { /* Storage may be unavailable. */ }
     if (seen || prefersReducedMotion() || new URLSearchParams(location.search).has('title') || !shots.length) {
+      setGone(true);
       onReveal();
       return;
     }
@@ -139,11 +140,12 @@ export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot
     };
   }, [ready, shots, total, onReveal]);
 
-  if (!ready || gone) return null;
+  if (gone) return null;
   const perRow = Math.ceil(wall.length / ROWS);
   return (
     <div className="gate" ref={root} aria-hidden="true">
       <div className="gate-blinds">{Array.from({ length: BLINDS }, (_, index) => <i className="gate-blind" key={index} />)}</div>
+      {ready && <>
       <div className="gate-wall">
         <div className="gate-plane">
           {Array.from({ length: ROWS }, (_, row) => (
@@ -170,6 +172,7 @@ export default function Gate({ shots, wall, total, onReveal }: { shots: GateShot
           </span>
         ))}
       </div>
+      </>}
       <span className="sr-only">{SITE_NAME}</span>
       <noscript><style>{'.gate{display:none}'}</style></noscript>
     </div>
