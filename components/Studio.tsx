@@ -10,7 +10,7 @@ import { CATEGORIES, entryKey, STATUSES, type Category } from '@/lib/types';
 const blank = (title: string, type: Category): Draft => ({ title, type, rating: '', status: 'Finished', episodes: '', quote: '' });
 const fromEntry = (entry: ListedTitle): Draft => ({
   title: entry.title, type: entry.type, rating: entry.rating === null ? '' : String(entry.rating),
-  status: entry.status ?? 'Finished', episodes: entry.episodes ? String(entry.episodes) : '', quote: entry.quote ?? '', tmdbKind: entry.tmdbKind ?? 'tv',
+  status: entry.status ?? 'Finished', episodes: entry.episodes ? String(entry.episodes) : '', totalEpisodes: entry.totalEpisodes, quote: entry.quote ?? '', tmdbKind: entry.tmdbKind ?? 'tv',
 });
 type Editing = { key: string | null; draft: Draft; poster?: string; year?: number };
 
@@ -104,6 +104,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
       {notice && !panelOpen && <p className={`notice tracker-notice ${notice.ok ? '' : 'bad'}`} role="status">{notice.message}</p>}
 
       <section className="tracker-list" aria-label="Your titles">
+        <div className="tracker-controls">
         <div className="tracker-status" role="group" aria-label="Watch status">
           <button aria-pressed={!filters.status} onClick={() => filterBy({ status: '' })}>All <span>{countWith(titles, filters, { status: '' })}</span></button>
           {STATUS_OPTIONS.map(({ id, label }) => (
@@ -121,14 +122,15 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
           </div></details>
         </div>
         <div className="tracker-list-meta"><p role="status">{filtered ? `${owned.length} of ${titles.length} titles` : `${titles.length} titles`}</p>{filtered && <button onClick={() => setFilters(NO_FILTERS)}>Clear filters</button>}</div>
+        </div>
         <div className="tracker-columns" aria-hidden="true"><span>Title</span><span>Status</span><span>Progress</span><span>Score</span><span /></div>
         <div className="tracker-entries">
           {owned.map((entry) => (
-            <button className="tracker-entry" key={entryKey(entry)} onClick={() => open(entry)} aria-label={`Edit ${entry.title}, ${statusOf(entry)}, ${entry.episodes ? `${entry.episodes} episodes` : 'progress not set'}, ${entry.rating === null ? 'unrated' : `score ${entry.rating.toFixed(1)}`}`}>
+            <button className="tracker-entry" key={entryKey(entry)} onClick={() => open(entry)} aria-label={`Edit ${entry.title}, ${statusOf(entry)}, ${entry.tmdbKind === 'movie' ? 'movie' : entry.episodes ? `${entry.episodes} episodes` : 'progress not set'}, ${entry.rating === null ? 'unrated' : `score ${entry.rating.toFixed(1)}`}`}>
               {entry.poster ? <img src={entry.poster.replace('/w342/', '/w92/')} alt="" loading="lazy" decoding="async" /> : <span className="tracker-no-poster" />}
               <span className="tracker-entry-title"><strong>{entry.title}</strong><small>{[entry.type, entry.year].filter(Boolean).join(' · ')}<span className="tracker-mobile-status"> · {statusOf(entry)}</span></small></span>
               <span className="tracker-entry-status">{statusOf(entry)}</span>
-              <span className="tracker-entry-progress"><span className="tracker-mobile-label">Progress </span>{entry.episodes ? `${entry.episodes} ep` : '—'}</span>
+              <span className="tracker-entry-progress">{entry.tmdbKind === 'movie' ? '' : <><span className="tracker-mobile-label">Progress </span>{entry.episodes ? `${entry.episodes} ep` : '—'}</>}</span>
               <span className="tracker-entry-score"><span className="tracker-mobile-label">Score </span>{entry.rating?.toFixed(1) ?? '—'}</span>
               <span className="tracker-entry-edit" aria-hidden="true">Edit <span>↗</span></span>
             </button>
@@ -154,8 +156,11 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
               <label className="field"><span className="label">Rating out of 10</span><input id="edit-rating" type="number" min="0" max="10" step="0.1" value={editing.draft.rating} onChange={(e) => set('rating', e.target.value)} /></label>
             </div>
             <div className="field-row">
-              <label className="field"><span className="label">Status</span><select id="edit-status" value={editing.draft.status} onChange={(e) => set('status', e.target.value)}>{[...new Set([...STATUSES, editing.draft.status])].map((s) => <option key={s}>{s}</option>)}</select></label>
-              <label className="field"><span className="label">Episodes watched</span><input id="edit-episodes" type="number" min="1" step="1" value={editing.draft.episodes} onChange={(e) => set('episodes', e.target.value)} /></label>
+              <label className="field"><span className="label">Status</span><select id="edit-status" value={editing.draft.status} onChange={(e) => {
+                const status = e.target.value;
+                setEditing((current) => current && { ...current, draft: { ...current.draft, status, ...(status === 'Finished' && (current.draft.tmdbKind ?? 'tv') !== 'movie' ? { episodes: String(current.draft.totalEpisodes ?? (current.draft.episodes ? Number(current.draft.episodes) : '')) } : {}) } });
+              }}>{[...new Set([...STATUSES, editing.draft.status])].map((s) => <option key={s}>{s}</option>)}</select></label>
+              {(editing.draft.tmdbKind ?? 'tv') !== 'movie' && <label className="field"><span className="label">Episodes watched</span><input id="edit-episodes" type="number" min="1" max={editing.draft.totalEpisodes || undefined} step="1" value={editing.draft.episodes} onChange={(e) => set('episodes', e.target.value)} /></label>}
             </div>
             <label className="field"><span className="label">Quote</span><textarea id="edit-quote" rows={2} maxLength={400} placeholder="The line that stayed with you" value={editing.draft.quote} onChange={(e) => set('quote', e.target.value)} /></label>
             <div className="editor-actions">

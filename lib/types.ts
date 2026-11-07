@@ -40,6 +40,8 @@ export type Entry = {
   quoteBy?: string;
   /** Episodes actually watched. */
   episodes?: number;
+  /** Number of regular episodes in the series, when known. */
+  totalEpisodes?: number;
   hours?: number;
   colours?: string[];
   tmdbId?: number;
@@ -51,6 +53,7 @@ export type Generated = {
   tmdbId?: number;
   catalogSource?: 'tvmaze';
   catalogId?: number;
+  totalEpisodes?: number;
   runtimeMinutes?: number;
   tmdbKind: 'tv' | 'movie';
   tmdbName?: string;

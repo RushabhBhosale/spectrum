@@ -9,6 +9,7 @@ type Show = {
   premiered?: string | null; averageRuntime?: number | null; runtime?: number | null;
   image?: { medium?: string; original?: string } | null;
 };
+type Episode = { season?: number; number?: number | null };
 
 function category(show: Show): Category {
   if (show.genres?.includes('Anime') || (show.type === 'Animation' && ['Japanese', 'Korean', 'Chinese'].includes(show.language ?? ''))) return 'Anime';
@@ -37,6 +38,13 @@ export async function searchShows(query: string) {
 export async function showDetails(id: number, entry: Entry): Promise<Generated> {
   if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Choose a valid title.');
   const show: Show = await get(`/shows/${id}`);
+  let totalEpisodes: number | undefined;
+  if (entry.tmdbKind !== 'movie') {
+    try {
+      const episodes: Episode[] = await get(`/shows/${id}/episodes`);
+      totalEpisodes = episodes.filter((episode) => (episode.season ?? 0) > 0 && episode.number != null).length || undefined;
+    } catch { /* Keep the title usable if the optional episode endpoint is unavailable. */ }
+  }
   const poster = show.image?.original ?? show.image?.medium;
   let colours = placeholderColours(entry.title, entry.type);
   let accent = colours[3];
@@ -51,5 +59,5 @@ export async function showDetails(id: number, entry: Entry): Promise<Generated> 
   }
   const runtimeMinutes = show.averageRuntime || show.runtime || undefined;
   const hours = entry.tmdbKind !== 'movie' && entry.episodes && runtimeMinutes ? Math.max(1, Math.round(entry.episodes * runtimeMinutes / 60)) : estimateHours(entry);
-  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
+  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, totalEpisodes, runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
 }

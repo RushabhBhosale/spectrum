@@ -564,6 +564,7 @@ body::after { position: fixed; inset: -80px; z-index: 180; background-image: url
 .tracker-add:hover { background: #d6cec3; }
 .tracker-notice { margin-bottom: 16px; }
 .tracker-list { min-width: 0; }
+.tracker-controls { position: sticky; top: 0; z-index: 10; padding-top: 8px; background: var(--bg); }
 .tracker-status { display: flex; gap: 27px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: thin; }
 .tracker-status button { position: relative; flex: none; min-height: 44px; padding: 0 0 12px; color: var(--muted); font-size: 14px; white-space: nowrap; }
 .tracker-status button:hover, .tracker-status button[aria-pressed=true] { color: var(--ink); }

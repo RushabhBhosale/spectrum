@@ -23,6 +23,7 @@ export type Draft = {
   tvmazeId?: number;
   posterUrl?: string;
   tmdbKind?: 'tv' | 'movie';
+  totalEpisodes?: number;
 };
 export type Result = { ok: true; message: string; key?: string } | { ok: false; message: string };
 export type Match = {
@@ -85,6 +86,7 @@ function toEntry(draft: Draft, previous?: Entry): Entry | string {
   if (rating !== null && !(rating >= 0 && rating <= 10)) return 'Ratings go from 0 to 10.';
   const episodes = draft.episodes.trim() === '' ? undefined : Number(draft.episodes);
   if (episodes !== undefined && !(Number.isInteger(episodes) && episodes > 0)) return 'Episodes should be a whole number.';
+  if ((draft.tmdbKind ?? previous?.tmdbKind) !== 'movie' && episodes !== undefined && draft.totalEpisodes && episodes > draft.totalEpisodes) return `Episodes watched cannot exceed ${draft.totalEpisodes}.`;
   if (draft.status && !(STATUSES as readonly string[]).includes(draft.status) && draft.status !== previous?.status) return 'Pick a status.';
 
   const entry: Entry = { ...previous, title, type: draft.type, rating };
@@ -95,7 +97,8 @@ function toEntry(draft: Draft, previous?: Entry): Entry | string {
   };
   setText('status', draft.status === 'Finished' ? '' : draft.status, MAX_NAME);
   setText('quote', draft.quote, MAX_QUOTE);
-  if (episodes) entry.episodes = episodes;
+  if ((draft.tmdbKind ?? previous?.tmdbKind) === 'movie') delete entry.episodes;
+  else if (episodes) entry.episodes = episodes;
   else delete entry.episodes;
   if (draft.tmdbKind) entry.tmdbKind = draft.tmdbKind;
   return entry;
@@ -118,6 +121,11 @@ export async function addTitle(draft: Draft): Promise<Result> {
       try { poster = new URL(draft.posterUrl.trim()); } catch { return { ok: false, message: 'Enter a valid poster URL.' }; }
       if (poster.protocol !== 'https:' || poster.username || poster.password || poster.href.length > 2048) return { ok: false, message: 'Use an HTTPS poster URL without login details.' };
       generated[key] = { tmdbKind: entry.tmdbKind ?? 'tv', hours: estimateHours(entry), colours: placeholderColours(entry.title, entry.type), poster: poster.href };
+    }
+    if (entry.tmdbKind !== 'movie' && !entry.status && generated[key]?.totalEpisodes) {
+      entry.totalEpisodes = generated[key].totalEpisodes;
+      entry.episodes = generated[key].totalEpisodes;
+      generated[key].hours = entry.hours ?? Math.max(1, Math.round(generated[key].totalEpisodes * (generated[key].runtimeMinutes ?? 24) / 60));
     }
     await writeStore({ titles: [entry, ...store.titles], generated, version: store.version });
     return { ok: true, key, message: `${entry.title} added.` };
@@ -142,6 +150,11 @@ export async function updateTitle(key: string, draft: Draft): Promise<Result> {
 
     const generated = { ...store.generated };
     const known = generated[key];
+    if (known?.totalEpisodes && entry.tmdbKind !== 'movie') {
+      entry.totalEpisodes = known.totalEpisodes;
+      if (!entry.status) entry.episodes = known.totalEpisodes;
+      else if (entry.episodes && entry.episodes > known.totalEpisodes) return { ok: false, message: `Episodes watched cannot exceed ${known.totalEpisodes}.` };
+    }
     delete generated[key];
     const episodesChanged = entry.episodes !== previous.episodes;
     if (known) {
