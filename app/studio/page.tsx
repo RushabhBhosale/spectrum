@@ -16,7 +16,7 @@ export default async function StudioPage() {
     <Studio
       titles={titles.map((entry) => {
         const found = generated[entryKey(entry)];
-        return { ...entry, hours: entry.hours ?? found?.hours ?? estimateHours(entry), poster: found?.poster, year: found?.year };
+        return { ...entry, hours: entry.hours ?? found?.hours ?? estimateHours(entry), poster: found?.poster, year: found?.year, tmdbKind: found?.tmdbKind ?? entry.tmdbKind };
       })}
     />
   );

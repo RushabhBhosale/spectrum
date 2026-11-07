@@ -146,3 +146,14 @@ test('the roster gets the biggest posters it can', () => {
   assert.equal(fitRoster(20, 900, 680, 10).columns, 7);
   assert.ok(fitRoster(20, 900, 680, 10).card > fitRoster(60, 900, 680, 10).card);
 });
+
+test('filters movie and TV formats without guessing missing formats', () => {
+  const entries = [
+    { ...shelf[0], tmdbKind: 'movie' },
+    { ...shelf[1], tmdbKind: 'tv' },
+    shelf[2],
+  ];
+  assert.deepEqual(names(entries.filter((title) => matches(title, { ...NO_FILTERS, format: 'movie' }))), ['Alpha']);
+  assert.deepEqual(names(entries.filter((title) => matches(title, { ...NO_FILTERS, format: 'tv' }))), ['beta']);
+  assert.deepEqual(names(entries.filter((title) => matches(title, NO_FILTERS))), ['Alpha', 'beta', 'Gamma']);
+});

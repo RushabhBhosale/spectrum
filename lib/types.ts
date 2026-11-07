@@ -48,7 +48,10 @@ export type Entry = {
 
 /** What `npm run colours` and the studio store for a title. */
 export type Generated = {
-  tmdbId: number;
+  tmdbId?: number;
+  catalogSource?: 'tvmaze';
+  catalogId?: number;
+  runtimeMinutes?: number;
   tmdbKind: 'tv' | 'movie';
   tmdbName?: string;
   year?: number;

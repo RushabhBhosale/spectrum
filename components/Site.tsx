@@ -211,7 +211,7 @@ export default function Site({ titles, placeholders }: { titles: Title[]; placeh
           <a href="/studio"><Roll>Manage collection</Roll></a>
           <a href="#top"><Roll>Back to top</Roll></a>
         </div>
-        <p className="wrap credits">Artwork and title information from TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.{placeholders > 0 && ` ${placeholders} ${placeholders === 1 ? 'title uses' : 'titles use'} a placeholder palette.`} Also by {SITE_OWNER}: <a href={SISTER_SITE.url} target="_blank" rel="noopener">{SISTER_SITE.name}</a>.</p>
+        <p className="wrap credits">Artwork and title information from TMDB and <a href="https://www.tvmaze.com/" target="_blank" rel="noopener">TVmaze</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.{placeholders > 0 && ` ${placeholders} ${placeholders === 1 ? 'title uses' : 'titles use'} a placeholder palette.`} Also by {SITE_OWNER}: <a href={SISTER_SITE.url} target="_blank" rel="noopener">{SISTER_SITE.name}</a>.</p>
       </footer>
 
       <TitleSheet title={open} paused={motionPaused} onClose={closeTitle} />

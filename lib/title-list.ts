@@ -3,7 +3,7 @@ import type { Category, Entry } from './types';
 /** A title as the studio lists it, with the details that live outside titles.json. */
 export type ListedTitle = Entry & { hours: number; poster?: string; year?: number };
 
-type Listed = Pick<ListedTitle, 'title' | 'type' | 'rating' | 'status' | 'quote' | 'hours' | 'year'>;
+type Listed = Pick<ListedTitle, 'title' | 'type' | 'rating' | 'status' | 'quote' | 'hours' | 'year' | 'tmdbKind'>;
 type Option = { id: string; label: string; test: (title: Listed) => boolean };
 
 const rated = (title: Listed, from: number, below = Infinity) => title.rating !== null && title.rating >= from && title.rating < below;
@@ -31,9 +31,9 @@ export const NOTE_OPTIONS: Option[] = [
   { id: 'no-quote', label: 'No quote yet', test: (title) => !title.quote },
 ];
 
-export type Filters = { text: string; category: Category | ''; status: string; rating: string; notes: string };
+export type Filters = { text: string; category: Category | ''; format: 'tv' | 'movie' | ''; status: string; rating: string; notes: string };
 
-export const NO_FILTERS: Filters = { text: '', category: '', status: '', rating: '', notes: '' };
+export const NO_FILTERS: Filters = { text: '', category: '', format: '', status: '', rating: '', notes: '' };
 
 export const isFiltered = (filters: Filters) => Object.values(filters).some((value) => value.trim());
 
@@ -43,6 +43,7 @@ export function matches(title: Listed, filters: Filters) {
   const text = filters.text.trim().toLowerCase();
   return (!text || title.title.toLowerCase().includes(text))
     && (!filters.category || title.type === filters.category)
+    && (!filters.format || title.tmdbKind === filters.format)
     && passes(STATUS_OPTIONS, filters.status, title)
     && passes(RATING_OPTIONS, filters.rating, title)
     && passes(NOTE_OPTIONS, filters.notes, title);

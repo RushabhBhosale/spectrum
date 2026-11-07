@@ -1,10 +1,11 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { enrich } from '@/scripts/enrich.mjs';
 import { createSession, passwordMatches, sessionIsValid } from '@/scripts/session.mjs';
-import { client, guessType, IMAGES, releaseYear } from '@/scripts/tmdb.mjs';
 import { readStore, writeStore } from '@/lib/store';
+import { estimateHours } from '@/lib/data';
+import { placeholderColours } from '@/lib/placeholder';
+import { searchShows, showDetails } from '@/lib/tvmaze';
 import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib/types';
 
 const COOKIE = 'spectrum_session';
@@ -19,7 +20,8 @@ export type Draft = {
   status: string;
   episodes: string;
   quote: string;
-  tmdbId?: number;
+  tvmazeId?: number;
+  posterUrl?: string;
   tmdbKind?: 'tv' | 'movie';
 };
 export type Result = { ok: true; message: string; key?: string } | { ok: false; message: string };
@@ -39,12 +41,6 @@ export async function isSignedIn() {
 
 async function requireSession() {
   if (!(await isSignedIn())) throw new Error('Sign in again to continue');
-}
-
-function tmdb() {
-  const key = process.env.TMDB_API_KEY;
-  if (!key) throw new Error('TMDB_API_KEY is missing');
-  return client(key);
 }
 
 export async function signIn(_: unknown, form: FormData): Promise<Result> {
@@ -70,28 +66,15 @@ export async function signOut() {
   jar.delete(COOKIE);
 }
 
-export async function searchTitles(query: string): Promise<Match[]> {
-  await requireSession();
-  const text = query.trim().slice(0, MAX_NAME);
-  if (!text) return [];
-  const get = tmdb();
-  const [shows, films] = await Promise.all([
-    get('/search/tv', { query: text, include_adult: 'false' }),
-    get('/search/movie', { query: text, include_adult: 'false' }),
-  ]);
-  const tag = (kind: 'tv' | 'movie') => (r: Record<string, unknown>) => ({ ...r, kind });
-  const all = [...shows.results.map(tag('tv')), ...films.results.map(tag('movie'))];
-  return all
-    .sort((a, b) => (b.vote_count ?? 0) - (a.vote_count ?? 0))
-    .slice(0, 12)
-    .map((r) => ({
-      id: r.id,
-      kind: r.kind,
-      name: r.name ?? r.title,
-      year: releaseYear(r),
-      poster: r.poster_path ? `${IMAGES}/w185${r.poster_path}` : undefined,
-      type: guessType(r),
-    }));
+export async function searchTitles(query: string): Promise<{ ok: true; matches: Match[] } | { ok: false; message: string }> {
+  try {
+    await requireSession();
+    const text = query.trim().slice(0, MAX_NAME);
+    return { ok: true, matches: text ? await searchShows(text) : [] };
+  } catch (error) {
+    console.error('TVmaze search failed:', error);
+    return { ok: false, message: 'Could not reach TVmaze. Check your connection or add the title manually.' };
+  }
 }
 
 function toEntry(draft: Draft, previous?: Entry): Entry | string {
@@ -114,8 +97,7 @@ function toEntry(draft: Draft, previous?: Entry): Entry | string {
   setText('quote', draft.quote, MAX_QUOTE);
   if (episodes) entry.episodes = episodes;
   else delete entry.episodes;
-  if (draft.tmdbId) entry.tmdbId = draft.tmdbId;
-  if (draft.tmdbKind === 'movie') entry.tmdbKind = 'movie';
+  if (draft.tmdbKind) entry.tmdbKind = draft.tmdbKind;
   return entry;
 }
 
@@ -129,9 +111,15 @@ export async function addTitle(draft: Draft): Promise<Result> {
     if (store.generated[key] || store.titles.some((t) => entryKey(t) === key)) {
       return { ok: false, message: `${entry.title} is already in ${entry.type}.` };
     }
-    const details = await enrich(tmdb(), entry);
-    if (!details) return { ok: false, message: "TMDB doesn't have images for that title." };
-    await writeStore({ titles: [entry, ...store.titles], generated: { ...store.generated, [key]: details }, version: store.version });
+    const generated = { ...store.generated };
+    if (draft.tvmazeId) generated[key] = await showDetails(draft.tvmazeId, entry);
+    else if (draft.posterUrl?.trim()) {
+      let poster: URL;
+      try { poster = new URL(draft.posterUrl.trim()); } catch { return { ok: false, message: 'Enter a valid poster URL.' }; }
+      if (poster.protocol !== 'https:' || poster.username || poster.password || poster.href.length > 2048) return { ok: false, message: 'Use an HTTPS poster URL without login details.' };
+      generated[key] = { tmdbKind: entry.tmdbKind ?? 'tv', hours: estimateHours(entry), colours: placeholderColours(entry.title, entry.type), poster: poster.href };
+    }
+    await writeStore({ titles: [entry, ...store.titles], generated, version: store.version });
     return { ok: true, key, message: `${entry.title} added.` };
   } catch (error) {
     return { ok: false, message: (error as Error).message };
@@ -155,10 +143,14 @@ export async function updateTitle(key: string, draft: Draft): Promise<Result> {
     const generated = { ...store.generated };
     const known = generated[key];
     delete generated[key];
-    // Rebuild only when hours depend on what changed, so editing a quote stays instant.
     const episodesChanged = entry.episodes !== previous.episodes;
-    const details = known && episodesChanged ? await enrich(tmdb(), { ...entry, tmdbId: known.tmdbId, tmdbKind: known.tmdbKind }) : known;
-    if (details) generated[nextKey] = details;
+    if (known) {
+      const runtime = known.runtimeMinutes ?? (previous.episodes ? known.hours * 60 / previous.episodes : undefined);
+      const hours = episodesChanged && (entry.tmdbKind ?? known.tmdbKind) !== 'movie'
+        ? (entry.episodes && runtime ? Math.max(1, Math.round(entry.episodes * runtime / 60)) : estimateHours(entry))
+        : known.hours;
+      generated[nextKey] = { ...known, tmdbKind: entry.tmdbKind ?? known.tmdbKind, hours };
+    }
 
     const titles = [...store.titles];
     titles[index] = entry;

@@ -15,7 +15,7 @@ The site opens on http://localhost:3200.
 
 ## Add titles
 
-Use `/studio` to add titles. Before MongoDB is configured you can also add a line to `data/titles.json`:
+Use `/studio` to search TVmaze for series or add a title manually. Manual entries can include a poster URL. Before MongoDB is configured you can also add a line to `data/titles.json`:
 
 ```json
 { "title": "Frieren: Beyond Journey's End", "type": "Anime", "rating": 9, "episodes": 28 }
@@ -56,9 +56,9 @@ With `episodes`, hours are episodes × runtime. Without it, TMDB's full episode 
 
 ## Studio
 
-`/studio` is a private page for adding series and quotes. Set `ADMIN_PASSWORD`, `TMDB_API_KEY` and `MONGODB_URI` in `.env.local`. Optionally set `MONGODB_DB` to choose a database name (the default is `spectrum`). The database user needs read and write access and Atlas must allow connections from the deployment. With no MongoDB URI, local Studio saves to the `data` files instead.
+`/studio` is a private page for adding titles and quotes. Its series search uses TVmaze and does not need a TMDB key. Add films and titles missing from TVmaze manually; a poster URL is optional. Set `ADMIN_PASSWORD` and `MONGODB_URI` in `.env.local`. `TMDB_API_KEY` is only needed for the optional colours script. Optionally set `MONGODB_DB` to choose a database name (the default is `spectrum`). The database user needs read and write access and Atlas must allow connections from the deployment. With no MongoDB URI, local Studio saves to the `data` files instead.
 
-Set the same variables for the Vercel Production environment and redeploy. The initial collection comes from the bundled JSON files; the first successful Studio save writes it to MongoDB. Later changes appear on the site without a redeployment. Keep database credentials private and back up the database regularly.
+Set the relevant variables for the Vercel Production environment and redeploy. The initial collection comes from the bundled JSON files; the first successful Studio save writes it to MongoDB. Later changes appear on the site without a redeployment. Keep database credentials private and back up the database regularly.
 
 ## Good to know
 
