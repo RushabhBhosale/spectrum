@@ -29,7 +29,8 @@
       "https://image.tmdb.org/t/p/w1280/oDvZl8a5Z0Lgy1oURqL88sLigeA.jpg",
       "https://image.tmdb.org/t/p/w1280/m8pWAmhgyND3IwhrwgZguAALaTB.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jEImh4O7mcYuwuAeryGZo3G6hg6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jEImh4O7mcYuwuAeryGZo3G6hg6.png",
+    "totalEpisodes": 406
   },
   "Anime:Naruto": {
     "tmdbId": 46260,
@@ -61,7 +62,8 @@
       "https://image.tmdb.org/t/p/w1280/9fwJ5ZOF14XjxDsIPDvEvnIo9r0.jpg",
       "https://image.tmdb.org/t/p/w1280/5F0HVEgkgP99fEWDjPyikGt9jQi.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/kaZ99sfclCKWnUgmW7AYrok03Am.png"
+    "logo": "https://image.tmdb.org/t/p/w500/kaZ99sfclCKWnUgmW7AYrok03Am.png",
+    "totalEpisodes": 720
   },
   "Anime:Chainsaw Man": {
     "tmdbId": 114410,
@@ -93,7 +95,8 @@
       "https://image.tmdb.org/t/p/w1280/onn6JPGNwqcOUkp73ADq0PEpuLv.jpg",
       "https://image.tmdb.org/t/p/w1280/gfa4xsUKMlRlSI6LWM9ysPMPihQ.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8X3AdUA5q3owusAXOiCOn3FwXUa.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8X3AdUA5q3owusAXOiCOn3FwXUa.png",
+    "totalEpisodes": 12
   },
   "Anime:Blue Lock": {
     "tmdbId": 131041,
@@ -125,7 +128,8 @@
       "https://image.tmdb.org/t/p/w1280/sMb2ovbMFPpwExTWgBZOxG7B4Q7.jpg",
       "https://image.tmdb.org/t/p/w1280/h7B5ydKy0LUXYfu3xMR41lZM7CH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/frZHsrVO7BjhfoHeWRBebKTU5u7.png"
+    "logo": "https://image.tmdb.org/t/p/w500/frZHsrVO7BjhfoHeWRBebKTU5u7.png",
+    "totalEpisodes": 38
   },
   "Anime:One Piece": {
     "tmdbId": 37854,
@@ -188,7 +192,8 @@
       "https://image.tmdb.org/t/p/w1280/wCDf6ARpEIEsXDYXtOTGMspuGtq.jpg",
       "https://image.tmdb.org/t/p/w1280/thG98XJehaDuDJ46pNgFY8bxLii.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/5S466RkIfyTigZGN1OGjANLJ7dc.png"
+    "logo": "https://image.tmdb.org/t/p/w500/5S466RkIfyTigZGN1OGjANLJ7dc.png",
+    "totalEpisodes": 12
   },
   "Anime:Kaguya-sama: Love Is War": {
     "tmdbId": 83121,
@@ -219,7 +224,8 @@
       "https://image.tmdb.org/t/p/w1280/tNyNbNWvaw4Dul1lRcYIXyADCuU.jpg",
       "https://image.tmdb.org/t/p/w1280/iyjJL6zPCa8QAtsarKICstaYTFx.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/56munppXDVJXSBt1GcttOrKMKnH.png"
+    "logo": "https://image.tmdb.org/t/p/w500/56munppXDVJXSBt1GcttOrKMKnH.png",
+    "totalEpisodes": 12
   },
   "Anime:The Eminence in Shadow": {
     "tmdbId": 119495,
@@ -252,7 +258,8 @@
       "https://image.tmdb.org/t/p/w1280/z4QSEdTHzxdjc7k5QuxKg8Iwegv.jpg",
       "https://image.tmdb.org/t/p/w1280/3ehMpKNXSK8atX3sVtWXqZSWGrf.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7QOjpeoEvit56UEkTluVsYmO17z.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7QOjpeoEvit56UEkTluVsYmO17z.png",
+    "totalEpisodes": 32
   },
   "Anime:Demon Slayer": {
     "tmdbId": 85937,
@@ -284,7 +291,8 @@
       "https://image.tmdb.org/t/p/w1280/dixegMxSehfC4pSht7reBemnJ2v.jpg",
       "https://image.tmdb.org/t/p/w1280/kFqANiHH5CwcqAoau8PuT6qxmB6.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ecghlDeabR3X3Vv8tXIOeXHQvQe.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ecghlDeabR3X3Vv8tXIOeXHQvQe.png",
+    "totalEpisodes": 56
   },
   "Anime:Spy x Family": {
     "tmdbId": 120089,
@@ -316,7 +324,8 @@
       "https://image.tmdb.org/t/p/w1280/lysUnU6V0VfcthDbviuVlIqgHOR.jpg",
       "https://image.tmdb.org/t/p/w1280/2ehh5arfVtswI2ixcazYcGLb0FE.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/hbZ7fVgxEg50plxtQHpVyXAppCq.png"
+    "logo": "https://image.tmdb.org/t/p/w500/hbZ7fVgxEg50plxtQHpVyXAppCq.png",
+    "totalEpisodes": 12
   },
   "Anime:Ao Ashi": {
     "tmdbId": 126437,
@@ -345,7 +354,8 @@
       "https://image.tmdb.org/t/p/w1280/4ixh7PNNWd1VaohzKD7pcP33SiN.jpg",
       "https://image.tmdb.org/t/p/w1280/q7hvHYbQm4isci83aE5cf8dOKT0.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ebDfNsW9uCNCfEEZ6E8bWpeI63Q.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ebDfNsW9uCNCfEEZ6E8bWpeI63Q.png",
+    "totalEpisodes": 24
   },
   "Anime:Hunter x Hunter": {
     "tmdbId": 46298,
@@ -377,7 +387,8 @@
       "https://image.tmdb.org/t/p/w1280/zJVqkxZ2cSD01MDhoFbT5Hg9pqm.jpg",
       "https://image.tmdb.org/t/p/w1280/6U0e6OHklJAcMAuIoGXjTBS5zsI.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jTzF5T8Ob6oZRinUCnhbLqrxFsM.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jTzF5T8Ob6oZRinUCnhbLqrxFsM.png",
+    "totalEpisodes": 148
   },
   "Anime:High School DxD": {
     "tmdbId": 45950,
@@ -410,7 +421,8 @@
       "https://image.tmdb.org/t/p/w1280/z9DZWWHj3JdIa2ltY3XtOtA9NwM.jpg",
       "https://image.tmdb.org/t/p/w1280/Ae5TIl3bY5M73I6AI80xPHRwktH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/AfT3MC3Xlvx0VghGf2TQp2GdBB1.png"
+    "logo": "https://image.tmdb.org/t/p/w500/AfT3MC3Xlvx0VghGf2TQp2GdBB1.png",
+    "totalEpisodes": 12
   },
   "Anime:My Dress-Up Darling": {
     "tmdbId": 123249,
@@ -474,7 +486,8 @@
       "https://image.tmdb.org/t/p/w1280/9CsTtHlvErQ93jvIWIjs06G0Abe.jpg",
       "https://image.tmdb.org/t/p/w1280/j2GvamiUMRpPjmNQSSht0Q7Z7e9.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png",
+    "totalEpisodes": 59
   },
   "Anime:Mushoku Tensei: Jobless Reincarnation": {
     "tmdbId": 94664,
@@ -506,7 +519,8 @@
       "https://image.tmdb.org/t/p/w1280/is6zxdDIca13zVxnyKkL6GSQMzF.jpg",
       "https://image.tmdb.org/t/p/w1280/pfgndj46RLPVJRWkUSCJBgLJ93w.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8hKunCjzL8jfiturHHZfRPfdaLA.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8hKunCjzL8jfiturHHZfRPfdaLA.png",
+    "totalEpisodes": 47
   },
   "Anime:Tokyo Revengers": {
     "tmdbId": 105009,
@@ -539,7 +553,8 @@
       "https://image.tmdb.org/t/p/w1280/a4MW4DzvP2eRizrx4OzOoIHu7Eg.jpg",
       "https://image.tmdb.org/t/p/w1280/naTQ1UmfUCAhe9PWmeVqx8nQ5Zh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/65tCEJcUZud5Pwixqv6xsKNjqYf.png"
+    "logo": "https://image.tmdb.org/t/p/w500/65tCEJcUZud5Pwixqv6xsKNjqYf.png",
+    "totalEpisodes": 50
   },
   "Anime:That Time I Got Reincarnated as a Slime": {
     "tmdbId": 82684,
@@ -572,7 +587,8 @@
       "https://image.tmdb.org/t/p/w1280/lHvUEHgPpCn6VoTkTty7LWZ32IW.jpg",
       "https://image.tmdb.org/t/p/w1280/yC6hGTAeUzJp4lteAgwmhLHAlJi.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/nBd0dWeSmD08NsoBTkSLlHDZg4l.png"
+    "logo": "https://image.tmdb.org/t/p/w500/nBd0dWeSmD08NsoBTkSLlHDZg4l.png",
+    "totalEpisodes": 72
   },
   "Anime:Bokutachi no Remake": {
     "tmdbId": 113687,
@@ -604,7 +620,8 @@
       "https://image.tmdb.org/t/p/w1280/cgzrWZ4mB9vQKAFFpVhJvBDOTvL.jpg",
       "https://image.tmdb.org/t/p/w1280/rtzXmdZJWWo9a2PSxj0NczUTpQp.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ucvNFSqpMoKFm7pGvH0nqenHWfb.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ucvNFSqpMoKFm7pGvH0nqenHWfb.png",
+    "totalEpisodes": 12
   },
   "Anime:Tokyo Ghoul": {
     "tmdbId": 61374,
@@ -668,7 +685,8 @@
       "https://image.tmdb.org/t/p/w1280/rvCtHEdwEJrbyPVGTVRivzCfmI2.jpg",
       "https://image.tmdb.org/t/p/w1280/4PsMNbOPNXWWposVBwO8LtfV66U.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/iSYSjq2ou2YEYUa7RWDUgCRhpJ4.png"
+    "logo": "https://image.tmdb.org/t/p/w500/iSYSjq2ou2YEYUa7RWDUgCRhpJ4.png",
+    "totalEpisodes": 12
   },
   "Anime:Koikimo": {
     "tmdbId": 98309,
@@ -728,7 +746,8 @@
       "https://image.tmdb.org/t/p/w1280/xeUupRL7nSL5cZiqnGeUflC3G3W.jpg",
       "https://image.tmdb.org/t/p/w1280/8bfDqo9PjN6P8MuzJgfbom1Bdur.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/wc1Mc6Yh1QvPNPPIt42Tu7J71Xl.png"
+    "logo": "https://image.tmdb.org/t/p/w500/wc1Mc6Yh1QvPNPPIt42Tu7J71Xl.png",
+    "totalEpisodes": 12
   },
   "Anime:Josee, the Tiger and the Fish": {
     "tmdbId": 652837,
@@ -792,7 +811,8 @@
       "https://image.tmdb.org/t/p/w1280/yvKrycViRMQcIgdnjsM5JGNWU4Q.jpg",
       "https://image.tmdb.org/t/p/w1280/2b0s0iMNl9CgrCMz0VGKlMw3vZw.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/csy774JSTIoo4KUkrFWtU9SHA8j.png"
+    "logo": "https://image.tmdb.org/t/p/w500/csy774JSTIoo4KUkrFWtU9SHA8j.png",
+    "totalEpisodes": 75
   },
   "Anime:Is It Wrong to Try to Pick Up Girls in a Dungeon?": {
     "tmdbId": 62745,
@@ -888,7 +908,8 @@
       "https://image.tmdb.org/t/p/w1280/vSDqmGqmxCMt2drhvBJC5g0apuI.jpg",
       "https://image.tmdb.org/t/p/w1280/mjwQ1pxhxloPwwQCO6bwYPbDvi0.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8QAIjMxgUorijK2nWV0XwGghxNT.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8QAIjMxgUorijK2nWV0XwGghxNT.png",
+    "totalEpisodes": 24
   },
   "Anime:Tonikawa: Over the Moon for You": {
     "tmdbId": 100049,
@@ -919,7 +940,8 @@
       "https://image.tmdb.org/t/p/w1280/3RnIjmdl7pcOcFt5Jaw2muQzjrt.jpg",
       "https://image.tmdb.org/t/p/w1280/yzYKMUK0Akcz2M3ncMXbIXgF0D.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/9cIPjo6rf8owHZ0RvOasFwmj8BE.png"
+    "logo": "https://image.tmdb.org/t/p/w500/9cIPjo6rf8owHZ0RvOasFwmj8BE.png",
+    "totalEpisodes": 12
   },
   "Anime:My Teen Romantic Comedy SNAFU": {
     "tmdbId": 65676,
@@ -951,7 +973,8 @@
       "https://image.tmdb.org/t/p/w1280/9D9enIdqzIE6oGtRYfyszBjPV8W.jpg",
       "https://image.tmdb.org/t/p/w1280/bpXAHgRM5mJbZ4qOc1JFoo2X7h1.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/w2fUbCyKjxYQweKRyIo9usNxA7Z.png"
+    "logo": "https://image.tmdb.org/t/p/w500/w2fUbCyKjxYQweKRyIo9usNxA7Z.png",
+    "totalEpisodes": 38
   },
   "Anime:The Misfit of Demon King Academy": {
     "tmdbId": 97617,
@@ -983,7 +1006,8 @@
       "https://image.tmdb.org/t/p/w1280/hiyRSw6BcEn6QHskS5QS8jvjLfo.jpg",
       "https://image.tmdb.org/t/p/w1280/f8njK2w03g8bwic1OnSgxDjqHy8.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/yh0RuAyuTVLqjmUdSOACDBY5N10.png"
+    "logo": "https://image.tmdb.org/t/p/w500/yh0RuAyuTVLqjmUdSOACDBY5N10.png",
+    "totalEpisodes": 13
   },
   "Anime:Vinland Saga": {
     "tmdbId": 88803,
@@ -1016,7 +1040,8 @@
       "https://image.tmdb.org/t/p/w1280/1g5j5FAKhljS8kVyb8voMeRydYy.jpg",
       "https://image.tmdb.org/t/p/w1280/rL3gpiDrdClh3PYqWhozu7WovPg.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3gRatXdgLfzYU9q9WRwuQaIvpGQ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3gRatXdgLfzYU9q9WRwuQaIvpGQ.png",
+    "totalEpisodes": 48
   },
   "Anime:Uzaki-chan Wants to Hang Out!": {
     "tmdbId": 98986,
@@ -1080,7 +1105,8 @@
       "https://image.tmdb.org/t/p/w1280/ZZMgdm3Yn6s7vXQsnmGSrLbPeA.jpg",
       "https://image.tmdb.org/t/p/w1280/uqXTeRohyYzB7WMTZ6iSiN4rDuG.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6eUepCwv6SXPsjnq0Bf2b0Ge3RB.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6eUepCwv6SXPsjnq0Bf2b0Ge3RB.png",
+    "totalEpisodes": 59
   },
   "Anime:One-Punch Man": {
     "tmdbId": 63926,
@@ -1113,7 +1139,8 @@
       "https://image.tmdb.org/t/p/w1280/9nGjuhRv0dcsR5Cjl7UWY0mTDvh.jpg",
       "https://image.tmdb.org/t/p/w1280/iiGtoYxmKFq85i0C196veQJtyVB.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/s4c20xXgSDjbYAcpKchuWRU3zuR.png"
+    "logo": "https://image.tmdb.org/t/p/w500/s4c20xXgSDjbYAcpKchuWRU3zuR.png",
+    "totalEpisodes": 24
   },
   "Anime:Domestic Girlfriend": {
     "tmdbId": 83103,
@@ -1144,7 +1171,8 @@
       "https://image.tmdb.org/t/p/w1280/xu1fKPkPNFqE97Ui2fAFBP9ABUv.jpg",
       "https://image.tmdb.org/t/p/w1280/aQaOCGiuFGmKlznVRBMN56D47Zk.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gG2D2IPmnuAtkTelSQmNPkcXrth.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gG2D2IPmnuAtkTelSQmNPkcXrth.png",
+    "totalEpisodes": 12
   },
   "Anime:Fruits Basket": {
     "tmdbId": 85991,
@@ -1208,7 +1236,8 @@
       "https://image.tmdb.org/t/p/w1280/24MQn39KCxZh8LXQ4P5plzrei1M.jpg",
       "https://image.tmdb.org/t/p/w1280/jlaL42VXJZVkLliytan1ekMyLVp.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3rRZjwkK4zkAd3CAq9Xlpn7sRK2.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3rRZjwkK4zkAd3CAq9Xlpn7sRK2.png",
+    "totalEpisodes": 13
   },
   "Anime:Sword Art Online": {
     "tmdbId": 45782,
@@ -1240,7 +1269,8 @@
       "https://image.tmdb.org/t/p/w1280/wJi7fRmHw0wRMldUY28sSzXpp4G.jpg",
       "https://image.tmdb.org/t/p/w1280/1PpbZSw8RYJlppbXRbFr1xVJ4w.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/twrWwjBFKExNAsEs2BRgbMjU0qv.png"
+    "logo": "https://image.tmdb.org/t/p/w500/twrWwjBFKExNAsEs2BRgbMjU0qv.png",
+    "totalEpisodes": 85
   },
   "Anime:I Want to Eat Your Pancreas": {
     "tmdbId": 504253,
@@ -1336,7 +1366,8 @@
       "https://image.tmdb.org/t/p/w1280/7E0MWlwb1hVG3wrij74bt0NAiT.jpg",
       "https://image.tmdb.org/t/p/w1280/rYlIjqfKKpU8Ca6qMvoRKdbkcY.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/5MbDY4yqTcKtXI35v3TgtsCmmw6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/5MbDY4yqTcKtXI35v3TgtsCmmw6.png",
+    "totalEpisodes": 12
   },
   "Anime:Black Clover": {
     "tmdbId": 73223,
@@ -1368,7 +1399,8 @@
       "https://image.tmdb.org/t/p/w1280/oUsm3pq6rUga7lVGQFS3g84etVE.jpg",
       "https://image.tmdb.org/t/p/w1280/4RzRtLMlTeJvpvvdXDe854VLEG8.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/j9ZZ7WV5pwLLXbbebyGdMUxbqrc.png"
+    "logo": "https://image.tmdb.org/t/p/w500/j9ZZ7WV5pwLLXbbebyGdMUxbqrc.png",
+    "totalEpisodes": 170
   },
   "Anime:School Babysitters": {
     "tmdbId": 76124,
@@ -1464,7 +1496,8 @@
       "https://image.tmdb.org/t/p/w1280/hO3f07SFOOpj5xkr5SSJuWHqi6P.jpg",
       "https://image.tmdb.org/t/p/w1280/7n4EhFDrSo3T91tIXhSWuZkPeb7.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/91qfiB0TzJ78ty1NIpyraFgb23O.png"
+    "logo": "https://image.tmdb.org/t/p/w500/91qfiB0TzJ78ty1NIpyraFgb23O.png",
+    "totalEpisodes": 12
   },
   "Anime:Weathering with You": {
     "tmdbId": 568160,
@@ -1594,7 +1627,8 @@
       "https://image.tmdb.org/t/p/w1280/bKRI22IDSv5wMuBvcDGtu9JF3oZ.jpg",
       "https://image.tmdb.org/t/p/w1280/qI2O6WusL0PVHxb8DneKMynX22J.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/p5FxSYg0sOqnOQqfT8LLFxDyfI6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/p5FxSYg0sOqnOQqfT8LLFxDyfI6.png",
+    "totalEpisodes": 50
   },
   "Anime:Erased": {
     "tmdbId": 65249,
@@ -1626,7 +1660,8 @@
       "https://image.tmdb.org/t/p/w1280/A9CJDUdj8QfOu2vMJcxjD9bHYGG.jpg",
       "https://image.tmdb.org/t/p/w1280/qxK3TWaWr2g8YvU7KgtUsxHyCHT.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/rdCxyk7PD1tXsQAtlZ6sAz52R4T.png"
+    "logo": "https://image.tmdb.org/t/p/w500/rdCxyk7PD1tXsQAtlZ6sAz52R4T.png",
+    "totalEpisodes": 12
   },
   "Anime:Orange": {
     "tmdbId": 66958,
@@ -1658,7 +1693,8 @@
       "https://image.tmdb.org/t/p/w1280/qnFCmPeD0KpZ3R1sn3Rwnr41IGd.jpg",
       "https://image.tmdb.org/t/p/w1280/hQ8KNtxknc6bI4KABEMQh4y34Eh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/i4XR1y2Fz6l1Jf1b5mzhk7FxWd1.png"
+    "logo": "https://image.tmdb.org/t/p/w500/i4XR1y2Fz6l1Jf1b5mzhk7FxWd1.png",
+    "totalEpisodes": 13
   },
   "Anime:Yona of the Dawn": {
     "tmdbId": 61461,
@@ -1690,7 +1726,8 @@
       "https://image.tmdb.org/t/p/w1280/wVgDUzgKYeKiGIzaTTGdmMDvVQv.jpg",
       "https://image.tmdb.org/t/p/w1280/8ysVo7GTYYtr4Xiua5pYoJ4rMGI.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/cFH0hORyqHzpFHSRzty8JqHbBuV.png"
+    "logo": "https://image.tmdb.org/t/p/w500/cFH0hORyqHzpFHSRzty8JqHbBuV.png",
+    "totalEpisodes": 24
   },
   "Anime:Assassination Classroom": {
     "tmdbId": 62110,
@@ -1756,7 +1793,8 @@
       "https://image.tmdb.org/t/p/w1280/juNO5utGY0lkFM2CdldOr3OXZst.jpg",
       "https://image.tmdb.org/t/p/w1280/bIDBShBv0afWlco2VuLhkNs2vjb.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8oLjgf6yA5diemvMCFlh1E97dIG.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8oLjgf6yA5diemvMCFlh1E97dIG.png",
+    "totalEpisodes": 24
   },
   "Anime:Terror in Resonance": {
     "tmdbId": 61421,
@@ -1789,7 +1827,8 @@
       "https://image.tmdb.org/t/p/w1280/y7n2fvuF1QipXwkVsrxKRGG1GUU.jpg",
       "https://image.tmdb.org/t/p/w1280/XafsM1cLcVeUFiQP2j1hJI2LMa.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/pXITp06XV9Kkxft2XfDdQUm9mgZ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/pXITp06XV9Kkxft2XfDdQUm9mgZ.png",
+    "totalEpisodes": 11
   },
   "Anime:Tamako Love Story": {
     "tmdbId": 257475,
@@ -1853,7 +1892,8 @@
       "https://image.tmdb.org/t/p/w1280/jGs3ZEfYCAU3mEDtdAbhSte9nGb.jpg",
       "https://image.tmdb.org/t/p/w1280/wBqnMJKD4Ps64P7GvChnymJH3fF.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/aCCYmnLRcbKVklS8vQ37ciZUzpo.png"
+    "logo": "https://image.tmdb.org/t/p/w500/aCCYmnLRcbKVklS8vQ37ciZUzpo.png",
+    "totalEpisodes": 12
   },
   "Anime:No Game No Life": {
     "tmdbId": 60808,
@@ -1886,7 +1926,8 @@
       "https://image.tmdb.org/t/p/w1280/n2fBMyqSzv3UjmKM6VKfxkLUI6o.jpg",
       "https://image.tmdb.org/t/p/w1280/iu0O5OcbnSkhXnD5HwhxnvF7aV0.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3SFmAlP4nGCD7vK2eDGQg3MZMRa.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3SFmAlP4nGCD7vK2eDGQg3MZMRa.png",
+    "totalEpisodes": 12
   },
   "Anime:Noragami": {
     "tmdbId": 64710,
@@ -1918,7 +1959,8 @@
       "https://image.tmdb.org/t/p/w1280/cfkhPKOHxVhvu8dVFAs2pypjSlQ.jpg",
       "https://image.tmdb.org/t/p/w1280/vjPd9DpFnN3TbinvtwrqNIlVLhd.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vxhNbXPyiGCtrN58zE6g9HO0W6e.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vxhNbXPyiGCtrN58zE6g9HO0W6e.png",
+    "totalEpisodes": 12
   },
   "Anime:Oreshura": {
     "tmdbId": 53296,
@@ -1948,7 +1990,8 @@
       "https://image.tmdb.org/t/p/w1280/9aDCkie80CFFFnA5rB3sY4wREpf.jpg",
       "https://image.tmdb.org/t/p/w1280/n8S5R7XKWN6qK4O5PCwB1sxoPwI.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/lKAS8SX6Wt5p8wJHf4qA8M3zuxY.png"
+    "logo": "https://image.tmdb.org/t/p/w500/lKAS8SX6Wt5p8wJHf4qA8M3zuxY.png",
+    "totalEpisodes": 13
   },
   "Anime:Golden Time": {
     "tmdbId": 67389,
@@ -1979,7 +2022,8 @@
       "https://image.tmdb.org/t/p/w1280/eKu4zq639EeSVGu5xWPPHKzju66.jpg",
       "https://image.tmdb.org/t/p/w1280/8401TiI7XZ6SQsV2q3gGgyMTqAO.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gNNNSooN4TbrJhUuZ6aW50oM5YH.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gNNNSooN4TbrJhUuZ6aW50oM5YH.png",
+    "totalEpisodes": 24
   },
   "Anime:The Pet Girl of Sakurasou": {
     "tmdbId": 50325,
@@ -2011,7 +2055,8 @@
       "https://image.tmdb.org/t/p/w1280/5eWk89cDBu0tQIWT3kXernhjYnB.jpg",
       "https://image.tmdb.org/t/p/w1280/5KujIH1wNF9s71lynhFjhdHClAx.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/drV18yrjq1J4JkwpGKDM7rjgZgV.png"
+    "logo": "https://image.tmdb.org/t/p/w500/drV18yrjq1J4JkwpGKDM7rjgZgV.png",
+    "totalEpisodes": 24
   },
   "Anime:Say \"I Love You\"": {
     "tmdbId": 52878,
@@ -2104,7 +2149,8 @@
       "https://image.tmdb.org/t/p/w1280/rhc6B0IVNbtq4WuChhQDVoCEn4K.jpg",
       "https://image.tmdb.org/t/p/w1280/ucT82Jh03ARqMl0TZuBQOgUC881.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2BZjWAE0tNoamCqyTI3Y89HnzWT.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2BZjWAE0tNoamCqyTI3Y89HnzWT.png",
+    "totalEpisodes": 12
   },
   "Anime:Wolf Children": {
     "tmdbId": 110420,
@@ -2169,7 +2215,8 @@
       "https://image.tmdb.org/t/p/w1280/9oFD1N7fQ0VlyaMEAtl63ddt11N.jpg",
       "https://image.tmdb.org/t/p/w1280/b1rV3mA23U5hCcFHy6HpvUIqxTh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/5L5ZxmdUPFjEgXu9elG53dhtkII.png"
+    "logo": "https://image.tmdb.org/t/p/w500/5L5ZxmdUPFjEgXu9elG53dhtkII.png",
+    "totalEpisodes": 25
   },
   "Anime:Future Diary": {
     "tmdbId": 46671,
@@ -2202,7 +2249,8 @@
       "https://image.tmdb.org/t/p/w1280/dkahBcrRECxiY7odlgDNupSkHuA.jpg",
       "https://image.tmdb.org/t/p/w1280/Aqtu1PhSilBxWEiQbVjdsXHv1v5.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/As280mX4NzoS6foY4m7BgHhMK3J.png"
+    "logo": "https://image.tmdb.org/t/p/w500/As280mX4NzoS6foY4m7BgHhMK3J.png",
+    "totalEpisodes": 26
   },
   "Anime:Usagi Drop": {
     "tmdbId": 45213,
@@ -2233,7 +2281,8 @@
       "https://image.tmdb.org/t/p/w1280/yUFDEntH7sIc6aA3NE9Jhpme5Hj.jpg",
       "https://image.tmdb.org/t/p/w1280/9VjDbgrviXq7zrSKATr2AEcvhRM.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jIjrb6tRngeP7hqb755W1kv5Zh3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jIjrb6tRngeP7hqb755W1kv5Zh3.png",
+    "totalEpisodes": 11
   },
   "Anime:Steins;Gate": {
     "tmdbId": 42509,
@@ -2266,7 +2315,8 @@
       "https://image.tmdb.org/t/p/w1280/u7G0GjS4hboCrmsN8jWldWhqbOf.jpg",
       "https://image.tmdb.org/t/p/w1280/5sv4tAr6r6Z2uwq9yRCk4wBS8qN.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7GEZnpbAgtPr7MeZ04i7HtiLvl3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7GEZnpbAgtPr7MeZ04i7HtiLvl3.png",
+    "totalEpisodes": 24
   },
   "Anime:Fullmetal Alchemist": {
     "tmdbId": 31911,
@@ -2299,7 +2349,8 @@
       "https://image.tmdb.org/t/p/w1280/dsJwQGgDhWPqCubNKCeTFLT8jFg.jpg",
       "https://image.tmdb.org/t/p/w1280/6PUIdOibvRXXflqUfBQIMMnTujp.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/1uxD6336yvySlaNqAuCl5XuGt3U.png"
+    "logo": "https://image.tmdb.org/t/p/w500/1uxD6336yvySlaNqAuCl5XuGt3U.png",
+    "totalEpisodes": 115
   },
   "Anime:Toradora!": {
     "tmdbId": 42916,
@@ -2331,7 +2382,8 @@
       "https://image.tmdb.org/t/p/w1280/u55EwHAlA6EbY4iXB1840Xf1o4H.jpg",
       "https://image.tmdb.org/t/p/w1280/uKbb4DzlYNGFswNmhYClAQ5sYID.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ehE2dYDIT1kFBafCJ1rqORJQb9w.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ehE2dYDIT1kFBafCJ1rqORJQb9w.png",
+    "totalEpisodes": 25
   },
   "Anime:Black Lagoon": {
     "tmdbId": 12598,
@@ -2364,7 +2416,8 @@
       "https://image.tmdb.org/t/p/w1280/89osfm8VZrCTEEzOA0dGiIzRUpM.jpg",
       "https://image.tmdb.org/t/p/w1280/sF8Es2XNhGbOpg0pRue8N41PmD6.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8NcZWGDedMIfkH2NQNxZe4mV8JR.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8NcZWGDedMIfkH2NQNxZe4mV8JR.png",
+    "totalEpisodes": 24
   },
   "Anime:5 Centimeters per Second": {
     "tmdbId": 38142,
@@ -2422,7 +2475,8 @@
       "https://image.tmdb.org/t/p/w1280/x2u7KWuKe4EfuzGXPZMrSbUfqis.jpg",
       "https://image.tmdb.org/t/p/w1280/mHYeZftwxF4Yz7O6ESlOcP2jVr5.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zhxGIMKAfws6qxKMtMJgQOyBmhV.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zhxGIMKAfws6qxKMtMJgQOyBmhV.png",
+    "totalEpisodes": 52
   },
   "Anime:Hellsing Ultimate": {
     "tmdbId": 61752,
@@ -2454,7 +2508,8 @@
       "https://image.tmdb.org/t/p/w1280/1Wyd6Lj2v6lSmAPdFtwVXpQKZVf.jpg",
       "https://image.tmdb.org/t/p/w1280/7ePLvGYYYgqTdZGAEsuEHs3B2m1.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/iYIXd5A9GA4QgKZB52mvQHUzQA8.png"
+    "logo": "https://image.tmdb.org/t/p/w500/iYIXd5A9GA4QgKZB52mvQHUzQA8.png",
+    "totalEpisodes": 10
   },
   "Anime:Baki": {
     "tmdbId": 80623,
@@ -2550,7 +2605,8 @@
       "https://image.tmdb.org/t/p/w1280/hnqO1ptGNWEDi5pouWydsqNzSKo.jpg",
       "https://image.tmdb.org/t/p/w1280/2w781YHJL5homjDMao1opkun4lJ.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3qUzbgRHYO0OFryvk7mSfOHsHws.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3qUzbgRHYO0OFryvk7mSfOHsHws.png",
+    "totalEpisodes": 12
   },
   "Anime:KonoSuba": {
     "tmdbId": 65844,
@@ -2679,7 +2735,8 @@
       "https://image.tmdb.org/t/p/w1280/qvSTpPSuvJgqwzHeJjEB7SjaKOh.jpg",
       "https://image.tmdb.org/t/p/w1280/izehH7iiVX5WCw9Q4GuUL4TFzKi.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/12gap9DNVqPvhwrAoa6W4mJj1Po.png"
+    "logo": "https://image.tmdb.org/t/p/w500/12gap9DNVqPvhwrAoa6W4mJj1Po.png",
+    "totalEpisodes": 13
   },
   "Anime:Initial D": {
     "tmdbId": 40424,
@@ -2771,7 +2828,8 @@
       "https://image.tmdb.org/t/p/w1280/4UPmVUWFraqBsmKC2bpunGo76Z2.jpg",
       "https://image.tmdb.org/t/p/w1280/abjUF0nYYFMRT6JSsdy76VM6S1S.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/u1Xw5umbCIufnjXzhoB1pn8uGkb.png"
+    "logo": "https://image.tmdb.org/t/p/w500/u1Xw5umbCIufnjXzhoB1pn8uGkb.png",
+    "totalEpisodes": 13
   },
   "Anime:Mashle": {
     "tmdbId": 204832,
@@ -2804,7 +2862,8 @@
       "https://image.tmdb.org/t/p/w1280/kfTGJgOBFHLIs1oITLdkTzpH1KQ.jpg",
       "https://image.tmdb.org/t/p/w1280/iqTeC3oXN0Ph5wKt5TE8Q1aYaTh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/f1iybcTUUU0QnPwvFjJvChxss6b.png"
+    "logo": "https://image.tmdb.org/t/p/w500/f1iybcTUUU0QnPwvFjJvChxss6b.png",
+    "totalEpisodes": 12
   },
   "Anime:Summoned to Another World for a Second Time": {
     "tmdbId": 137391,
@@ -2900,7 +2959,8 @@
       "https://image.tmdb.org/t/p/w1280/1gJJxj6qrSt9dNBAcJIc2KXYNT2.jpg",
       "https://image.tmdb.org/t/p/w1280/yL5IeMRncRQqVImXBr2ZmXL2byn.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/bhfexIAegWQnIqbgh8qAdSJZjqz.png"
+    "logo": "https://image.tmdb.org/t/p/w500/bhfexIAegWQnIqbgh8qAdSJZjqz.png",
+    "totalEpisodes": 8
   },
   "Anime:Samurai Champloo": {
     "tmdbId": 1063,
@@ -2964,7 +3024,8 @@
       "https://image.tmdb.org/t/p/w1280/mtOKMeU8rG9Oab3uWJuJdtwsAVd.jpg",
       "https://image.tmdb.org/t/p/w1280/rWLlNDA57auN4eZIcBkPmiWsOJq.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vFb7iWw6MUbLIAB4RMKDhsSlt8X.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vFb7iWw6MUbLIAB4RMKDhsSlt8X.png",
+    "totalEpisodes": 25
   },
   "Anime:Sweetness and Lightning": {
     "tmdbId": 66990,
@@ -3057,7 +3118,8 @@
       "https://image.tmdb.org/t/p/w1280/nJCOlS65IpUW4QjhemwE5jkfJb6.jpg",
       "https://image.tmdb.org/t/p/w1280/olhWtUo8Qc8hlQRRV6uVDolT3ET.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/u2AAEcHsirDckbmDhhwAiw2QpAW.png"
+    "logo": "https://image.tmdb.org/t/p/w500/u2AAEcHsirDckbmDhhwAiw2QpAW.png",
+    "totalEpisodes": 12
   },
   "Anime:Ragna Crimson": {
     "tmdbId": 195459,
@@ -3089,7 +3151,8 @@
       "https://image.tmdb.org/t/p/w1280/suvolu4ikZV2MAu3jZLN4slr2Kl.jpg",
       "https://image.tmdb.org/t/p/w1280/yPR367BR15XH1gDCWXrEacVTMoV.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6fUJr08Iv6EtR61kkeyCtVZEL5r.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6fUJr08Iv6EtR61kkeyCtVZEL5r.png",
+    "totalEpisodes": 24
   },
   "Anime:So I'm a Spider, So What?": {
     "tmdbId": 99618,
@@ -3186,7 +3249,8 @@
       "https://image.tmdb.org/t/p/w1280/m4puqFxUYpufeAbsbrJa6AKMumD.jpg",
       "https://image.tmdb.org/t/p/w1280/tPdDksM1iF4HGJJqySug5ylwRo8.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/soogvWTvbW2YVpZwUz0SgPBKiVa.png"
+    "logo": "https://image.tmdb.org/t/p/w500/soogvWTvbW2YVpZwUz0SgPBKiVa.png",
+    "totalEpisodes": 25
   },
   "Anime:Bakuman": {
     "tmdbId": 36041,
@@ -3216,7 +3280,8 @@
       "https://image.tmdb.org/t/p/w1280/zSPJZOAn93t2VAtHsXdodKJHMpk.jpg",
       "https://image.tmdb.org/t/p/w1280/dDWVs8jA6X9OfACfNT8uCtFYspV.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/iDTQh7qxWbtxciaHJ4D66HbduAI.png"
+    "logo": "https://image.tmdb.org/t/p/w500/iDTQh7qxWbtxciaHJ4D66HbduAI.png",
+    "totalEpisodes": 75
   },
   "Anime:Tsukimichi: Moonlit Fantasy": {
     "tmdbId": 111819,
@@ -3249,7 +3314,8 @@
       "https://image.tmdb.org/t/p/w1280/1qujOSB9MjcbsCLuxsGqQgixjJK.jpg",
       "https://image.tmdb.org/t/p/w1280/rkIqm7dBylHxh4isgIzid9jxKCx.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/nr3uoHRhxnblZTeCe5OZiLiLStK.png"
+    "logo": "https://image.tmdb.org/t/p/w500/nr3uoHRhxnblZTeCe5OZiLiLStK.png",
+    "totalEpisodes": 37
   },
   "Anime:Call of the Night": {
     "tmdbId": 138357,
@@ -3314,7 +3380,8 @@
       "https://image.tmdb.org/t/p/w1280/6lsGhDDYnmYiRQSFPEmJmdZpp4h.jpg",
       "https://image.tmdb.org/t/p/w1280/8MvsFDUY6X7wiobuJgTqbXnljnv.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/yQuc8JcBxRWXfRHrNUSM47gCXOo.png"
+    "logo": "https://image.tmdb.org/t/p/w500/yQuc8JcBxRWXfRHrNUSM47gCXOo.png",
+    "totalEpisodes": 28
   },
   "Anime:Darwin's Game": {
     "tmdbId": 85942,
@@ -3347,7 +3414,8 @@
       "https://image.tmdb.org/t/p/w1280/tE8Kv9PmT2jclLNgXN0z26sJyVi.jpg",
       "https://image.tmdb.org/t/p/w1280/eKUh3biLJxPMLwCaCRS8cm4psqu.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2W2LZLHKPNGlnbqM41Fg9GNSlMm.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2W2LZLHKPNGlnbqM41Fg9GNSlMm.png",
+    "totalEpisodes": 11
   },
   "Anime:Shangri-La Frontier": {
     "tmdbId": 205050,
@@ -3380,7 +3448,8 @@
       "https://image.tmdb.org/t/p/w1280/cYaT6Pe6Cx9MTScTHRS0LTjZqq2.jpg",
       "https://image.tmdb.org/t/p/w1280/yrWItcIMsqBx3mkvbphKRPwyK4B.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tb6GwZGs0Qn1kGA5kd12hAUF1QN.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tb6GwZGs0Qn1kGA5kd12hAUF1QN.png",
+    "totalEpisodes": 50
   },
   "Anime:Devilman Crybaby": {
     "tmdbId": 75208,
@@ -3412,7 +3481,8 @@
       "https://image.tmdb.org/t/p/w1280/9pgGVXJYXGtECErbNbgxQkj7994.jpg",
       "https://image.tmdb.org/t/p/w1280/dyLh4ATPk0zLzMU25quCHyeTUl8.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2Lgly4tSwFiYGGbuEBTTw8OKpiC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2Lgly4tSwFiYGGbuEBTTw8OKpiC.png",
+    "totalEpisodes": 10
   },
   "Anime:Akudama Drive": {
     "tmdbId": 100436,
@@ -3446,7 +3516,8 @@
       "https://image.tmdb.org/t/p/w1280/jt1bqPWR2CaJScOalHBvU56vjMq.jpg",
       "https://image.tmdb.org/t/p/w1280/m45MYKKS4RsoppjdsEjhcY1T0rr.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/yJYLSWtKvydkXovpnylUCML9NyP.png"
+    "logo": "https://image.tmdb.org/t/p/w500/yJYLSWtKvydkXovpnylUCML9NyP.png",
+    "totalEpisodes": 12
   },
   "Anime:Violet Evergarden": {
     "tmdbId": 75214,
@@ -3479,7 +3550,8 @@
       "https://image.tmdb.org/t/p/w1280/bSywT2z96YOMHI7p7aChEsmptZg.jpg",
       "https://image.tmdb.org/t/p/w1280/2BgABDABstTVOiAFnoZpkFnePAS.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3mxodaw8QDT2uzno1UdTjLi1GFs.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3mxodaw8QDT2uzno1UdTjLi1GFs.png",
+    "totalEpisodes": 13
   },
   "Anime:The Promised Neverland": {
     "tmdbId": 83097,
@@ -3512,7 +3584,8 @@
       "https://image.tmdb.org/t/p/w1280/snOFsVbSlwE4BKOhkongVdMVxQJ.jpg",
       "https://image.tmdb.org/t/p/w1280/lIvlMDEKImf3pkDtLjjKZqRZ5AM.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/o4dhM6xk4Ux7Z3FqtSiZdyeRsyC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/o4dhM6xk4Ux7Z3FqtSiZdyeRsyC.png",
+    "totalEpisodes": 12
   },
   "Anime:Golden Boy": {
     "tmdbId": 34105,
@@ -3543,7 +3616,8 @@
       "https://image.tmdb.org/t/p/w1280/syvaSQM0JCu46Jq7mnB1vC3QjXD.jpg",
       "https://image.tmdb.org/t/p/w1280/fNhrlYvgxVfEqASqODXKaVKJJby.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/oO56gpDAMZtNnJM7jvIiivQB4dq.png"
+    "logo": "https://image.tmdb.org/t/p/w500/oO56gpDAMZtNnJM7jvIiivQB4dq.png",
+    "totalEpisodes": 6
   },
   "Anime:Kaiju No. 8": {
     "tmdbId": 207468,
@@ -3575,7 +3649,8 @@
       "https://image.tmdb.org/t/p/w1280/kMMFY8gE3HHt5TmzF55jY7I3Fjs.jpg",
       "https://image.tmdb.org/t/p/w1280/nvJmYItvWSqUu724Hk0xv8nnpX5.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/wzQb17mLoXYU7uDZmIRgskTXzI3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/wzQb17mLoXYU7uDZmIRgskTXzI3.png",
+    "totalEpisodes": 23
   },
   "Anime:Link Click": {
     "tmdbId": 123542,
@@ -3639,7 +3714,8 @@
       "https://image.tmdb.org/t/p/w1280/vEblyD3KEjfnxFBedU2rwurOd4N.jpg",
       "https://image.tmdb.org/t/p/w1280/nStmqYuEfegKhNhbkWPos8LjVf4.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/z0ElfwMAOkQWvDw7miVBD3a3iOA.png"
+    "logo": "https://image.tmdb.org/t/p/w500/z0ElfwMAOkQWvDw7miVBD3a3iOA.png",
+    "totalEpisodes": 15
   },
   "Anime:Re:Zero − Starting Life in Another World": {
     "tmdbId": 65942,
@@ -3672,7 +3748,8 @@
       "https://image.tmdb.org/t/p/w1280/qrYep23cjwdlwgfvyoO51YD9JrI.jpg",
       "https://image.tmdb.org/t/p/w1280/qMCXCmPN4gSMGUjxTE2Ql3FCgYX.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/bbMoSaLgiV7uSwlfrYSFsOcS18j.png"
+    "logo": "https://image.tmdb.org/t/p/w500/bbMoSaLgiV7uSwlfrYSFsOcS18j.png",
+    "totalEpisodes": 66
   },
   "Anime:Spirited Away": {
     "tmdbId": 129,
@@ -3769,7 +3846,8 @@
       "https://image.tmdb.org/t/p/w1280/rOliKet6nTuZ1ViTFgGsTudhHbR.jpg",
       "https://image.tmdb.org/t/p/w1280/sTwTID9Q26Pg1xI4OskI5clTEHI.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/nbkSualnPujaAXTHwbR8vyV2FzG.png"
+    "logo": "https://image.tmdb.org/t/p/w500/nbkSualnPujaAXTHwbR8vyV2FzG.png",
+    "totalEpisodes": 12
   },
   "Anime:The Irregular at Magic High School": {
     "tmdbId": 60833,
@@ -3833,7 +3911,8 @@
       "https://image.tmdb.org/t/p/w1280/bxMb1zLY0vg9qKzoBAUTotQiBHM.jpg",
       "https://image.tmdb.org/t/p/w1280/ruMeRhGA9Nj683gUjdxndL9w9Cg.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vF4uHLG7p10GtQbelFtRx7HKAb.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vF4uHLG7p10GtQbelFtRx7HKAb.png",
+    "totalEpisodes": 24
   },
   "Anime:I Parry Everything": {
     "tmdbId": 238892,
@@ -3863,7 +3942,8 @@
       "https://image.tmdb.org/t/p/w1280/nrclMK5PQ28YS9khf1DRNXgk3AT.jpg",
       "https://image.tmdb.org/t/p/w1280/1GD7tJyn8WMaExTh9u0K2ytFejO.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6L3DTAa8mj7nuAg4JExuYchVN0X.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6L3DTAa8mj7nuAg4JExuYchVN0X.png",
+    "totalEpisodes": 12
   },
   "Anime:The Apothecary Diaries": {
     "tmdbId": 220542,
@@ -3926,7 +4006,8 @@
       "https://image.tmdb.org/t/p/w1280/dBOFUO7hq31bgtAUP8XimXuE2r8.jpg",
       "https://image.tmdb.org/t/p/w1280/5aVJULcnX6y2qZ3FHfUtr3R8hOl.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/fmYm0BcEHotd2SQCoKmqzqx1Wv0.png"
+    "logo": "https://image.tmdb.org/t/p/w500/fmYm0BcEHotd2SQCoKmqzqx1Wv0.png",
+    "totalEpisodes": 12
   },
   "Anime:Blue Box": {
     "tmdbId": 207347,
@@ -3957,7 +4038,8 @@
       "https://image.tmdb.org/t/p/w1280/6n5O2QlR6H87PBCII4QweqaDj8q.jpg",
       "https://image.tmdb.org/t/p/w1280/koXm6cLQA2NU9ABtY2gIlfbgf2X.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ubw6k78dv5SU9y9JoHRkBW8pGuN.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ubw6k78dv5SU9y9JoHRkBW8pGuN.png",
+    "totalEpisodes": 25
   },
   "Anime:Dandadan": {
     "tmdbId": 240411,
@@ -3990,7 +4072,8 @@
       "https://image.tmdb.org/t/p/w1280/bUiBXaUPuX3zuHrvzmvFjB37zQQ.jpg",
       "https://image.tmdb.org/t/p/w1280/4qvNAhSEqobkNSRLbiqTvanL5c7.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/epIhjEzJ5uJsH1kbYkklKwx6ogy.png"
+    "logo": "https://image.tmdb.org/t/p/w500/epIhjEzJ5uJsH1kbYkklKwx6ogy.png",
+    "totalEpisodes": 24
   },
   "Anime:The Ossan Newbie Adventurer": {
     "tmdbId": 250598,
@@ -4021,7 +4104,8 @@
       "https://image.tmdb.org/t/p/w1280/zIgdhdEjrrMsT8bG4Ev4EX1q4Q7.jpg",
       "https://image.tmdb.org/t/p/w1280/31mdOSBmNdQeJN7KFFFQjZjZmRs.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8XQYnYQ1HO88fVKQLMW6BzaG1nq.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8XQYnYQ1HO88fVKQLMW6BzaG1nq.png",
+    "totalEpisodes": 12
   },
   "Anime:The God of High School": {
     "tmdbId": 99778,
@@ -4054,7 +4138,8 @@
       "https://image.tmdb.org/t/p/w1280/gexkIOkGW4PaYTOctUTlG59MZ0B.jpg",
       "https://image.tmdb.org/t/p/w1280/7hQ4jjfuH04stb1d4H2u4CLoQvu.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/aCBEQhe4hdo0fX2Kd9D2Yf91jtc.png"
+    "logo": "https://image.tmdb.org/t/p/w500/aCBEQhe4hdo0fX2Kd9D2Yf91jtc.png",
+    "totalEpisodes": 13
   },
   "Anime:Ranma 1/2": {
     "tmdbId": 259140,
@@ -4184,7 +4269,8 @@
       "https://image.tmdb.org/t/p/w1280/4qG2q0pXBO0eHCr1ro7BWhi48Fc.jpg",
       "https://image.tmdb.org/t/p/w1280/ewWOb6Ph8ckqBy2fbMzw9W2IWdR.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3BfFk6nHTktXwPNQ9DwXwQObPIE.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3BfFk6nHTktXwPNQ9DwXwQObPIE.png",
+    "totalEpisodes": 13
   },
   "Anime:Sword of the Demon Hunter": {
     "tmdbId": 133154,
@@ -4310,7 +4396,8 @@
       "https://image.tmdb.org/t/p/w1280/pPAdXOi2bRmjuDuz2UkMInkhyxd.jpg",
       "https://image.tmdb.org/t/p/w1280/iXkKQoQlci9WHcjchlb69FHoMpo.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zsz5MOvYRF2ZTkn31q2VT6Rcq68.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zsz5MOvYRF2ZTkn31q2VT6Rcq68.png",
+    "totalEpisodes": 23
   },
   "Anime:The Super Cube": {
     "tmdbId": 279182,
@@ -4406,7 +4493,8 @@
       "https://image.tmdb.org/t/p/w1280/lYFVTkTxjYGsiMDXqXk70fBKQAM.jpg",
       "https://image.tmdb.org/t/p/w1280/qpEKFsZ5mNO8VsI61h7noM2JJEh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gpb7U1qMZwgxilpg2egagY87IyS.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gpb7U1qMZwgxilpg2egagY87IyS.png",
+    "totalEpisodes": 12
   },
   "Anime:Gachiakuta": {
     "tmdbId": 256721,
@@ -4470,7 +4558,8 @@
       "https://image.tmdb.org/t/p/w1280/iUWlup4LiAnP56T5RIdLu3y7NHL.jpg",
       "https://image.tmdb.org/t/p/w1280/tOdy36VWG9xF1lmNh61oeZ7qAnX.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/AbAI8WQ875UZn5a3rToUmRNMuE3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/AbAI8WQ875UZn5a3rToUmRNMuE3.png",
+    "totalEpisodes": 13
   },
   "Anime:The Water Magician": {
     "tmdbId": 281615,
@@ -4502,7 +4591,8 @@
       "https://image.tmdb.org/t/p/w1280/rNoVYTOt9o5GnfY7bgkJD0z21Pp.jpg",
       "https://image.tmdb.org/t/p/w1280/jQFPgDRx3oJhKBGGMeE85egPdsK.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/1gZZYpCJD5TOC17AYqVXnwoiwfF.png"
+    "logo": "https://image.tmdb.org/t/p/w500/1gZZYpCJD5TOC17AYqVXnwoiwfF.png",
+    "totalEpisodes": 12
   },
   "Anime:To Be Hero X": {
     "tmdbId": 272059,
@@ -4534,7 +4624,8 @@
       "https://image.tmdb.org/t/p/w1280/35I8knxMTmclSkbYpA4F6JZUuN6.jpg",
       "https://image.tmdb.org/t/p/w1280/4yMSPxUoF2Tm7rdFqhtEwZaEVVx.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vXGfIlREc2VnzuLD86Huz7T4SMc.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vXGfIlREc2VnzuLD86Huz7T4SMc.png",
+    "totalEpisodes": 24
   },
   "Anime:100 Meters": {
     "tmdbId": 1295026,
@@ -4598,7 +4689,8 @@
       "https://image.tmdb.org/t/p/w1280/bzP9F6e7SATgJvNA5AHERIoW6Dz.jpg",
       "https://image.tmdb.org/t/p/w1280/8c3Y7I3QReCY6y4kHM6sqVQrxnN.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/bP3K7sD2SJS911Tea9M1Yg6an8C.png"
+    "logo": "https://image.tmdb.org/t/p/w500/bP3K7sD2SJS911Tea9M1Yg6an8C.png",
+    "totalEpisodes": 13
   },
   "Anime:Sentenced to Be a Hero": {
     "tmdbId": 249907,
@@ -4662,7 +4754,8 @@
       "https://image.tmdb.org/t/p/w1280/3YKxemi1Roid52zFM9c5FSEoahX.jpg",
       "https://image.tmdb.org/t/p/w1280/2RMtqVPC6FrwBjybOZzekgzu0hk.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2Lk0Pu080zCWDLyPvYe1Dx2mP13.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2Lk0Pu080zCWDLyPvYe1Dx2mP13.png",
+    "totalEpisodes": 12
   },
   "Anime:Monster": {
     "tmdbId": 30981,
@@ -4760,7 +4853,8 @@
       "https://image.tmdb.org/t/p/w1280/aO6FQ6fwwI5TAMpFnWawPSSVHEm.jpg",
       "https://image.tmdb.org/t/p/w1280/9zLOYWXZwc30cz9XqOkOQybHClh.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/q1AHD0oorRWXmlyZ1njjVBZJQ8.png"
+    "logo": "https://image.tmdb.org/t/p/w500/q1AHD0oorRWXmlyZ1njjVBZJQ8.png",
+    "totalEpisodes": 50
   },
   "Anime:Slam Dunk": {
     "tmdbId": 42573,
@@ -4855,7 +4949,8 @@
       "https://image.tmdb.org/t/p/w1280/A4WAgjXnuCHWdY5TYyLf2wvAIPD.jpg",
       "https://image.tmdb.org/t/p/w1280/4j9ZcfJiURGSmhvKXAfwe78ZCfR.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/oY6y3fy6wfhByKgYe8T3Wn2cIyC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/oY6y3fy6wfhByKgYe8T3Wn2cIyC.png",
+    "totalEpisodes": 16
   },
   "Anime:Astra Lost in Space": {
     "tmdbId": 88041,
@@ -4888,7 +4983,8 @@
       "https://image.tmdb.org/t/p/w1280/dsxOsMb0RTNwPfVFHpBLZ11FkWi.jpg",
       "https://image.tmdb.org/t/p/w1280/k8aRUvmyVkbJJgcfzpInZgEDRod.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/aU1ctSqGCrUuU3A157NmBSIhkwe.png"
+    "logo": "https://image.tmdb.org/t/p/w500/aU1ctSqGCrUuU3A157NmBSIhkwe.png",
+    "totalEpisodes": 12
   },
   "Anime:Kaiji": {
     "tmdbId": 42951,
@@ -4954,7 +5050,8 @@
       "https://image.tmdb.org/t/p/w1280/eSLZjmzyVK7isMeAWT0XO5ZTbaj.jpg",
       "https://image.tmdb.org/t/p/w1280/urKRigdnyltCutcrBzBa7TVnIKd.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/znGVUeFTAM0WhRHMJl1kxlzC1l6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/znGVUeFTAM0WhRHMJl1kxlzC1l6.png",
+    "totalEpisodes": 20
   },
   "K-drama:Reply 1988": {
     "tmdbId": 64010,
@@ -4985,7 +5082,8 @@
       "https://image.tmdb.org/t/p/w1280/xa6TFV34VH1HPJmV5DmTaXvVREt.jpg",
       "https://image.tmdb.org/t/p/w1280/xBzmVfyrFmN1btbyLOK26b0zNEL.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/xbqvVxQk0RzR35iUnbP7yCt8SJp.png"
+    "logo": "https://image.tmdb.org/t/p/w500/xbqvVxQk0RzR35iUnbP7yCt8SJp.png",
+    "totalEpisodes": 20
   },
   "K-drama:Moving": {
     "tmdbId": 126485,
@@ -5018,7 +5116,8 @@
       "https://image.tmdb.org/t/p/w1280/7vgHuo62w6znDUCACIpEEUPRZf2.jpg",
       "https://image.tmdb.org/t/p/w1280/AilwxdE34zPorJXSqPvvkexQ5PH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gu768DYUj242X2ooyJfufBZhaC2.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gu768DYUj242X2ooyJfufBZhaC2.png",
+    "totalEpisodes": 20
   },
   "K-drama:Itaewon Class": {
     "tmdbId": 96162,
@@ -5049,7 +5148,8 @@
       "https://image.tmdb.org/t/p/w1280/erQ8E5txwX1anw4kQjIGavezBKb.jpg",
       "https://image.tmdb.org/t/p/w1280/y9Pqd4rIs6puP0wTNRmnTpwBugU.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ymBkaDMh7gbXMjmRAgGdpUBH4S2.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ymBkaDMh7gbXMjmRAgGdpUBH4S2.png",
+    "totalEpisodes": 16
   },
   "K-drama:Big Mouth": {
     "tmdbId": 155226,
@@ -5082,7 +5182,8 @@
       "https://image.tmdb.org/t/p/w1280/xitlwLOMokq9WHd5tB9IOgLYDDD.jpg",
       "https://image.tmdb.org/t/p/w1280/o8NY6LuKbXWWTj8E2Y8vcw5jkGU.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3R50E6IeqIsQmJKqTU69EmjvZNm.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3R50E6IeqIsQmJKqTU69EmjvZNm.png",
+    "totalEpisodes": 16
   },
   "K-drama:Weak Hero Class 1": {
     "tmdbId": 200709,
@@ -5114,7 +5215,8 @@
       "https://image.tmdb.org/t/p/w1280/oNaoUbvM6SCxdnAiBtyUitdg25K.jpg",
       "https://image.tmdb.org/t/p/w1280/daYC0g7xZRYvcuJF11tWHBJZh1u.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/igNEgOI3Wcq43xXcgH8LqBpio5H.png"
+    "logo": "https://image.tmdb.org/t/p/w500/igNEgOI3Wcq43xXcgH8LqBpio5H.png",
+    "totalEpisodes": 8
   },
   "K-drama:All of Us Are Dead": {
     "tmdbId": 99966,
@@ -5147,7 +5249,8 @@
       "https://image.tmdb.org/t/p/w1280/5wQG7raxg1N6jBNU5nBFXUQVqnQ.jpg",
       "https://image.tmdb.org/t/p/w1280/sKe2qFTMRunPzRMbBy5Yaf3ppJe.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/i3NbH6xn7Y76LV2QmPnG3t6w1Su.png"
+    "logo": "https://image.tmdb.org/t/p/w500/i3NbH6xn7Y76LV2QmPnG3t6w1Su.png",
+    "totalEpisodes": 12
   },
   "K-drama:It's Okay to Not Be Okay": {
     "tmdbId": 96462,
@@ -5179,7 +5282,8 @@
       "https://image.tmdb.org/t/p/w1280/8NdVTP0ZSr9UKVpcUaAIUzLd2lP.jpg",
       "https://image.tmdb.org/t/p/w1280/mQbpeiWtbD4XOmJugwhT4v5MlsT.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/49xFFqq2lilJP2f5LHQlcJ8y96y.png"
+    "logo": "https://image.tmdb.org/t/p/w500/49xFFqq2lilJP2f5LHQlcJ8y96y.png",
+    "totalEpisodes": 16
   },
   "K-drama:Soundtrack #1": {
     "tmdbId": 137872,
@@ -5210,7 +5314,8 @@
       "https://image.tmdb.org/t/p/w1280/eoByNTk129JNTLrhEP7Zl3x5Yfc.jpg",
       "https://image.tmdb.org/t/p/w1280/1LZWTBf6g5pJ75DldU9xhTkt250.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/lEmk03a0bV2dnj3itvYLCvNVSml.png"
+    "logo": "https://image.tmdb.org/t/p/w500/lEmk03a0bV2dnj3itvYLCvNVSml.png",
+    "totalEpisodes": 4
   },
   "K-drama:Twenty Five Twenty One": {
     "tmdbId": 129888,
@@ -5241,7 +5346,8 @@
       "https://image.tmdb.org/t/p/w1280/ychZ9FokohTrfC3ioaTBTywfKTq.jpg",
       "https://image.tmdb.org/t/p/w1280/bc7JsaiNnLKIlBQIjs3xMI0ZJ3S.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2poOPcHjrEJJFp8LFH0P3qC8ZnJ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2poOPcHjrEJJFp8LFH0P3qC8ZnJ.png",
+    "totalEpisodes": 16
   },
   "K-drama:Alchemy of Souls": {
     "tmdbId": 135157,
@@ -5275,7 +5381,8 @@
       "https://image.tmdb.org/t/p/w1280/pj3zCnPXI5Bh3lblZAgfzWUAn5v.jpg",
       "https://image.tmdb.org/t/p/w1280/pAY95Pd1fP8B6vi29YxXvVbTCm.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/sFVThz6cgpQntvK6ovayVf2UUmz.png"
+    "logo": "https://image.tmdb.org/t/p/w500/sFVThz6cgpQntvK6ovayVf2UUmz.png",
+    "totalEpisodes": 30
   },
   "K-drama:Welcome to Waikiki": {
     "tmdbId": 76557,
@@ -5307,7 +5414,8 @@
       "https://image.tmdb.org/t/p/w1280/zUj0A3qSML0tjG7lKvCoBGuabWt.jpg",
       "https://image.tmdb.org/t/p/w1280/1YI8A0t8qyEKPpfmUT9bVEE2PwO.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/9gGpzO9lgIzvvuJgLkLeJrc0yJv.png"
+    "logo": "https://image.tmdb.org/t/p/w500/9gGpzO9lgIzvvuJgLkLeJrc0yJv.png",
+    "totalEpisodes": 20
   },
   "K-drama:Fight for My Way": {
     "tmdbId": 70813,
@@ -5339,7 +5447,8 @@
       "https://image.tmdb.org/t/p/w1280/rHnLMeW11Fimvnbv94lq9IKvPe1.jpg",
       "https://image.tmdb.org/t/p/w1280/cA6xT7iGmdFNx3q6Hb4WfQOL7p.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/3OgH6Abm6x1bw5PT0mafmGJzdXW.png"
+    "logo": "https://image.tmdb.org/t/p/w500/3OgH6Abm6x1bw5PT0mafmGJzdXW.png",
+    "totalEpisodes": 16
   },
   "K-drama:Business Proposal": {
     "tmdbId": 154825,
@@ -5371,7 +5480,8 @@
       "https://image.tmdb.org/t/p/w1280/Ava1di0BgpTWWOLveg0JfRd5eQe.jpg",
       "https://image.tmdb.org/t/p/w1280/wNn3vYseenNcFSnzMx7Asb1cKrR.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/89cbbDLh5l7QNbgfKM4PoHHW43A.png"
+    "logo": "https://image.tmdb.org/t/p/w500/89cbbDLh5l7QNbgfKM4PoHHW43A.png",
+    "totalEpisodes": 12
   },
   "K-drama:18 Again": {
     "tmdbId": 99654,
@@ -5404,7 +5514,8 @@
       "https://image.tmdb.org/t/p/w1280/Aj0fAj376kteL8C2mUGQ0c9BeV9.jpg",
       "https://image.tmdb.org/t/p/w1280/86OfwAgnduUp19thSIVRv39tFgM.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/GLGtMvmLtSWGtKNIqMphvNqYNU.png"
+    "logo": "https://image.tmdb.org/t/p/w500/GLGtMvmLtSWGtKNIqMphvNqYNU.png",
+    "totalEpisodes": 16
   },
   "K-drama:Weightlifting Fairy Kim Bok Joo": {
     "tmdbId": 68349,
@@ -5436,7 +5547,8 @@
       "https://image.tmdb.org/t/p/w1280/k3Bh3hbDVVAbggHrgzMgyO4V9Ak.jpg",
       "https://image.tmdb.org/t/p/w1280/luNi18lwn6shjYocqtSc2owSkt4.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/uShwP1kHfXzKuivuv3v6CJf3siw.png"
+    "logo": "https://image.tmdb.org/t/p/w500/uShwP1kHfXzKuivuv3v6CJf3siw.png",
+    "totalEpisodes": 16
   },
   "K-drama:Descendants of the Sun": {
     "tmdbId": 65143,
@@ -5500,7 +5612,8 @@
       "https://image.tmdb.org/t/p/w1280/34w8KFW838QUwZaLmcC3HLY75bp.jpg",
       "https://image.tmdb.org/t/p/w1280/ubQQrMAsyLuLjp0UEbvtX85Al3T.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/skYrMWvdXxxOiloSaZWP6LOvI64.png"
+    "logo": "https://image.tmdb.org/t/p/w500/skYrMWvdXxxOiloSaZWP6LOvI64.png",
+    "totalEpisodes": 16
   },
   "K-drama:Strong Girl Bong-soon": {
     "tmdbId": 68814,
@@ -5533,7 +5646,8 @@
       "https://image.tmdb.org/t/p/w1280/pUKslDIokIi7TIGqTHpFlMre6H8.jpg",
       "https://image.tmdb.org/t/p/w1280/bBA7prECugEiudNuME4MA4z2txG.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vs1POisGhFqvajdUOM9rSHdH6kR.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vs1POisGhFqvajdUOM9rSHdH6kR.png",
+    "totalEpisodes": 16
   },
   "K-drama:Do Do Sol Sol La La Sol": {
     "tmdbId": 106465,
@@ -5628,7 +5742,8 @@
       "https://image.tmdb.org/t/p/w1280/ueK0jw3KjSLzUSAdLbDygbnN0Kx.jpg",
       "https://image.tmdb.org/t/p/w1280/ans4HovaDAGluK7486rGYadHs10.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/5C97XwHgw0ksx5bqmIZywqWJC1o.png"
+    "logo": "https://image.tmdb.org/t/p/w500/5C97XwHgw0ksx5bqmIZywqWJC1o.png",
+    "totalEpisodes": 16
   },
   "K-drama:Hwarang: The Poet Warrior Youth": {
     "tmdbId": 66496,
@@ -5661,7 +5776,8 @@
       "https://image.tmdb.org/t/p/w1280/ihchkvPJrlIkArsYbeUAtbvE0xD.jpg",
       "https://image.tmdb.org/t/p/w1280/3wy66tXBSwa61FknIipBGGR7pPD.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/w5SgfPmGPbhbCcOaU8Igjq1EbJ6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/w5SgfPmGPbhbCcOaU8Igjq1EbJ6.png",
+    "totalEpisodes": 20
   },
   "K-drama:My Roommate Is a Gumiho": {
     "tmdbId": 114118,
@@ -5884,7 +6000,8 @@
       "https://image.tmdb.org/t/p/w1280/C8jIUjLeyWsmqLmWOsztizeZad.jpg",
       "https://image.tmdb.org/t/p/w1280/l07KSeuk6YaH8w35TFt7NYJn0ZX.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/pmiqjuSPhQGZrxllkFC8KiK8I3T.png"
+    "logo": "https://image.tmdb.org/t/p/w500/pmiqjuSPhQGZrxllkFC8KiK8I3T.png",
+    "totalEpisodes": 16
   },
   "K-drama:Shooting Stars": {
     "tmdbId": 127231,
@@ -5913,7 +6030,8 @@
       "https://image.tmdb.org/t/p/w1280/xbguh5c5eQJkLSPPWAkdKibcHnk.jpg",
       "https://image.tmdb.org/t/p/w1280/49jYSeElMEqqDCv2UceIhKFWtOD.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/neQsVnBfKupRoHWtPxzdppXhEQr.png"
+    "logo": "https://image.tmdb.org/t/p/w500/neQsVnBfKupRoHWtPxzdppXhEQr.png",
+    "totalEpisodes": 16
   },
   "K-drama:Touch Your Heart": {
     "tmdbId": 85404,
@@ -5945,7 +6063,8 @@
       "https://image.tmdb.org/t/p/w1280/5F6yMBLw54OL11UfQFwzo00vNUz.jpg",
       "https://image.tmdb.org/t/p/w1280/pM8A1zZuRtmjbhT0Jcg72KMyt4i.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/soOjSdcf1tT1xGqdyisjdaBCe5.png"
+    "logo": "https://image.tmdb.org/t/p/w500/soOjSdcf1tT1xGqdyisjdaBCe5.png",
+    "totalEpisodes": 16
   },
   "K-drama:20th Century Girl": {
     "tmdbId": 851644,
@@ -6009,7 +6128,8 @@
       "https://image.tmdb.org/t/p/w1280/m9o8kf6wAMp9JHLH86f3C0pARWR.jpg",
       "https://image.tmdb.org/t/p/w1280/wrK5jaWEJS64coFH3ZvVzq2llxB.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/oHUo3I983avToQl8qq8850xaVPi.png"
+    "logo": "https://image.tmdb.org/t/p/w500/oHUo3I983avToQl8qq8850xaVPi.png",
+    "totalEpisodes": 16
   },
   "K-drama:Midnight Runners": {
     "tmdbId": 453127,
@@ -6075,7 +6195,8 @@
       "https://image.tmdb.org/t/p/w1280/yOn7jEGMm90vRYMxVrfRsCaenaP.jpg",
       "https://image.tmdb.org/t/p/w1280/v9rbc4ZAurA5K2l9KiGzftpmcBG.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jeRIG13tHW2KPDkdxO015yUz9Pd.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jeRIG13tHW2KPDkdxO015yUz9Pd.png",
+    "totalEpisodes": 12
   },
   "K-drama:Cheer Up": {
     "tmdbId": 155229,
@@ -6270,7 +6391,8 @@
       "https://image.tmdb.org/t/p/w1280/tMEYYBIIi9BVX2hO93shz0sjpQg.jpg",
       "https://image.tmdb.org/t/p/w1280/9QPXtMk9ThZLoTmCHbpZyGaiCkc.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/iyzqTdOBLAKcWxdWqVwianinVVK.png"
+    "logo": "https://image.tmdb.org/t/p/w500/iyzqTdOBLAKcWxdWqVwianinVVK.png",
+    "totalEpisodes": 20
   },
   "K-drama:Signal": {
     "tmdbId": 64840,
@@ -6304,7 +6426,8 @@
       "https://image.tmdb.org/t/p/w1280/gXFFZOd3mEThbqYOFCjX9DM39ox.jpg",
       "https://image.tmdb.org/t/p/w1280/ssNejt42Ri51OwfE49cjE8KhUhx.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/mTgKdxk3wrh5VoT62OmcT2v2vjy.png"
+    "logo": "https://image.tmdb.org/t/p/w500/mTgKdxk3wrh5VoT62OmcT2v2vjy.png",
+    "totalEpisodes": 16
   },
   "K-drama:Crash Landing on You": {
     "tmdbId": 94796,
@@ -6369,7 +6492,8 @@
       "https://image.tmdb.org/t/p/w1280/lF7rKEZ5PeH6HJvyV1gAb82IRWj.jpg",
       "https://image.tmdb.org/t/p/w1280/w8APNzAC4siVDPR2TDYNIjdInJb.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/xF6Bl12zpDQ144NxCTPaYs6fwll.png"
+    "logo": "https://image.tmdb.org/t/p/w500/xF6Bl12zpDQ144NxCTPaYs6fwll.png",
+    "totalEpisodes": 16
   },
   "K-drama:Bloodhounds": {
     "tmdbId": 127529,
@@ -6402,7 +6526,8 @@
       "https://image.tmdb.org/t/p/w1280/cRZktBCIBnfmuFHL2VrkjPgqlkU.jpg",
       "https://image.tmdb.org/t/p/w1280/hWtKc8Y8PTS9d8OhIOO9AaXYYYy.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/luUqD7PtUpwo51qG8rpXcecaO4b.png"
+    "logo": "https://image.tmdb.org/t/p/w500/luUqD7PtUpwo51qG8rpXcecaO4b.png",
+    "totalEpisodes": 15
   },
   "K-drama:While You Were Sleeping": {
     "tmdbId": 70649,
@@ -6434,7 +6559,8 @@
       "https://image.tmdb.org/t/p/w1280/6IstuOfOT2UKLAijnT6cU1ibNl2.jpg",
       "https://image.tmdb.org/t/p/w1280/65AlZVTz6vOA1DSTRqSzqfveArH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/uN1uvzg4ekww9TFIxfHMwBsQ0FA.png"
+    "logo": "https://image.tmdb.org/t/p/w500/uN1uvzg4ekww9TFIxfHMwBsQ0FA.png",
+    "totalEpisodes": 32
   },
   "K-drama:A Time Called You": {
     "tmdbId": 196474,
@@ -6465,7 +6591,8 @@
       "https://image.tmdb.org/t/p/w1280/g9AIAJ2ldr4ROzjFOuWfwkdbZOV.jpg",
       "https://image.tmdb.org/t/p/w1280/bBKE6Sl9NnueGw1qK2HkrlNaIKG.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/1bVJ1ffJnYC8bxakKJjieMlX2os.png"
+    "logo": "https://image.tmdb.org/t/p/w500/1bVJ1ffJnYC8bxakKJjieMlX2os.png",
+    "totalEpisodes": 12
   },
   "K-drama:Flower of Evil": {
     "tmdbId": 99494,
@@ -6498,7 +6625,8 @@
       "https://image.tmdb.org/t/p/w1280/1dJ2fvltzw1UCF5Ot5YFwKo1C19.jpg",
       "https://image.tmdb.org/t/p/w1280/q6QCpGZ2Nv0WZDq8VcpP92qOlB.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7kMOHCoDjQeZSJkTJzba2Xm6V5T.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7kMOHCoDjQeZSJkTJzba2Xm6V5T.png",
+    "totalEpisodes": 16
   },
   "K-drama:Love All Play": {
     "tmdbId": 152512,
@@ -6529,7 +6657,8 @@
       "https://image.tmdb.org/t/p/w1280/4eLyBwAozQ8cORIJpZlogibgxv4.jpg",
       "https://image.tmdb.org/t/p/w1280/9lw8eParuCCWSwlFGSYl3hj7IhL.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ae1lG0FGLU4uibaYDnCo2hYQvGI.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ae1lG0FGLU4uibaYDnCo2hYQvGI.png",
+    "totalEpisodes": 16
   },
   "K-drama:The Worst of Evil": {
     "tmdbId": 210704,
@@ -6562,7 +6691,8 @@
       "https://image.tmdb.org/t/p/w1280/ypCmoeuRFwfzfr1vxf9W9BZU8j8.jpg",
       "https://image.tmdb.org/t/p/w1280/scC4b1GdpWAwZa7VoZhOFt2Pf2h.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6B0QGXhDEvaZSq08Oiibo1f8Lpc.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6B0QGXhDEvaZSq08Oiibo1f8Lpc.png",
+    "totalEpisodes": 12
   },
   "K-drama:Squid Game": {
     "tmdbId": 93405,
@@ -6595,7 +6725,8 @@
       "https://image.tmdb.org/t/p/w1280/qw3J9cNeLioOLoR68WX7z79aCdK.jpg",
       "https://image.tmdb.org/t/p/w1280/3xF78MnaTAoX3hkygglbCUEywU.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6YFWTX7fiGjWpsnJWLLV4RSbJWd.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6YFWTX7fiGjWpsnJWLLV4RSbJWd.png",
+    "totalEpisodes": 9
   },
   "K-drama:Start-Up": {
     "tmdbId": 99048,
@@ -6627,7 +6758,8 @@
       "https://image.tmdb.org/t/p/w1280/yKCzkOxvWioXv8LfynFHlF5oG71.jpg",
       "https://image.tmdb.org/t/p/w1280/mQxYnncpZymtrvQVdvg02KwEKaY.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ufnG2iy1bJTemn9QML5S4TPEVzw.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ufnG2iy1bJTemn9QML5S4TPEVzw.png",
+    "totalEpisodes": 16
   },
   "K-drama:Vagabond": {
     "tmdbId": 92983,
@@ -6660,7 +6792,8 @@
       "https://image.tmdb.org/t/p/w1280/7WeMyZbterw4PiAeGPBS9HWY8sQ.jpg",
       "https://image.tmdb.org/t/p/w1280/yPlh8DAsuntCzTy8O6aFKbBKzLB.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tlfueIFua3TWPDaK5aEYBe8rwOI.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tlfueIFua3TWPDaK5aEYBe8rwOI.png",
+    "totalEpisodes": 16
   },
   "K-drama:W": {
     "tmdbId": 66330,
@@ -6723,7 +6856,8 @@
       "https://image.tmdb.org/t/p/w1280/d4G2ANcaUvbNbhE5EhCfnEeSJkf.jpg",
       "https://image.tmdb.org/t/p/w1280/uJrcgBjCoBdCL6uZQT3NSseeQGv.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zEZjQTvTzk5MROv1aGG8OnVFEvB.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zEZjQTvTzk5MROv1aGG8OnVFEvB.png",
+    "totalEpisodes": 36
   },
   "K-drama:Something in the Rain": {
     "tmdbId": 78385,
@@ -6819,7 +6953,8 @@
       "https://image.tmdb.org/t/p/w1280/hhhGk0lB99uXhuKlzn3mvi6lLgE.jpg",
       "https://image.tmdb.org/t/p/w1280/vpxIJ3A4wvS0SKUi0jGcreJMm0F.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gWK5b7RDbpdjFqM2XFFAsO4ByT0.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gWK5b7RDbpdjFqM2XFFAsO4ByT0.png",
+    "totalEpisodes": 16
   },
   "K-drama:Sweet Home": {
     "tmdbId": 96648,
@@ -6851,7 +6986,8 @@
       "https://image.tmdb.org/t/p/w1280/vum7d5Sp5xdFUTYByYr2o7ORzS7.jpg",
       "https://image.tmdb.org/t/p/w1280/8U0CLE1jm8wzsAUqmawdOqR46FD.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tPfB6aJRLc6ClGGv8TGt6M2bvTN.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tPfB6aJRLc6ClGGv8TGt6M2bvTN.png",
+    "totalEpisodes": 26
   },
   "K-drama:Happiness": {
     "tmdbId": 135340,
@@ -6884,7 +7020,8 @@
       "https://image.tmdb.org/t/p/w1280/o2di6BRbt2xz1ja0who2B39s9Rt.jpg",
       "https://image.tmdb.org/t/p/w1280/i2lIp9MYjiA8RbrzUd2IHD5MNRp.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/1OLwb5kdmqn8vDW0irhJoiKhEH1.png"
+    "logo": "https://image.tmdb.org/t/p/w500/1OLwb5kdmqn8vDW0irhJoiKhEH1.png",
+    "totalEpisodes": 12
   },
   "K-drama:My Demon": {
     "tmdbId": 218539,
@@ -6948,7 +7085,8 @@
       "https://image.tmdb.org/t/p/w1280/po3Nj1wCL4g2ZbkBTOunUAutz1.jpg",
       "https://image.tmdb.org/t/p/w1280/aiVGJ8OMkowOHxke9WsMSZaPX8z.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2RrrnG15wa0X6RVj2tzzfSexGpo.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2RrrnG15wa0X6RVj2tzzfSexGpo.png",
+    "totalEpisodes": 16
   },
   "K-drama:Taxi Driver": {
     "tmdbId": 119769,
@@ -6981,7 +7119,8 @@
       "https://image.tmdb.org/t/p/w1280/i1SyUHsi45psSH1xy9sM0in8FKJ.jpg",
       "https://image.tmdb.org/t/p/w1280/jEbW6F9KIz8zYHmJJjA0E9V9KIz.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/mzrKK1FUNs8YTdkrmDP288KsmKT.png"
+    "logo": "https://image.tmdb.org/t/p/w500/mzrKK1FUNs8YTdkrmDP288KsmKT.png",
+    "totalEpisodes": 16
   },
   "K-drama:Death's Game": {
     "tmdbId": 218230,
@@ -7013,7 +7152,8 @@
       "https://image.tmdb.org/t/p/w1280/qeN6jXEBToLSeHmF8JbTh34n1qp.jpg",
       "https://image.tmdb.org/t/p/w1280/dXAtWp6fPMdeu9HUT3oZ4R92YWO.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/r20enk9QfWeTXWECSI8na4vBp0S.png"
+    "logo": "https://image.tmdb.org/t/p/w500/r20enk9QfWeTXWECSI8na4vBp0S.png",
+    "totalEpisodes": 8
   },
   "K-drama:Doctor Slump": {
     "tmdbId": 222233,
@@ -7077,7 +7217,8 @@
       "https://image.tmdb.org/t/p/w1280/5CDIJhyAr8KgJ5w2KQivm7GV7Qj.jpg",
       "https://image.tmdb.org/t/p/w1280/wyfS7XJLlAfRzIsLBW4iuQpllZK.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/9ZSkQOkA0h0XU7fonDTAprY3X66.png"
+    "logo": "https://image.tmdb.org/t/p/w500/9ZSkQOkA0h0XU7fonDTAprY3X66.png",
+    "totalEpisodes": 16
   },
   "K-drama:One Dollar Lawyer": {
     "tmdbId": 201852,
@@ -7109,7 +7250,8 @@
       "https://image.tmdb.org/t/p/w1280/lem4oW4vcI1nf0OR4DdJLoBE3h1.jpg",
       "https://image.tmdb.org/t/p/w1280/5KYpoApAeW3aahFBYhpUx19W1xK.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/pgq6xpr73UPB06E6sh7wDnAfNPC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/pgq6xpr73UPB06E6sh7wDnAfNPC.png",
+    "totalEpisodes": 12
   },
   "K-drama:Suspicious Partner": {
     "tmdbId": 71349,
@@ -7142,7 +7284,8 @@
       "https://image.tmdb.org/t/p/w1280/b5BGCyWGIehjkisCvCk1Ph8kAbX.jpg",
       "https://image.tmdb.org/t/p/w1280/zH8lRhUDUl4rsCaS1jRbndDtlmq.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/uKZvTHXQ6SRsNnxAUtKn9WNzzNv.png"
+    "logo": "https://image.tmdb.org/t/p/w500/uKZvTHXQ6SRsNnxAUtKn9WNzzNv.png",
+    "totalEpisodes": 40
   },
   "K-drama:A Shop for Killers": {
     "tmdbId": 215072,
@@ -7175,7 +7318,8 @@
       "https://image.tmdb.org/t/p/w1280/zYdsfRl03WpxwiLG1QWRKuYQtrz.jpg",
       "https://image.tmdb.org/t/p/w1280/zistuio0YaQoRX6nEbwxw6nPpSe.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/u39tHQqcIqUZ6Luc7GhSJr0gmDr.png"
+    "logo": "https://image.tmdb.org/t/p/w500/u39tHQqcIqUZ6Luc7GhSJr0gmDr.png",
+    "totalEpisodes": 8
   },
   "K-drama:Encounter": {
     "tmdbId": 83941,
@@ -7206,7 +7350,8 @@
       "https://image.tmdb.org/t/p/w1280/9APCmwIJnusA2taRAVIaQiGyONU.jpg",
       "https://image.tmdb.org/t/p/w1280/jXAlCchX0KjVy2j3oL27WgMdB43.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/adltQTwrTjxx26PMFjIBFjWWTaC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/adltQTwrTjxx26PMFjIBFjWWTaC.png",
+    "totalEpisodes": 16
   },
   "K-drama:Marry My Husband": {
     "tmdbId": 221851,
@@ -7239,7 +7384,8 @@
       "https://image.tmdb.org/t/p/w1280/9oeLnFtbs6k5pY9CoJo2jHDJBfK.jpg",
       "https://image.tmdb.org/t/p/w1280/mjhiADW3Z0QDoJ0GVMnmdLej9Ug.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jjMJvopFVcbM2RiDufP2BaWpc4Y.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jjMJvopFVcbM2RiDufP2BaWpc4Y.png",
+    "totalEpisodes": 16
   },
   "K-drama:Queen of Tears": {
     "tmdbId": 215720,
@@ -7271,7 +7417,8 @@
       "https://image.tmdb.org/t/p/w1280/bq3werQvvG0ATPUUPZMrYs8Np0u.jpg",
       "https://image.tmdb.org/t/p/w1280/npbBpyODXW6HOLeSalqrX2jtR0p.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/rtYUutWaNOO0IfWQWhegTUw0ERo.png"
+    "logo": "https://image.tmdb.org/t/p/w500/rtYUutWaNOO0IfWQWhegTUw0ERo.png",
+    "totalEpisodes": 16
   },
   "K-drama:Because This Is My First Life": {
     "tmdbId": 74074,
@@ -7303,7 +7450,8 @@
       "https://image.tmdb.org/t/p/w1280/gnNFNup48kr8nRWM1fKQ2nTZUrc.jpg",
       "https://image.tmdb.org/t/p/w1280/uHEq2Uw1eEa6TUpKdLhfoBcZ7Ui.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/sx1oIfFZCfzeznUwxB9MlZC4Qzw.png"
+    "logo": "https://image.tmdb.org/t/p/w500/sx1oIfFZCfzeznUwxB9MlZC4Qzw.png",
+    "totalEpisodes": 16
   },
   "K-drama:Lovely Runner": {
     "tmdbId": 230923,
@@ -7368,7 +7516,8 @@
       "https://image.tmdb.org/t/p/w1280/aYuAcqL66TuF7h7zkEBrbuTML05.jpg",
       "https://image.tmdb.org/t/p/w1280/kINbOjOrUCvR4KwALRSYxPM9NNS.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7BfJ3p5JnvwC6QA6lHtKRX437M9.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7BfJ3p5JnvwC6QA6lHtKRX437M9.png",
+    "totalEpisodes": 12
   },
   "K-drama:Run On": {
     "tmdbId": 113240,
@@ -7399,7 +7548,8 @@
       "https://image.tmdb.org/t/p/w1280/jvGK3RLCxSpoaCs0VY2im7zbT8H.jpg",
       "https://image.tmdb.org/t/p/w1280/ynFf26DpT9RWq9eIj0HI9uitQfr.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jttXpRbqpYaSDF2R7jthkqCkIgR.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jttXpRbqpYaSDF2R7jthkqCkIgR.png",
+    "totalEpisodes": 16
   },
   "K-drama:Good Manager": {
     "tmdbId": 68947,
@@ -7431,7 +7581,8 @@
       "https://image.tmdb.org/t/p/w1280/1W2tIdBdCDs0jPTA2KtBdFx6M7v.jpg",
       "https://image.tmdb.org/t/p/w1280/8T8jLw5cdM9kp7jxt1eY7uMoKGM.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/694oghwup7snl0MXsquHfXEBLPX.png"
+    "logo": "https://image.tmdb.org/t/p/w500/694oghwup7snl0MXsquHfXEBLPX.png",
+    "totalEpisodes": 20
   },
   "K-drama:Reborn Rich": {
     "tmdbId": 153496,
@@ -7463,7 +7614,8 @@
       "https://image.tmdb.org/t/p/w1280/7sDHgqB3qgYkrGiDtm7qa51L8eH.jpg",
       "https://image.tmdb.org/t/p/w1280/lbgkqaFfcu5Ni87nCqdtGj8LOHb.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/kmUKgkbtz4iGePhVeSMFX3WOC7E.png"
+    "logo": "https://image.tmdb.org/t/p/w500/kmUKgkbtz4iGePhVeSMFX3WOC7E.png",
+    "totalEpisodes": 16
   },
   "K-drama:The Atypical Family": {
     "tmdbId": 232616,
@@ -7495,7 +7647,8 @@
       "https://image.tmdb.org/t/p/w1280/47Bn7Va9eXgT6JNV5BjsQTblykr.jpg",
       "https://image.tmdb.org/t/p/w1280/hbksC9zJiV1na8rW6BMJ7ywycVX.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/jIytLkzBl9E9b8q0NslAZNDfsCk.png"
+    "logo": "https://image.tmdb.org/t/p/w500/jIytLkzBl9E9b8q0NslAZNDfsCk.png",
+    "totalEpisodes": 12
   },
   "K-drama:Hot Stove League": {
     "tmdbId": 95484,
@@ -7526,7 +7679,8 @@
       "https://image.tmdb.org/t/p/w1280/o8rlF5DLKfPfWu2Lgsq7tpZ2PvS.jpg",
       "https://image.tmdb.org/t/p/w1280/kTF3gmM4esxHhtrNkFP7xkVyUoF.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zhLFN3jQe3Z4oooYgPT5axhX0pJ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zhLFN3jQe3Z4oooYgPT5axhX0pJ.png",
+    "totalEpisodes": 16
   },
   "K-drama:The Gangster, the Cop, the Devil": {
     "tmdbId": 581528,
@@ -7591,7 +7745,8 @@
       "https://image.tmdb.org/t/p/w1280/iRJR5PSEWeRlmP67SjhATZVs6IL.jpg",
       "https://image.tmdb.org/t/p/w1280/7uwzQCPwytTRenPBgPbvtwgBd52.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/4hAnHTcfpXNkCG7Gns5KDTOrqaq.png"
+    "logo": "https://image.tmdb.org/t/p/w500/4hAnHTcfpXNkCG7Gns5KDTOrqaq.png",
+    "totalEpisodes": 20
   },
   "K-drama:Love Next Door": {
     "tmdbId": 241454,
@@ -7623,7 +7778,8 @@
       "https://image.tmdb.org/t/p/w1280/7LXNpWUDH5WjjyTUat89DUR9Z6m.jpg",
       "https://image.tmdb.org/t/p/w1280/ariE1ALdXK3vuqGKFYkEX5SMlSG.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/8DZoBQ7U0EwnFSJbAOGX3v4cOEL.png"
+    "logo": "https://image.tmdb.org/t/p/w500/8DZoBQ7U0EwnFSJbAOGX3v4cOEL.png",
+    "totalEpisodes": 16
   },
   "K-drama:Mouse": {
     "tmdbId": 117378,
@@ -7655,7 +7811,8 @@
       "https://image.tmdb.org/t/p/w1280/2kwGcGHIYMGP9ONMcwk9J2NmuY9.jpg",
       "https://image.tmdb.org/t/p/w1280/mGJDSOKMTyQ8e57u38g885fau9o.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vV5DlRybmNJrfmyymkv6yaAD3og.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vV5DlRybmNJrfmyymkv6yaAD3og.png",
+    "totalEpisodes": 20
   },
   "K-drama:One Spring Night": {
     "tmdbId": 89604,
@@ -7686,7 +7843,8 @@
       "https://image.tmdb.org/t/p/w1280/hiWCygEFNbxayNhqNnnWGH6d4S3.jpg",
       "https://image.tmdb.org/t/p/w1280/AbmoeK9OHSe9bxSKd7E5QxkvEkg.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2IX0b3uDhWuyUBviFetJ7nB5Zyz.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2IX0b3uDhWuyUBviFetJ7nB5Zyz.png",
+    "totalEpisodes": 32
   },
   "K-drama:Love 911": {
     "tmdbId": 146724,
@@ -7785,7 +7943,8 @@
       "https://image.tmdb.org/t/p/w1280/1j9OuIQe4brFqowLHRsqGsuHUjB.jpg",
       "https://image.tmdb.org/t/p/w1280/azsal5vB6DBvSnYfjH187bbsRrp.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/bDpOteXMzzLTteqA74hddq6uLCJ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/bDpOteXMzzLTteqA74hddq6uLCJ.png",
+    "totalEpisodes": 10
   },
   "K-drama:My Name Is Loh Kiwan": {
     "tmdbId": 1039882,
@@ -7876,7 +8035,8 @@
       "https://image.tmdb.org/t/p/w1280/vFs6A5NrjPUDN5erNmBqHZRQfAn.jpg",
       "https://image.tmdb.org/t/p/w1280/hlPnoPi6XuekCItShtXWyR2HUcA.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/izsot0vibLhojHPTksvyVGPFgKu.png"
+    "logo": "https://image.tmdb.org/t/p/w500/izsot0vibLhojHPTksvyVGPFgKu.png",
+    "totalEpisodes": 16
   },
   "K-drama:Train to Busan": {
     "tmdbId": 396535,
@@ -7943,7 +8103,8 @@
       "https://image.tmdb.org/t/p/w1280/dMbBYZCB5yyekEDmxOoimZIunE6.jpg",
       "https://image.tmdb.org/t/p/w1280/lq2NrxlzFKNmZx1W2qZSj5ypG9L.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/goAnU5Xe770Jct6twkmS4HEG7ZM.png"
+    "logo": "https://image.tmdb.org/t/p/w500/goAnU5Xe770Jct6twkmS4HEG7ZM.png",
+    "totalEpisodes": 12
   },
   "K-drama:Gyeongseong Creature": {
     "tmdbId": 135238,
@@ -8042,7 +8203,8 @@
       "https://image.tmdb.org/t/p/w1280/6IOk78d5HqP4XGEAUmpCtUOHWUb.jpg",
       "https://image.tmdb.org/t/p/w1280/cFgdPtGNlpIJKKVOGNH4uGBDRJW.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/t2mExGcLAUSPHKrJj8VeLFdnv7A.png"
+    "logo": "https://image.tmdb.org/t/p/w500/t2mExGcLAUSPHKrJj8VeLFdnv7A.png",
+    "totalEpisodes": 12
   },
   "K-drama:Couple on the Backtrack": {
     "tmdbId": 74064,
@@ -8072,7 +8234,8 @@
       "https://image.tmdb.org/t/p/w1280/9HMkLpccqskUXzARetIjEeX1nz.jpg",
       "https://image.tmdb.org/t/p/w1280/fNKdjWiU1aJMxcKcsx4ZAWO5beC.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/sVVOBMO09ieCBiSdS7BhJSCtpTR.png"
+    "logo": "https://image.tmdb.org/t/p/w500/sVVOBMO09ieCBiSdS7BhJSCtpTR.png",
+    "totalEpisodes": 12
   },
   "K-drama:Study Group": {
     "tmdbId": 233347,
@@ -8169,7 +8332,8 @@
       "https://image.tmdb.org/t/p/w1280/l7Rh1wX4Uk2jpfY025UJmqLk74U.jpg",
       "https://image.tmdb.org/t/p/w1280/jPWk9UaKjEUlr5u5iY7cE8H0Egn.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/am3WbCcPXKGhUSCpHNnSNfiKIBd.png"
+    "logo": "https://image.tmdb.org/t/p/w500/am3WbCcPXKGhUSCpHNnSNfiKIBd.png",
+    "totalEpisodes": 10
   },
   "K-drama:Kill Boksoon": {
     "tmdbId": 849869,
@@ -8235,7 +8399,8 @@
       "https://image.tmdb.org/t/p/w1280/l2r5a9rdwPVUDhKf77fRxrxVOfb.jpg",
       "https://image.tmdb.org/t/p/w1280/aKuLHKgSxsHyIstierMX56Puchl.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/iFparapxy2524J5wLlmrv7IXsbW.png"
+    "logo": "https://image.tmdb.org/t/p/w500/iFparapxy2524J5wLlmrv7IXsbW.png",
+    "totalEpisodes": 10
   },
   "K-drama:Moment at Eighteen": {
     "tmdbId": 90407,
@@ -8267,7 +8432,8 @@
       "https://image.tmdb.org/t/p/w1280/gDbnRGOEBDmzvwL3EMBMh2shPfV.jpg",
       "https://image.tmdb.org/t/p/w1280/btAbzx9JD68BDw4auzUNqQf4Wco.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6vQu6xJszLFfPekZwFlH56UIRKy.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6vQu6xJszLFfPekZwFlH56UIRKy.png",
+    "totalEpisodes": 16
   },
   "K-drama:Undercover High School": {
     "tmdbId": 248244,
@@ -8300,7 +8466,8 @@
       "https://image.tmdb.org/t/p/w1280/bxZLT0pnNi0rm4xgbkUWCvkYXLr.jpg",
       "https://image.tmdb.org/t/p/w1280/aveSIWMxS62cqLyFSvG0phsg2OE.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/g35Ne9cwGLnIdsg2M32KG0thI2x.png"
+    "logo": "https://image.tmdb.org/t/p/w500/g35Ne9cwGLnIdsg2M32KG0thI2x.png",
+    "totalEpisodes": 12
   },
   "K-drama:Resident Playbook": {
     "tmdbId": 235355,
@@ -8331,7 +8498,8 @@
       "https://image.tmdb.org/t/p/w1280/rLizgs2rieC2IMIZPbgguICrZZm.jpg",
       "https://image.tmdb.org/t/p/w1280/dPPiPZOJZM8DxRYsbrMYqSlORMS.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/9cHQ9q6XuRlndCKZTVeMu54KtF9.png"
+    "logo": "https://image.tmdb.org/t/p/w500/9cHQ9q6XuRlndCKZTVeMu54KtF9.png",
+    "totalEpisodes": 12
   },
   "K-drama:When Life Gives You Tangerines": {
     "tmdbId": 219246,
@@ -8362,7 +8530,8 @@
       "https://image.tmdb.org/t/p/w1280/cxCYvKUSBSu9FiLNzpz4Ylafe2E.jpg",
       "https://image.tmdb.org/t/p/w1280/oVCmEveKX3RVmiB3BBI6XwofEsF.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/hvFFNASGQ31Y6oQyxmq0EkaiTQX.png"
+    "logo": "https://image.tmdb.org/t/p/w500/hvFFNASGQ31Y6oQyxmq0EkaiTQX.png",
+    "totalEpisodes": 16
   },
   "K-drama:The Sound of Your Heart": {
     "tmdbId": 126647,
@@ -8387,7 +8556,8 @@
       "https://image.tmdb.org/t/p/w1280/vLWalCWSnOhJYRRvQubxcSYYL0t.jpg",
       "https://image.tmdb.org/t/p/w1280/itwLsEg4aUWRhpwEbDqL1iFGcPi.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zsND5TEwkaDYEWvnsS3QhUS9pDN.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zsND5TEwkaDYEWvnsS3QhUS9pDN.png",
+    "totalEpisodes": 20
   },
   "K-drama:Good Boy": {
     "tmdbId": 231280,
@@ -8421,7 +8591,8 @@
       "https://image.tmdb.org/t/p/w1280/oybNHWH1xGqZ5qYbjiH0Iz6uoqX.jpg",
       "https://image.tmdb.org/t/p/w1280/8l1BN0IIjHmRyW0oDfUfs3F6F4N.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/bNHxhioWfbSAUaO3v9EMvrfV2W7.png"
+    "logo": "https://image.tmdb.org/t/p/w500/bNHxhioWfbSAUaO3v9EMvrfV2W7.png",
+    "totalEpisodes": 16
   },
   "K-drama:The Divorce Insurance": {
     "tmdbId": 258764,
@@ -8453,7 +8624,8 @@
       "https://image.tmdb.org/t/p/w1280/v8gg0GRwHV25emb9uVQ2lOUkyKc.jpg",
       "https://image.tmdb.org/t/p/w1280/A5H1rDDnPAziTX4YxVwATSFSlOu.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/yedxd9ntgHib0m15e0UD5C4YgR3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/yedxd9ntgHib0m15e0UD5C4YgR3.png",
+    "totalEpisodes": 12
   },
   "K-drama:Our Unwritten Seoul": {
     "tmdbId": 261980,
@@ -8516,7 +8688,8 @@
       "https://image.tmdb.org/t/p/w1280/eDwtS4A9HFwNJykTvYyuR6GPlgx.jpg",
       "https://image.tmdb.org/t/p/w1280/96LsUeoBlD68zwMwAGghIAUY8bc.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/gnEjTt2ZjWwf6JWE1VziPEhYK8Q.png"
+    "logo": "https://image.tmdb.org/t/p/w500/gnEjTt2ZjWwf6JWE1VziPEhYK8Q.png",
+    "totalEpisodes": 10
   },
   "K-drama:Mercy for None": {
     "tmdbId": 232766,
@@ -8548,7 +8721,8 @@
       "https://image.tmdb.org/t/p/w1280/tbE5o28jCaj83oI3UorT2BThhhL.jpg",
       "https://image.tmdb.org/t/p/w1280/fz7NzRApFf2JRvFisdFNeRAHLHZ.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/x5mClwGfIQiIyYU8bWSpds7jBq2.png"
+    "logo": "https://image.tmdb.org/t/p/w500/x5mClwGfIQiIyYU8bWSpds7jBq2.png",
+    "totalEpisodes": 7
   },
   "K-drama:Gaus Electronics": {
     "tmdbId": 197084,
@@ -8580,7 +8754,8 @@
       "https://image.tmdb.org/t/p/w1280/xRkf8k5kgkudi6pZHAeW6BDW7vD.jpg",
       "https://image.tmdb.org/t/p/w1280/hke06YMaS9W1N1A8lPKFZsnYZ7H.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/mGFIrBdM9n2ewRh94TUKVjy06d0.png"
+    "logo": "https://image.tmdb.org/t/p/w500/mGFIrBdM9n2ewRh94TUKVjy06d0.png",
+    "totalEpisodes": 12
   },
   "K-drama:High School Return of a Gangster": {
     "tmdbId": 224030,
@@ -8612,7 +8787,8 @@
       "https://image.tmdb.org/t/p/w1280/qGjWfoyBnQQLrHWLUpRTOyg7YA4.jpg",
       "https://image.tmdb.org/t/p/w1280/610oSowz0W8EAovMQpB8DbEqpeQ.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/maFcTYK9k0TugmW7b8nISFObkL4.png"
+    "logo": "https://image.tmdb.org/t/p/w500/maFcTYK9k0TugmW7b8nISFObkL4.png",
+    "totalEpisodes": 8
   },
   "K-drama:Trigger": {
     "tmdbId": 238084,
@@ -8645,7 +8821,8 @@
       "https://image.tmdb.org/t/p/w1280/3f6Kp16D3jRQ5fmV4cljYRu1Nfv.jpg",
       "https://image.tmdb.org/t/p/w1280/92t0YbO1ifYbIBFCtr4kaHDykfi.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ojCikA8B5Cclian3h06K5SBiyS3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ojCikA8B5Cclian3h06K5SBiyS3.png",
+    "totalEpisodes": 10
   },
   "K-drama:Full House": {
     "tmdbId": 3504,
@@ -8739,7 +8916,8 @@
       "https://image.tmdb.org/t/p/w1280/kfjOcHZd3t1st4d7vKojZAwLUv2.jpg",
       "https://image.tmdb.org/t/p/w1280/tdI56DYgkwpya2T7qgyJA3sMYCP.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7Yer3qSEHoRtVuX3u6cMYGEtJfN.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7Yer3qSEHoRtVuX3u6cMYGEtJfN.png",
+    "totalEpisodes": 16
   },
   "K-drama:Typhoon Family": {
     "tmdbId": 280946,
@@ -8770,7 +8948,8 @@
       "https://image.tmdb.org/t/p/w1280/yJVXajjBaC1r9CFtIC2iBhsDgZt.jpg",
       "https://image.tmdb.org/t/p/w1280/hYQK4EJdH3VBJtbFdHddnewPyqz.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/o7CPRoPXTogJuiz7UcPHYzNpXC9.png"
+    "logo": "https://image.tmdb.org/t/p/w500/o7CPRoPXTogJuiz7UcPHYzNpXC9.png",
+    "totalEpisodes": 16
   },
   "K-drama:Can This Love Be Translated?": {
     "tmdbId": 229891,
@@ -8802,7 +8981,8 @@
       "https://image.tmdb.org/t/p/w1280/m1rBIr615iAZU034zd8cX0y0iUK.jpg",
       "https://image.tmdb.org/t/p/w1280/6RNeYjd54ajlW92dwJUvQp5m4tg.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/dbg6KO0Glp9RYHIt46I0CGXhaB7.png"
+    "logo": "https://image.tmdb.org/t/p/w500/dbg6KO0Glp9RYHIt46I0CGXhaB7.png",
+    "totalEpisodes": 12
   },
   "K-drama:No Other Choice": {
     "tmdbId": 639988,
@@ -8933,7 +9113,8 @@
       "https://image.tmdb.org/t/p/w1280/1OEhd32ZcIKk8mlY7bsVHnW3uji.jpg",
       "https://image.tmdb.org/t/p/w1280/fvdPfzO0nsTC7JNLnPYiU4LIDIy.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/21nrcCJkHtuPvDLkZDOg2mstBtS.png"
+    "logo": "https://image.tmdb.org/t/p/w500/21nrcCJkHtuPvDLkZDOg2mstBtS.png",
+    "totalEpisodes": 8
   },
   "K-drama:Our Sticky Love": {
     "tmdbId": 291496,
@@ -8965,7 +9146,8 @@
       "https://image.tmdb.org/t/p/w1280/mp2AFsWsuyxCzenJh3DTKw7z4jG.jpg",
       "https://image.tmdb.org/t/p/w1280/6SuDRpEn83SjNPqPTzyyd9Uxe1l.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tdmmTgRGnKZBReHGPJYdl3NDqt7.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tdmmTgRGnKZBReHGPJYdl3NDqt7.png",
+    "totalEpisodes": 12
   },
   "K-drama:In Your Radiant Season": {
     "tmdbId": 233833,
@@ -8997,7 +9179,8 @@
       "https://image.tmdb.org/t/p/w1280/AhhxB7QqVx0XAa824GoyG5NUiIg.jpg",
       "https://image.tmdb.org/t/p/w1280/dmXCATceBjS619zkfEZ11Zkifa0.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/nU5zUEgqx8JkZGCTLaW98E9WgN1.png"
+    "logo": "https://image.tmdb.org/t/p/w500/nU5zUEgqx8JkZGCTLaW98E9WgN1.png",
+    "totalEpisodes": 12
   },
   "C-drama:18×2 Beyond Youthful Days": {
     "tmdbId": 1188258,
@@ -9092,7 +9275,8 @@
       "https://image.tmdb.org/t/p/w1280/eRgQNvBhnySqoQApAF6yRY6F6KS.jpg",
       "https://image.tmdb.org/t/p/w1280/iq4ianUCOjfQOCtt9IDpQaqHChe.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/hJMyumhz0DtjezGTYQLuZuKwsDQ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/hJMyumhz0DtjezGTYQLuZuKwsDQ.png",
+    "totalEpisodes": 30
   },
   "C-drama:Put Your Head on My Shoulder": {
     "tmdbId": 88548,
@@ -9124,7 +9308,8 @@
       "https://image.tmdb.org/t/p/w1280/9CD50KSENIc5FbNZO9h3yON5cOR.jpg",
       "https://image.tmdb.org/t/p/w1280/7PauO7plffDsujzlm24JYsHc2HC.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/1Qm2zotwtEfohNu5A0CtW0Hi81n.png"
+    "logo": "https://image.tmdb.org/t/p/w500/1Qm2zotwtEfohNu5A0CtW0Hi81n.png",
+    "totalEpisodes": 24
   },
   "C-drama:Falling Into Your Smile": {
     "tmdbId": 95486,
@@ -9189,7 +9374,8 @@
       "https://image.tmdb.org/t/p/w1280/5tulkIFh4wqb5a9Vu2CIqwxp0aY.jpg",
       "https://image.tmdb.org/t/p/w1280/aXeDKJ16QoHnyQ4SmOUvfUHKekH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/t0vyTEFN1BOZliVgGbvMHCR05xU.png"
+    "logo": "https://image.tmdb.org/t/p/w500/t0vyTEFN1BOZliVgGbvMHCR05xU.png",
+    "totalEpisodes": 46
   },
   "C-drama:Everyone Loves Me": {
     "tmdbId": 247453,
@@ -9252,7 +9438,8 @@
       "https://image.tmdb.org/t/p/w1280/90DGJmfEDP2StKXdhTA2RqDLkrm.jpg",
       "https://image.tmdb.org/t/p/w1280/a2WOSHWzwebUS7UDIXBhJAZeaf6.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/wnDITCPzR0zCy4oCFMGbKPZdvdL.png"
+    "logo": "https://image.tmdb.org/t/p/w500/wnDITCPzR0zCy4oCFMGbKPZdvdL.png",
+    "totalEpisodes": 28
   },
   "C-drama:My Calorie Boy": {
     "tmdbId": 211016,
@@ -9281,7 +9468,8 @@
       "https://image.tmdb.org/t/p/w1280/syAxYSuSpqHeVFe2NcLUivvchEX.jpg",
       "https://image.tmdb.org/t/p/w1280/nZrFFbcTs9poPF1tKvAPuOS13Po.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/za7TqRIHd23n7lCzvCsl5LS7U7H.png"
+    "logo": "https://image.tmdb.org/t/p/w500/za7TqRIHd23n7lCzvCsl5LS7U7H.png",
+    "totalEpisodes": 30
   },
   "C-drama:Our Generation": {
     "tmdbId": 261128,
@@ -9312,7 +9500,8 @@
       "https://image.tmdb.org/t/p/w1280/6Z999PogEk1noV4WBlJ8I5Ykx9x.jpg",
       "https://image.tmdb.org/t/p/w1280/3ySN9ssjCw6p7WMMhmhKBt1yu7w.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/eqF9qKTHLq4dOGRLO1aUb07FB11.png"
+    "logo": "https://image.tmdb.org/t/p/w500/eqF9qKTHLq4dOGRLO1aUb07FB11.png",
+    "totalEpisodes": 24
   },
   "C-drama:A River Runs Through It": {
     "tmdbId": 129496,
@@ -9344,7 +9533,8 @@
       "https://image.tmdb.org/t/p/w1280/kAaQg6DICTDGHEtYtebknbFhLzc.jpg",
       "https://image.tmdb.org/t/p/w1280/jfiC9elCTfu90CcfDlhDcz5Ro6Y.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/cIf281eH4qNJtgeVM7ybSTMpVFA.png"
+    "logo": "https://image.tmdb.org/t/p/w500/cIf281eH4qNJtgeVM7ybSTMpVFA.png",
+    "totalEpisodes": 36
   },
   "C-drama:Be Passionately in Love": {
     "tmdbId": 259857,
@@ -9376,7 +9566,8 @@
       "https://image.tmdb.org/t/p/w1280/8qQziAvLZpho3eXTuBQ3hdMRb0M.jpg",
       "https://image.tmdb.org/t/p/w1280/kten7cKh2sutEPImqRw7JvxhrIb.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/52pljXfajkgpoZseUSA5ZjCJoLC.png"
+    "logo": "https://image.tmdb.org/t/p/w500/52pljXfajkgpoZseUSA5ZjCJoLC.png",
+    "totalEpisodes": 24
   },
   "C-drama:The Best of You in My Mind": {
     "tmdbId": 101724,
@@ -9406,7 +9597,8 @@
       "https://image.tmdb.org/t/p/w1280/bleNj5lLpjEf9hOozfZqv3j0FCS.jpg",
       "https://image.tmdb.org/t/p/w1280/nkR9uxhKxzRELn9gYFeDnccEn8R.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/qGTd1a9C8h8PNOYPmAnE5WyIvaf.png"
+    "logo": "https://image.tmdb.org/t/p/w500/qGTd1a9C8h8PNOYPmAnE5WyIvaf.png",
+    "totalEpisodes": 24
   },
   "C-drama:Our Secret": {
     "tmdbId": 130822,
@@ -9500,7 +9692,8 @@
       "https://image.tmdb.org/t/p/w1280/fRXGBaTSs5UQ0e6NXq3l6kUCBRi.jpg",
       "https://image.tmdb.org/t/p/w1280/tMzXkej1wHRIFPFFzx0NPgsoZP9.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/yutGgmbiRddZKdYWreiMhbFtCGu.png"
+    "logo": "https://image.tmdb.org/t/p/w500/yutGgmbiRddZKdYWreiMhbFtCGu.png",
+    "totalEpisodes": 28
   },
   "C-drama:Summer Again": {
     "tmdbId": 128927,
@@ -9526,7 +9719,8 @@
     "stills": [
       "https://image.tmdb.org/t/p/w1280/fzjDxUKutwZMlWmYCaM9iisPHai.jpg",
       "https://image.tmdb.org/t/p/w1280/ad5QRJNUO7EXOAszf6alqLPCwXn.jpg"
-    ]
+    ],
+    "totalEpisodes": 24
   },
   "C-drama:No Pain No Gain": {
     "tmdbId": 278882,
@@ -9590,7 +9784,8 @@
       "https://image.tmdb.org/t/p/w1280/fHujwGIiCsodpKyaHP7v4W6IXaS.jpg",
       "https://image.tmdb.org/t/p/w1280/yFOHbKXwDMnxBVgz78vOzqI1Ock.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/i48SefwlLwkHqbduFFEkiTdfUCw.png"
+    "logo": "https://image.tmdb.org/t/p/w500/i48SefwlLwkHqbduFFEkiTdfUCw.png",
+    "totalEpisodes": 40
   },
   "C-drama:Meet Yourself": {
     "tmdbId": 216424,
@@ -9621,7 +9816,8 @@
       "https://image.tmdb.org/t/p/w1280/2AaXSGSNmoP1wGHLFetUPQpwuF0.jpg",
       "https://image.tmdb.org/t/p/w1280/sNFYvKB6lY9ROfv7G6Be66KhSSr.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/46mHklGjIU45QtDtDvuK44BGT3t.png"
+    "logo": "https://image.tmdb.org/t/p/w500/46mHklGjIU45QtDtDvuK44BGT3t.png",
+    "totalEpisodes": 40
   },
   "C-drama:When We Were Young": {
     "tmdbId": 84604,
@@ -9653,7 +9849,8 @@
       "https://image.tmdb.org/t/p/w1280/jTOoZ25t93bTfrYtnleYgtKLpWg.jpg",
       "https://image.tmdb.org/t/p/w1280/xuxWDrRn0LksqZxKdVKPnqV4z8F.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/2PwMNMWjTW7Pe67R10pmibL9Ish.png"
+    "logo": "https://image.tmdb.org/t/p/w500/2PwMNMWjTW7Pe67R10pmibL9Ish.png",
+    "totalEpisodes": 24
   },
   "J-drama:Alice in Borderland": {
     "tmdbId": 110316,
@@ -9686,7 +9883,8 @@
       "https://image.tmdb.org/t/p/w1280/8J1WE3Fk6lQV1ZxxuVL6xig5evl.jpg",
       "https://image.tmdb.org/t/p/w1280/A1B7fQhLYUDEuOI8ZwrcVq1QB0x.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/epePp3mrs9zCRoYQuJHIQGcpfr9.png"
+    "logo": "https://image.tmdb.org/t/p/w500/epePp3mrs9zCRoYQuJHIQGcpfr9.png",
+    "totalEpisodes": 22
   },
   "J-drama:Trillion Game": {
     "tmdbId": 240125,
@@ -9713,7 +9911,8 @@
       "https://image.tmdb.org/t/p/w1280/zaxmjuukpaqLiMW4EOp2ArdO7xH.jpg",
       "https://image.tmdb.org/t/p/w1280/a4p0sdEWqYre8DLEqqX4o99Q3lj.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/4cOIaH5orzFvqFix4Cmk5YUfEeB.png"
+    "logo": "https://image.tmdb.org/t/p/w500/4cOIaH5orzFvqFix4Cmk5YUfEeB.png",
+    "totalEpisodes": 10
   },
   "J-drama:Good Morning Call": {
     "tmdbId": 65693,
@@ -9838,7 +10037,8 @@
       "https://image.tmdb.org/t/p/w1280/8fdoMkOXZi3otEhZzWyzeX7qzZJ.jpg",
       "https://image.tmdb.org/t/p/w1280/TM9Ta13jGZQtR0SRbaHTjWJsu0.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7tnz9gqgsJJJNxTOsE7ylJCIW2b.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7tnz9gqgsJJJNxTOsE7ylJCIW2b.png",
+    "totalEpisodes": 10
   },
   "J-drama:Don't Call It Mystery": {
     "tmdbId": 126849,
@@ -9900,7 +10100,8 @@
       "https://image.tmdb.org/t/p/w1280/yWZCJRtADJeeogZ1QfA5kNukXVA.jpg",
       "https://image.tmdb.org/t/p/w1280/3l2KIw4CDuc3sLkOQ5qsB7E4K81.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vqzm25mpJqF9wDalCSZSFi7uikK.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vqzm25mpJqF9wDalCSZSFi7uikK.png",
+    "totalEpisodes": 8
   },
   "J-drama:Glass Heart": {
     "tmdbId": 247670,
@@ -9931,7 +10132,8 @@
       "https://image.tmdb.org/t/p/w1280/b9IbdJPxHi7IeNjGxLqMVY02qaL.jpg",
       "https://image.tmdb.org/t/p/w1280/9OnFTwvxg2qtmtUrQiDdHJK2AKw.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/hDgNFUsla7E16y6sEk2xY5cjBAw.png"
+    "logo": "https://image.tmdb.org/t/p/w500/hDgNFUsla7E16y6sEk2xY5cjBAw.png",
+    "totalEpisodes": 10
   },
   "J-drama:Wood Job!": {
     "tmdbId": 274817,
@@ -11957,7 +12159,8 @@
       "https://image.tmdb.org/t/p/w1280/wokDQZwuY7VxKQ8vbANh4nJrKTi.jpg",
       "https://image.tmdb.org/t/p/w1280/6wSSyRNeF9vBJ1h29nuw3vG9hZI.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/ztteKox6S97uwEuEF2lsaFxaJmg.png"
+    "logo": "https://image.tmdb.org/t/p/w500/ztteKox6S97uwEuEF2lsaFxaJmg.png",
+    "totalEpisodes": 170
   },
   "Anime:Dragon Ball": {
     "tmdbId": 12609,
@@ -12053,7 +12256,8 @@
       "https://image.tmdb.org/t/p/w1280/aPkVPHHHFqiiWn3JaCehCiK428x.jpg",
       "https://image.tmdb.org/t/p/w1280/p0o2yHo45QJl0E8JRvSAHXGxn7A.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/5EsSjcltlc6ibiU3FpoylCuItNr.png"
+    "logo": "https://image.tmdb.org/t/p/w500/5EsSjcltlc6ibiU3FpoylCuItNr.png",
+    "totalEpisodes": 43
   },
   "Anime:Ninja Kamui": {
     "tmdbId": 202284,
@@ -12117,7 +12321,8 @@
       "https://image.tmdb.org/t/p/w1280/48SnEDnIs0kkGb3p4rUYUc3lSXw.jpg",
       "https://image.tmdb.org/t/p/w1280/qIRTvwih3jSJxCHZJlM51G6hFKH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/qlJ4cCqnHNs8cPEZDlM67RwZIFQ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/qlJ4cCqnHNs8cPEZDlM67RwZIFQ.png",
+    "totalEpisodes": 126
   },
   "Anime:Devil May Cry": {
     "tmdbId": 235930,
@@ -12182,7 +12387,8 @@
       "https://image.tmdb.org/t/p/w1280/zZJTnVkJ4rCVYm2gYtkWDFPpe4a.jpg",
       "https://image.tmdb.org/t/p/w1280/noHJwrCu2HuDf6wmLokwtiFDLPd.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/kH55VdmiVmeDWIiGUwtB7MRQSnQ.png"
+    "logo": "https://image.tmdb.org/t/p/w500/kH55VdmiVmeDWIiGUwtB7MRQSnQ.png",
+    "totalEpisodes": 24
   },
   "Anime:Cyberpunk: Edgerunners": {
     "tmdbId": 105248,
@@ -12215,7 +12421,8 @@
       "https://image.tmdb.org/t/p/w1280/9Mo7R35rv14LVYLHdU5Cq7dJuGv.jpg",
       "https://image.tmdb.org/t/p/w1280/w0lU7U89Fm4K8BQD4hJQpQthxu9.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/sNhrCQwDbvu6hGm8yKNQAh3njKf.png"
+    "logo": "https://image.tmdb.org/t/p/w500/sNhrCQwDbvu6hGm8yKNQAh3njKf.png",
+    "totalEpisodes": 10
   },
   "K-drama:Goblin": {
     "tmdbId": 67915,
@@ -12248,7 +12455,8 @@
       "https://image.tmdb.org/t/p/w1280/hG0SL39CNBD11jANAAYSWYG5Fo3.jpg",
       "https://image.tmdb.org/t/p/w1280/pdw05wKRPLyMADXK8nWdkOrkYrH.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/vq3jtNuFkeVW3dYZGOjvsgTKyPa.png"
+    "logo": "https://image.tmdb.org/t/p/w500/vq3jtNuFkeVW3dYZGOjvsgTKyPa.png",
+    "totalEpisodes": 16
   },
   "Web series:Dark": {
     "tmdbId": 70523,
@@ -12315,7 +12523,8 @@
       "https://image.tmdb.org/t/p/w1280/fZ1YiLHXQuB5b4fEgpoKlHOaQVZ.jpg",
       "https://image.tmdb.org/t/p/w1280/fCEKeONLr0tuWV5hT0iHeiRjYM4.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/6iSOCdU57CoyHLWWGrojUnNbO18.png"
+    "logo": "https://image.tmdb.org/t/p/w500/6iSOCdU57CoyHLWWGrojUnNbO18.png",
+    "totalEpisodes": 8
   },
   "Anime:Barakamon": {
     "tmdbId": 67048,
@@ -12378,7 +12587,8 @@
       "https://image.tmdb.org/t/p/w1280/upYLggi6tBaQtg0Rxwd2DBXicF3.jpg",
       "https://image.tmdb.org/t/p/w1280/pqML8hqZckaQTlgw7fE9fNhLIL5.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/7x0ezrWgpaFZHV5PbMvxQnQzmyq.png"
+    "logo": "https://image.tmdb.org/t/p/w500/7x0ezrWgpaFZHV5PbMvxQnQzmyq.png",
+    "totalEpisodes": 26
   },
   "Anime:Higehiro": {
     "tmdbId": 106519,
@@ -12409,7 +12619,8 @@
       "https://image.tmdb.org/t/p/w1280/fp88d7Egnbu8RCoDX3Bu1zFTfXD.jpg",
       "https://image.tmdb.org/t/p/w1280/7k31ow9dfasOoJMwPCu4Uu5fUO7.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/wZGnlg9Dqa04qRd2HzxTCxIPwmO.png"
+    "logo": "https://image.tmdb.org/t/p/w500/wZGnlg9Dqa04qRd2HzxTCxIPwmO.png",
+    "totalEpisodes": 13
   },
   "C-drama:Hidden Love": {
     "tmdbId": 210733,
@@ -12440,7 +12651,8 @@
       "https://image.tmdb.org/t/p/w1280/22vGOBhwIjac8CtFeiAayM6T6RZ.jpg",
       "https://image.tmdb.org/t/p/w1280/20xtgSMXFAPbq3Gl7o72LW8isEg.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/x2yxa8E2YdrUKlkn966JROO5Cf6.png"
+    "logo": "https://image.tmdb.org/t/p/w500/x2yxa8E2YdrUKlkn966JROO5Cf6.png",
+    "totalEpisodes": 25
   },
   "C-drama:The First Frost": {
     "tmdbId": 250060,
@@ -12471,7 +12683,8 @@
       "https://image.tmdb.org/t/p/w1280/qGdKPz5PZ6O274xiYYA68SaTS61.jpg",
       "https://image.tmdb.org/t/p/w1280/x29EmxvCvg5q7lQOUeR0b6atTBR.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zTR7BpHqSZKq8yOinFpompdNXyH.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zTR7BpHqSZKq8yOinFpompdNXyH.png",
+    "totalEpisodes": 32
   },
   "J-drama:First Love": {
     "tmdbId": 210955,
@@ -12502,7 +12715,8 @@
       "https://image.tmdb.org/t/p/w1280/rti4rnQXdJb4qiGNuW3CMi37lrY.jpg",
       "https://image.tmdb.org/t/p/w1280/6KiYkUP1BSJX0QMen17tT4il5C8.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/zQ426xfeQZBzseTRAqUvX3ku8V3.png"
+    "logo": "https://image.tmdb.org/t/p/w500/zQ426xfeQZBzseTRAqUvX3ku8V3.png",
+    "totalEpisodes": 9
   },
   "Web series:Money Heist": {
     "tmdbId": 71446,
@@ -12664,7 +12878,8 @@
       "https://image.tmdb.org/t/p/w1280/2Yfzm5857lprGonYPl30XgEpTry.jpg",
       "https://image.tmdb.org/t/p/w1280/bY17tTK5GOEwxIValL0MBHGt6T6.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tdmqbFnG79NFRoQkI2HrrfAWRQv.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tdmqbFnG79NFRoQkI2HrrfAWRQv.png",
+    "totalEpisodes": 37
   },
   "Anime:A Silent Voice": {
     "tmdbId": 378064,
@@ -12727,6 +12942,7 @@
       "https://image.tmdb.org/t/p/w1280/lTZTzqBKFHL9LIn7Rl5ZH8kVakV.jpg",
       "https://image.tmdb.org/t/p/w1280/6UJYVrQUEGdvUZ6BWWykqzwNOiP.jpg"
     ],
-    "logo": "https://image.tmdb.org/t/p/w500/tTjv03N60XTlKRhS6YCpQZ6njAS.png"
+    "logo": "https://image.tmdb.org/t/p/w500/tTjv03N60XTlKRhS6YCpQZ6njAS.png",
+    "totalEpisodes": 16
   }
 }

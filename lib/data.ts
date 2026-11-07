@@ -36,6 +36,7 @@ export function loadTitles(entries: Entry[], extra: Record<string, Generated>): 
       rating: entry.rating,
       status: entry.status,
       review: entry.review,
+      overview: found?.overview,
       quote: entry.quote,
       quoteBy: entry.quoteBy,
       hours: entry.hours ?? found?.hours ?? estimateHours(entry),

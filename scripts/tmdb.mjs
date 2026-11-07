@@ -70,7 +70,7 @@ export function client(key) {
     const url = new URL(API + path);
     for (const [name, value] of Object.entries(params)) url.searchParams.set(name, value);
     if (!isToken) url.searchParams.set('api_key', key);
-    const res = await fetch(url, { headers: isToken ? { Authorization: `Bearer ${key}` } : {} });
+    const res = await fetch(url, { headers: isToken ? { Authorization: `Bearer ${key}` } : {}, signal: AbortSignal.timeout(15000) });
     if (!res.ok) throw new Error(`TMDB answered ${res.status} for ${path}`);
     return res.json();
   };

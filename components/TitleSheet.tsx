@@ -98,6 +98,7 @@ export default function TitleSheet({ title, paused, onClose }: { title: Title | 
           <div className="sheet-details">
             <div className="sheet-side"><Poster title={title} /></div>
             <div className="sheet-text">
+              {title.overview && <section className="sheet-synopsis" aria-labelledby="sheet-synopsis-title"><h3 id="sheet-synopsis-title">Synopsis</h3><p>{title.overview}</p></section>}
               {title.quote && <blockquote className="sheet-quote">“{title.quote}”</blockquote>}
               <dl className="sheet-facts">
                 <div><dt>Time in this world</dt><dd>{title.hours.toLocaleString('en-US')} hours</dd></div>

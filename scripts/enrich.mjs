@@ -41,6 +41,7 @@ export async function enrich(get, entry) {
     tmdbId: match.id,
     tmdbKind: match.kind,
     tmdbName: detail.name ?? detail.title,
+    overview: detail.overview ?? undefined,
     year: releaseYear(detail),
     hours: runtimeHours(detail, match.kind, entry.type, entry.episodes),
     genres: (detail.genres ?? []).map((g) => g.name).filter((name) => name !== ANIMATION),

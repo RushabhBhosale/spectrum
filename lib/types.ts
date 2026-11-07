@@ -14,6 +14,7 @@ export type Title = {
   /** Empty when finished. Otherwise e.g. Dropped, On hold, Unfinished or Watching. */
   status?: string;
   review?: string;
+  overview?: string;
   quote?: string;
   quoteBy?: string;
   /** Seven hex colours, from light to dark. */
@@ -57,6 +58,7 @@ export type Generated = {
   runtimeMinutes?: number;
   tmdbKind: 'tv' | 'movie';
   tmdbName?: string;
+  overview?: string;
   year?: number;
   hours: number;
   colours: string[];

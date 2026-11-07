@@ -367,6 +367,9 @@ body::after { position: fixed; inset: -80px; z-index: 180; background-image: url
 .sheet-details { display: grid; grid-template-columns: minmax(150px, 280px) minmax(0, 1fr); gap: clamp(28px, 6vw, 96px); padding: clamp(50px, 10vh, 110px) var(--gutter); }
 .sheet-side { align-self: start; }
 .sheet-text { display: flex; flex-direction: column; gap: 34px; min-width: 0; }
+.sheet-synopsis { max-width: 70ch; }
+.sheet-synopsis h3 { margin-bottom: 10px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.sheet-synopsis p { color: var(--light); font-family: var(--serif); font-size: clamp(20px, 2vw, 30px); line-height: 1.35; }
 .sheet-quote { margin: 0; padding: 0; background: none; color: var(--accent); font-family: var(--serif); font-size: clamp(32px, 4.4vw, 68px); letter-spacing: -.015em; line-height: 1.02; }
 .sheet-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px 0 0; border-top: 1px solid var(--line); }
 .sheet-share { padding: 0; }

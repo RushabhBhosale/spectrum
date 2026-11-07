@@ -7,6 +7,7 @@ import type { Category, Entry, Generated } from './types';
 type Show = {
   id: number; name: string; type?: string; language?: string; genres?: string[];
   premiered?: string | null; averageRuntime?: number | null; runtime?: number | null;
+  summary?: string | null;
   image?: { medium?: string; original?: string } | null;
 };
 type Episode = { season?: number; number?: number | null };
@@ -24,6 +25,10 @@ async function get(path: string) {
   const response = await fetch(`https://api.tvmaze.com${path}`, { signal: AbortSignal.timeout(10000) });
   if (!response.ok) throw new Error(`TVmaze returned ${response.status}`);
   return response.json();
+}
+
+function cleanSummary(summary?: string | null) {
+  return summary?.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&quot;/gi, '"').replace(/&#39;/gi, "'").replace(/\s+/g, ' ').trim() || undefined;
 }
 
 export async function searchShows(query: string) {
@@ -59,5 +64,5 @@ export async function showDetails(id: number, entry: Entry): Promise<Generated> 
   }
   const runtimeMinutes = show.averageRuntime || show.runtime || undefined;
   const hours = entry.tmdbKind !== 'movie' && entry.episodes && runtimeMinutes ? Math.max(1, Math.round(entry.episodes * runtimeMinutes / 60)) : estimateHours(entry);
-  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, totalEpisodes, runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
+  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, totalEpisodes, overview: cleanSummary(show.summary), runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
 }
