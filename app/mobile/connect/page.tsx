@@ -30,8 +30,8 @@ export default async function ConnectPage({ searchParams }: { searchParams: Prom
       <h1>Connect Memonest</h1>
       <p>Allow this device to use your personal collection for its on-device assistant?</p>
       <ul style={{ lineHeight: 1.8, paddingLeft: 24, marginBlock: 24 }}>
-        <li>Read your titles, ratings and viewing status.</li>
-        <li>Update status and ratings after you review a change in Memonest.</li>
+        <li>Read your titles, ratings, viewing status and episode progress.</li>
+        <li>Update status, ratings and episode progress after you review a change in Memonest.</li>
         <li>Keep a small copy on this phone for offline answers.</li>
       </ul>
       <p>This grants access to this Studio&apos;s single personal collection. Memonest does not receive your Studio password or database credentials, and does not copy titles to its cloud services.</p>

@@ -1,3 +1,5 @@
+import type { EpisodeGuide, EpisodePosition } from './episode-progress';
+
 export const CATEGORIES = ['Anime', 'K-drama', 'C-drama', 'J-drama', 'Web series', 'Hindi series'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
@@ -39,6 +41,7 @@ export type Entry = {
   review?: string;
   quote?: string;
   quoteBy?: string;
+  progress?: EpisodePosition;
   /** Episodes actually watched. */
   episodes?: number;
   /** Number of regular episodes in the series, when known. */
@@ -52,6 +55,7 @@ export type Entry = {
 /** What `npm run colours` and the studio store for a title. */
 export type Generated = {
   tmdbId?: number;
+  episodeGuide?: EpisodeGuide;
   catalogSource?: 'tvmaze';
   catalogId?: number;
   totalEpisodes?: number;

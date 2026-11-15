@@ -12,6 +12,7 @@ const TYPICAL_HOURS: Record<Category, number> = {
 
 export function estimateHours(entry: Entry) {
   if (entry.tmdbKind === 'movie') return FILM_HOURS;
+  if (entry.episodes === 0) return 0;
   if (entry.episodes) return Math.max(1, Math.round((entry.episodes * EPISODE_MINUTES[entry.type]) / 60));
   return TYPICAL_HOURS[entry.type];
 }

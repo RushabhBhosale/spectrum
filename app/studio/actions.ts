@@ -1,6 +1,9 @@
 'use server';
 
 import { cookies } from 'next/headers';
+import { episodeGuideFor, resolveProgressDraft } from '@/lib/episode-guide';
+import { CATEGORIES } from '@/lib/types';
+import type { EpisodeGuide } from '@/lib/episode-progress';
 import { buildTitleUpdate, toEntry, type Draft } from '@/lib/title-mutations';
 import { createSession, passwordMatches, sessionIsValid } from '@/scripts/session.mjs';
 import { readStore, writeStore } from '@/lib/store';
@@ -71,20 +74,27 @@ export async function searchTitles(query: string): Promise<{ ok: true; matches: 
 export async function addTitle(draft: Draft): Promise<Result> {
   try {
     await requireSession();
-    const entry = toEntry(draft);
+    let entry = toEntry(draft.progressMode === 'season' ? { ...draft, progressMode: 'count', episodes: '' } : draft);
     if (typeof entry === 'string') return { ok: false, message: entry };
     const store = await readStore();
     const key = entryKey(entry);
     if (store.generated[key] || store.titles.some((t) => entryKey(t) === key)) {
       return { ok: false, message: `${entry.title} is already in ${entry.type}.` };
     }
-    const generated = { ...store.generated };
+    let generated = { ...store.generated };
     if (draft.tvmazeId) generated[key] = await showDetails(draft.tvmazeId, entry);
     else if (draft.posterUrl?.trim()) {
       let poster: URL;
       try { poster = new URL(draft.posterUrl.trim()); } catch { return { ok: false, message: 'Enter a valid poster URL.' }; }
       if (poster.protocol !== 'https:' || poster.username || poster.password || poster.href.length > 2048) return { ok: false, message: 'Use an HTTPS poster URL without login details.' };
       generated[key] = { tmdbKind: entry.tmdbKind ?? 'tv', hours: estimateHours(entry), colours: placeholderColours(entry.title, entry.type), poster: poster.href };
+    }
+    if (draft.progressMode === 'season') {
+      const resolved = await resolveProgressDraft({ titles: [entry], generated, version: store.version }, key, draft);
+      const next = toEntry(resolved.draft, entry);
+      if (typeof next === 'string') return { ok: false, message: next };
+      entry = next;
+      generated = resolved.store.generated;
     }
     if (entry.tmdbKind !== 'movie' && !entry.status && generated[key]?.totalEpisodes) {
       entry.totalEpisodes = generated[key].totalEpisodes;
@@ -102,7 +112,8 @@ export async function updateTitle(key: string, draft: Draft): Promise<Result> {
   try {
     await requireSession();
     const store = await readStore();
-    const update = buildTitleUpdate(store, key, draft);
+    const resolved = await resolveProgressDraft(store, key, draft);
+    const update = buildTitleUpdate(resolved.store, key, resolved.draft);
     await writeStore(update.store);
     return { ok: true, key: update.key, message: `${draft.title.trim()} saved.` };
   } catch (error) {
@@ -123,4 +134,21 @@ export async function removeTitle(key: string): Promise<Result> {
   } catch (error) {
     return { ok: false, message: (error as Error).message };
   }
+}
+
+
+export async function getTitleEpisodeGuide(input: { key?: string; tvmazeId?: number; title?: string; type?: Category }): Promise<{ ok: true; guide: EpisodeGuide } | { ok: false; message: string }> {
+  try {
+    await requireSession();
+    if (input.key) {
+      const store = await readStore();
+      const entry = store.titles.find((item) => entryKey(item) === input.key);
+      if (!entry) throw new Error('Title not found. Refresh your list.');
+      return { ok: true, guide: await episodeGuideFor(entry, store.generated[input.key]) };
+    }
+    if (!input.title?.trim() || input.title.length > MAX_NAME || !input.type || !CATEGORIES.includes(input.type)) throw new Error('Choose a title first.');
+    const entry = { title: input.title, type: input.type, rating: null, tmdbKind: 'tv' as const };
+    const extra = input.tvmazeId && Number.isSafeInteger(input.tvmazeId) && input.tvmazeId > 0 ? { catalogSource: 'tvmaze' as const, catalogId: input.tvmazeId, tmdbKind: 'tv' as const, colours: [], hours: 0 } : undefined;
+    return { ok: true, guide: await episodeGuideFor(entry, extra) };
+  } catch (error) { return { ok: false, message: (error as Error).message }; }
 }

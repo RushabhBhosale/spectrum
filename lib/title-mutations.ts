@@ -1,3 +1,4 @@
+import type { EpisodePosition } from './episode-progress';
 import { estimateHours } from './data';
 import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from './types';
 import type { Store } from './store';
@@ -15,6 +16,10 @@ export type Draft = {
   posterUrl?: string;
   tmdbKind?: 'tv' | 'movie';
   totalEpisodes?: number;
+  progressMode?: 'count' | 'season';
+  season?: string;
+  episode?: string;
+  progress?: EpisodePosition;
 };
 export function toEntry(draft: Draft, previous?: Entry): Entry | string {
   const title = draft.title.trim().slice(0, MAX_NAME);
@@ -23,7 +28,7 @@ export function toEntry(draft: Draft, previous?: Entry): Entry | string {
   const rating = draft.rating.trim() === '' ? null : Number(draft.rating);
   if (rating !== null && !(rating >= 0 && rating <= 10)) return 'Ratings go from 0 to 10.';
   const episodes = draft.episodes.trim() === '' ? undefined : Number(draft.episodes);
-  if (episodes !== undefined && !(Number.isInteger(episodes) && episodes > 0)) return 'Episodes should be a whole number.';
+  if (episodes !== undefined && !(Number.isSafeInteger(episodes) && episodes >= 0)) return 'Episodes should be a whole number of zero or more.';
   if ((draft.tmdbKind ?? previous?.tmdbKind) !== 'movie' && episodes !== undefined && draft.totalEpisodes && episodes > draft.totalEpisodes) return `Episodes watched cannot exceed ${draft.totalEpisodes}.`;
   if (draft.status && !(STATUSES as readonly string[]).includes(draft.status) && draft.status !== previous?.status) return 'Pick a status.';
 
@@ -36,8 +41,14 @@ export function toEntry(draft: Draft, previous?: Entry): Entry | string {
   setText('status', draft.status === 'Finished' ? '' : draft.status, MAX_NAME);
   setText('quote', draft.quote, MAX_QUOTE);
   if ((draft.tmdbKind ?? previous?.tmdbKind) === 'movie') delete entry.episodes;
-  else if (episodes) entry.episodes = episodes;
+  else if (episodes !== undefined) entry.episodes = episodes;
   else delete entry.episodes;
+  if ((draft.tmdbKind ?? previous?.tmdbKind) === 'movie') delete entry.progress;
+  else if (draft.progressMode === 'season') {
+    if (!draft.progress || !Number.isSafeInteger(draft.progress.season) || draft.progress.season <= 0 || !Number.isSafeInteger(draft.progress.episode) || draft.progress.episode <= 0) return 'Enter valid season/episode progress.';
+    entry.progress = draft.progress;
+  } else if (entry.episodes !== previous?.episodes) delete entry.progress;
+  if (draft.totalEpisodes !== undefined && Number.isSafeInteger(draft.totalEpisodes) && draft.totalEpisodes > 0) entry.totalEpisodes = draft.totalEpisodes;
   if (draft.tmdbKind) entry.tmdbKind = draft.tmdbKind;
   return entry;
 }
@@ -58,7 +69,10 @@ export function buildTitleUpdate(store: Store, key: string, draft: Draft) {
   const known = generated[key];
   if (known?.totalEpisodes && entry.tmdbKind !== 'movie') {
     entry.totalEpisodes = known.totalEpisodes;
-    if (!entry.status) entry.episodes = known.totalEpisodes;
+    if (!entry.status) {
+      if (entry.episodes !== known.totalEpisodes) delete entry.progress;
+      entry.episodes = known.totalEpisodes;
+    }
     else if (entry.episodes && entry.episodes > known.totalEpisodes) throw new Error(`Episodes watched cannot exceed ${known.totalEpisodes}.`);
   }
   delete generated[key];
@@ -66,7 +80,7 @@ export function buildTitleUpdate(store: Store, key: string, draft: Draft) {
   if (known) {
     const runtime = known.runtimeMinutes ?? (previous.episodes ? known.hours * 60 / previous.episodes : undefined);
     const hours = episodesChanged && (entry.tmdbKind ?? known.tmdbKind) !== 'movie'
-      ? (entry.episodes && runtime ? Math.max(1, Math.round(entry.episodes * runtime / 60)) : estimateHours(entry))
+      ? (entry.episodes === 0 ? 0 : entry.episodes && runtime ? Math.max(1, Math.round(entry.episodes * runtime / 60)) : estimateHours(entry))
       : known.hours;
     generated[nextKey] = { ...known, tmdbKind: entry.tmdbKind ?? known.tmdbKind, hours };
   }

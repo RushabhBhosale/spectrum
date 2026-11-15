@@ -5,12 +5,14 @@ import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { addTitle, removeTitle, searchTitles, signOut, updateTitle, type Draft, type Match, type Result } from '@/app/studio/actions';
 import { SITE_NAME } from '@/lib/site';
 import { countWith, isFiltered, matches as matchesFilters, NO_FILTERS, NOTE_OPTIONS, RATING_OPTIONS, SORTS, sortTitles, statusOf, STATUS_OPTIONS, type Filters, type ListedTitle } from '@/lib/title-list';
+import EpisodeProgress from './EpisodeProgress';
 import { CATEGORIES, entryKey, STATUSES, type Category } from '@/lib/types';
 
 const blank = (title: string, type: Category): Draft => ({ title, type, rating: '', status: 'Finished', episodes: '', quote: '' });
+const episodesWatched = (entry: ListedTitle) => entry.episodes ?? (!entry.status || entry.status === 'Finished' ? entry.totalEpisodes : undefined);
 const fromEntry = (entry: ListedTitle): Draft => ({
   title: entry.title, type: entry.type, rating: entry.rating === null ? '' : String(entry.rating),
-  status: entry.status ?? 'Finished', episodes: entry.episodes ? String(entry.episodes) : '', totalEpisodes: entry.totalEpisodes, quote: entry.quote ?? '', tmdbKind: entry.tmdbKind ?? 'tv',
+  status: entry.status ?? 'Finished', episodes: episodesWatched(entry) != null ? String(episodesWatched(entry)) : '', progressMode: entry.progress ? 'season' : 'count', season: entry.progress ? String(entry.progress.season) : '', episode: entry.progress ? String(entry.progress.episode) : '', totalEpisodes: entry.totalEpisodes, quote: entry.quote ?? '', tmdbKind: entry.tmdbKind ?? 'tv',
 });
 type Editing = { key: string | null; draft: Draft; poster?: string; year?: number };
 
@@ -24,6 +26,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
   const [filters, setFilters] = useState<Filters>(NO_FILTERS);
   const [sort, setSort] = useState(SORTS[0].id);
   const [notice, setNotice] = useState<Result | null>(null);
+  const [episodeReady, setEpisodeReady] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [busy, start] = useTransition();
 
@@ -77,6 +80,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
   };
   const manual = () => { setNotice(null); setEditing({ key: null, draft: { ...blank(query.trim(), 'Web series'), tmdbKind: 'tv' } }); };
   const open = (entry: ListedTitle) => {
+    setEpisodeReady(false);
     setNotice(null);
     setConfirming(false);
     setEditing({ key: entryKey(entry), draft: fromEntry(entry), poster: entry.poster, year: entry.year });
@@ -127,11 +131,11 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
         <div className="tracker-columns" aria-hidden="true"><span>Title</span><span>Status</span><span>Progress</span><span>Score</span><span /></div>
         <div className="tracker-entries">
           {owned.map((entry) => (
-            <button className="tracker-entry" key={entryKey(entry)} onClick={() => open(entry)} aria-label={`Edit ${entry.title}, ${statusOf(entry)}, ${entry.tmdbKind === 'movie' ? 'movie' : entry.episodes ? `${entry.episodes} episodes` : 'progress not set'}, ${entry.rating === null ? 'unrated' : `score ${entry.rating.toFixed(1)}`}`}>
+            <button className="tracker-entry" key={entryKey(entry)} onClick={() => open(entry)} aria-label={`Edit ${entry.title}, ${statusOf(entry)}, ${entry.tmdbKind === 'movie' ? 'movie' : episodesWatched(entry) != null ? `${episodesWatched(entry)} episodes` : 'progress not set'}, ${entry.rating === null ? 'unrated' : `score ${entry.rating.toFixed(1)}`}`}>
               {entry.poster ? <img src={entry.poster.replace('/w342/', '/w92/')} alt="" loading="lazy" decoding="async" /> : <span className="tracker-no-poster" />}
               <span className="tracker-entry-title"><strong>{entry.title}</strong><small>{[entry.type, entry.year].filter(Boolean).join(' · ')}<span className="tracker-mobile-status"> · {statusOf(entry)}</span></small></span>
               <span className="tracker-entry-status">{statusOf(entry)}</span>
-              <span className="tracker-entry-progress">{entry.tmdbKind === 'movie' ? '' : <><span className="tracker-mobile-label">Progress </span>{entry.episodes ? `${entry.episodes} ep` : '—'}</>}</span>
+              <span className="tracker-entry-progress">{entry.tmdbKind === 'movie' ? '' : <><span className="tracker-mobile-label">Progress </span>{entry.progress ? `S${entry.progress.season} E${entry.progress.episode} · ` : ''}{episodesWatched(entry) != null ? `${episodesWatched(entry)}${entry.totalEpisodes ? ` / ${entry.totalEpisodes}` : ''} ep` : '—'}</>}</span>
               <span className="tracker-entry-score"><span className="tracker-mobile-label">Score </span>{entry.rating?.toFixed(1) ?? '—'}</span>
               <span className="tracker-entry-edit" aria-hidden="true">Edit <span>↗</span></span>
             </button>
@@ -161,11 +165,18 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
                 const status = e.target.value;
                 setEditing((current) => current && { ...current, draft: { ...current.draft, status, ...(status === 'Finished' && (current.draft.tmdbKind ?? 'tv') !== 'movie' ? { episodes: String(current.draft.totalEpisodes ?? (current.draft.episodes ? Number(current.draft.episodes) : '')) } : {}) } });
               }}>{[...new Set([...STATUSES, editing.draft.status])].map((s) => <option key={s}>{s}</option>)}</select></label>
-              {(editing.draft.tmdbKind ?? 'tv') !== 'movie' && <label className="field"><span className="label">Episodes watched</span><input id="edit-episodes" type="number" min="1" max={editing.draft.totalEpisodes || undefined} step="1" value={editing.draft.episodes} onChange={(e) => set('episodes', e.target.value)} /></label>}
+
             </div>
+            {(editing.draft.tmdbKind ?? 'tv') !== 'movie' && <EpisodeProgress
+              titleKey={editing.key ?? undefined}
+              draft={editing.draft}
+              disabled={busy}
+              onReadyChange={setEpisodeReady}
+              onChange={(patch) => { if (patch.progressMode === 'season') setEpisodeReady(false); setEditing((current) => current && { ...current, draft: { ...current.draft, ...patch } }); }}
+            />}
             <label className="field"><span className="label">Quote</span><textarea id="edit-quote" rows={2} maxLength={400} placeholder="The line that stayed with you" value={editing.draft.quote} onChange={(e) => set('quote', e.target.value)} /></label>
             <div className="editor-actions">
-              <button className="solid" disabled={busy}>{busy ? 'Saving…' : editing.key ? 'Save changes' : 'Add to the collection'}</button>
+              <button className="solid" disabled={busy || (editing.draft.tmdbKind !== 'movie' && editing.draft.progressMode === 'season' && !episodeReady)}>{busy ? 'Saving…' : editing.key ? 'Save changes' : 'Add to the collection'}</button>
               <button type="button" onClick={() => editing.key ? setPanelOpen(false) : setEditing(null)}>{editing.key ? 'Cancel' : 'Back to search'}</button>
               {editing.key && !confirming && <button type="button" className="danger" onClick={() => setConfirming(true)}>Remove</button>}
               {editing.key && confirming && <button type="button" className="danger" disabled={busy} onClick={remove}>Yes, remove it</button>}

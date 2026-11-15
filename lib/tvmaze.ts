@@ -1,3 +1,4 @@
+import { buildEpisodeGuide, type EpisodeGuide } from './episode-progress';
 import sharp from 'sharp';
 import { extractPalette } from '@/scripts/palette.mjs';
 import { estimateHours } from './data';
@@ -43,11 +44,13 @@ export async function searchShows(query: string) {
 export async function showDetails(id: number, entry: Entry): Promise<Generated> {
   if (!Number.isSafeInteger(id) || id <= 0) throw new Error('Choose a valid title.');
   const show: Show = await get(`/shows/${id}`);
+  let episodeGuide: EpisodeGuide | undefined;
   let totalEpisodes: number | undefined;
   if (entry.tmdbKind !== 'movie') {
     try {
       const episodes: Episode[] = await get(`/shows/${id}/episodes`);
-      totalEpisodes = episodes.filter((episode) => (episode.season ?? 0) > 0 && episode.number != null).length || undefined;
+      episodeGuide = buildEpisodeGuide(episodes, 'tvmaze');
+      totalEpisodes = episodeGuide.totalEpisodes;
     } catch { /* Keep the title usable if the optional episode endpoint is unavailable. */ }
   }
   const poster = show.image?.original ?? show.image?.medium;
@@ -63,6 +66,6 @@ export async function showDetails(id: number, entry: Entry): Promise<Generated> 
     } catch { /* Keep the deterministic palette if the image is unavailable. */ }
   }
   const runtimeMinutes = show.averageRuntime || show.runtime || undefined;
-  const hours = entry.tmdbKind !== 'movie' && entry.episodes && runtimeMinutes ? Math.max(1, Math.round(entry.episodes * runtimeMinutes / 60)) : estimateHours(entry);
-  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, totalEpisodes, overview: cleanSummary(show.summary), runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
+  const hours = entry.tmdbKind !== 'movie' && entry.episodes === 0 ? 0 : entry.tmdbKind !== 'movie' && entry.episodes && runtimeMinutes ? Math.max(1, Math.round(entry.episodes * runtimeMinutes / 60)) : estimateHours(entry);
+  return { tmdbKind: entry.tmdbKind ?? 'tv', catalogSource: 'tvmaze', catalogId: show.id, totalEpisodes, episodeGuide, overview: cleanSummary(show.summary), runtimeMinutes, year: show.premiered ? Number(show.premiered.slice(0, 4)) : undefined, hours, colours, accent, genres: show.genres ?? [], poster };
 }

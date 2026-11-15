@@ -17,7 +17,7 @@ export async function PATCH(request: Request) {
     const body = await mobileBody(request);
     if (Object.keys(body).some((key) => !['id', 'expectedRevision', 'changes'].includes(key))) throw new MobileError(400, 'Unsupported update fields.');
     const store = await readStore();
-    const update = prepareMobileUpdate(store, body.id, body.expectedRevision, body.changes);
+    const update = await prepareMobileUpdate(store, body.id, body.expectedRevision, body.changes);
     try { await writeStore(update.store); }
     catch (error) {
       if ((error as Error).message.includes('changed while you were editing')) throw new MobileError(409, 'The collection changed. Refresh and review again.');

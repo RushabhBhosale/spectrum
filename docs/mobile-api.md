@@ -58,3 +58,14 @@ Local builds and tests do not deploy these routes. After deployment, verify capa
 - `lib/store.ts`: shares the existing tracker database connection with device grants.
 - `components/Studio.tsx`: Connected apps link.
 - `scripts/mobile-api.test.mjs`: isolated authorization/API regressions.
+
+
+## Episode counts and season/episode progress
+
+The native app and Studio now retain manual cumulative counts and add last-watched season/episode entry. Entry `episodes` permits zero; `progress:{season,episode}` records a known position. `Generated.episodeGuide` contains regular numbered episodes grouped by season and is reused for 24 hours. It excludes season-zero/unnumbered specials and deduplicates catalog rows.
+
+`GET /api/mobile/episodes?id=<entryKey>` requires `library:read` and returns `{seasons:[{season,episodes:[numbers]}],totalEpisodes,source,fetchedAt}` for one actual saved title. Catalog access is server-side: existing TVmaze IDs or an unambiguous exact name/year match, then known TMDB IDs with the existing optional server-only `TMDB_API_KEY` as fallback. Lookup failure leaves manual count entry usable.
+
+Mobile title rows add nullable `episodes`, `totalEpisodes` and `progress`. PATCH `changes` now permits a nonnegative whole `episodes` count and/or positive integer `progress:{season,episode}`. A progress save recalculates the cumulative count on the server and checks any reviewed client total. Invalid/missing episodes return 400; a changed calculated count returns 409. Manual count changes clear old season markers. Counts above a known total, film episode updates and partial progress with Finished status are rejected. Finished still completes the catalog total and updates hours; zero watched episodes produce zero calculated hours.
+
+Studio uses the same resolver and mutation rules; both input methods remain available. The website displays the calculated total before a season/episode save. New files: `lib/episode-progress.ts`, `lib/episode-guide.ts`, `components/EpisodeProgress.tsx`, `app/api/mobile/episodes/route.ts`, `scripts/episode-progress.test.mjs`. Existing model, editor, TVmaze enrichment, mobile projection/validation, consent text and API regression tests were extended. No existing watch history is migrated or deleted. Redeploy to enable the new route and fields.

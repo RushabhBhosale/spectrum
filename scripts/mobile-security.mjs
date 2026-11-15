@@ -21,10 +21,12 @@ export function equalSecret(left, right) {
   return a.length === b.length && timingSafeEqual(a, b);
 }
 export function validateChanges(value) {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Provide status or rating changes.');
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Provide status, rating or episode progress changes.');
   const fields = Object.keys(value);
-  if (!fields.length || fields.some((key) => !['status', 'rating'].includes(key))) throw new Error('Only status and rating can be updated from Memonest.');
+  if (!fields.length || fields.some((key) => !['status', 'rating', 'episodes', 'progress'].includes(key))) throw new Error('Only status, rating and episode progress can be updated from Memonest.');
   if ('status' in value && !['Finished', 'Watching', 'On hold', 'Dropped', 'Unfinished'].includes(value.status)) throw new Error('Choose a supported viewing status.');
   if ('rating' in value && value.rating !== null && (typeof value.rating !== 'number' || !Number.isFinite(value.rating) || value.rating < 0 || value.rating > 10)) throw new Error('Ratings must be between 0 and 10.');
-  return { ...('status' in value ? { status: value.status } : {}), ...('rating' in value ? { rating: value.rating } : {}) };
+  if ('episodes' in value && (!Number.isSafeInteger(value.episodes) || value.episodes < 0)) throw new Error('Episodes watched must be a whole number of zero or more.');
+  if ('progress' in value && (!value.progress || typeof value.progress !== 'object' || Array.isArray(value.progress) || Object.keys(value.progress).some((key) => !['season', 'episode'].includes(key)) || !Number.isSafeInteger(value.progress.season) || value.progress.season <= 0 || !Number.isSafeInteger(value.progress.episode) || value.progress.episode <= 0)) throw new Error('Enter a valid season and last-watched episode.');
+  return { ...('episodes' in value ? { episodes: value.episodes } : {}), ...('progress' in value ? { progress: { season: value.progress.season, episode: value.progress.episode } } : {}), ...('status' in value ? { status: value.status } : {}), ...('rating' in value ? { rating: value.rating } : {}) };
 }
