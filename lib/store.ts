@@ -9,11 +9,16 @@ export type Store = { titles: Entry[]; generated: Record<string, Generated>; ver
 const dataPath = (file: string) => path.join(process.cwd(), 'data', file);
 const connection = mongoConnection((uri: string) => new MongoClient(uri));
 
-async function collection() {
+export async function trackerDatabase() {
   const uri = process.env.MONGODB_URI;
   if (!uri) return null;
   const client = await connection.get(uri);
-  return { client, db: client.db(process.env.MONGODB_DB || 'spectrum').collection('collection') };
+  return { client, db: client.db(process.env.MONGODB_DB || 'spectrum') };
+}
+
+async function collection() {
+  const connected = await trackerDatabase();
+  return connected ? { client: connected.client, db: connected.db.collection('collection') } : null;
 }
 
 async function initialStore(): Promise<Store> {

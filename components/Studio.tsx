@@ -94,6 +94,7 @@ export default function Studio({ titles }: { titles: ListedTitle[] }) {
     <main className="wrap studio">
       <header className="studio-head">
         <a className="label" href="/">← {SITE_NAME}</a>
+        <a className="label" href="/mobile/connections">Connected apps</a>
         <button className="label" onClick={() => start(async () => { await signOut(); router.refresh(); })}>Sign out</button>
       </header>
 

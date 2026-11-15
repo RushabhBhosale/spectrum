@@ -1,30 +1,19 @@
 'use server';
 
 import { cookies } from 'next/headers';
+import { buildTitleUpdate, toEntry, type Draft } from '@/lib/title-mutations';
 import { createSession, passwordMatches, sessionIsValid } from '@/scripts/session.mjs';
 import { readStore, writeStore } from '@/lib/store';
 import { estimateHours } from '@/lib/data';
 import { placeholderColours } from '@/lib/placeholder';
 import { searchShows, showDetails } from '@/lib/tvmaze';
-import { CATEGORIES, entryKey, STATUSES, type Category, type Entry } from '@/lib/types';
+import { entryKey, type Category } from '@/lib/types';
 
 const COOKIE = 'spectrum_session';
-const MAX_QUOTE = 400;
 const MAX_NAME = 120;
 const FAILED_LOGIN_DELAY_MS = 800;
 
-export type Draft = {
-  title: string;
-  type: Category;
-  rating: string;
-  status: string;
-  episodes: string;
-  quote: string;
-  tvmazeId?: number;
-  posterUrl?: string;
-  tmdbKind?: 'tv' | 'movie';
-  totalEpisodes?: number;
-};
+export type { Draft } from '@/lib/title-mutations';
 export type Result = { ok: true; message: string; key?: string } | { ok: false; message: string };
 export type Match = {
   id: number;
@@ -78,31 +67,6 @@ export async function searchTitles(query: string): Promise<{ ok: true; matches: 
   }
 }
 
-function toEntry(draft: Draft, previous?: Entry): Entry | string {
-  const title = draft.title.trim().slice(0, MAX_NAME);
-  if (!title) return 'Give it a title.';
-  if (!CATEGORIES.includes(draft.type)) return 'Pick a category.';
-  const rating = draft.rating.trim() === '' ? null : Number(draft.rating);
-  if (rating !== null && !(rating >= 0 && rating <= 10)) return 'Ratings go from 0 to 10.';
-  const episodes = draft.episodes.trim() === '' ? undefined : Number(draft.episodes);
-  if (episodes !== undefined && !(Number.isInteger(episodes) && episodes > 0)) return 'Episodes should be a whole number.';
-  if ((draft.tmdbKind ?? previous?.tmdbKind) !== 'movie' && episodes !== undefined && draft.totalEpisodes && episodes > draft.totalEpisodes) return `Episodes watched cannot exceed ${draft.totalEpisodes}.`;
-  if (draft.status && !(STATUSES as readonly string[]).includes(draft.status) && draft.status !== previous?.status) return 'Pick a status.';
-
-  const entry: Entry = { ...previous, title, type: draft.type, rating };
-  const setText = (field: 'status' | 'quote', value: string, limit: number) => {
-    const text = value.trim().slice(0, limit);
-    if (text) entry[field] = text;
-    else delete entry[field];
-  };
-  setText('status', draft.status === 'Finished' ? '' : draft.status, MAX_NAME);
-  setText('quote', draft.quote, MAX_QUOTE);
-  if ((draft.tmdbKind ?? previous?.tmdbKind) === 'movie') delete entry.episodes;
-  else if (episodes) entry.episodes = episodes;
-  else delete entry.episodes;
-  if (draft.tmdbKind) entry.tmdbKind = draft.tmdbKind;
-  return entry;
-}
 
 export async function addTitle(draft: Draft): Promise<Result> {
   try {
@@ -138,37 +102,9 @@ export async function updateTitle(key: string, draft: Draft): Promise<Result> {
   try {
     await requireSession();
     const store = await readStore();
-    const index = store.titles.findIndex((t) => entryKey(t) === key);
-    if (index < 0) return { ok: false, message: "That title isn't in your list any more." };
-    const previous = store.titles[index];
-    const entry = toEntry(draft, previous);
-    if (typeof entry === 'string') return { ok: false, message: entry };
-    const nextKey = entryKey(entry);
-    if (nextKey !== key && store.titles.some((t) => entryKey(t) === nextKey)) {
-      return { ok: false, message: `${entry.title} is already in ${entry.type}.` };
-    }
-
-    const generated = { ...store.generated };
-    const known = generated[key];
-    if (known?.totalEpisodes && entry.tmdbKind !== 'movie') {
-      entry.totalEpisodes = known.totalEpisodes;
-      if (!entry.status) entry.episodes = known.totalEpisodes;
-      else if (entry.episodes && entry.episodes > known.totalEpisodes) return { ok: false, message: `Episodes watched cannot exceed ${known.totalEpisodes}.` };
-    }
-    delete generated[key];
-    const episodesChanged = entry.episodes !== previous.episodes;
-    if (known) {
-      const runtime = known.runtimeMinutes ?? (previous.episodes ? known.hours * 60 / previous.episodes : undefined);
-      const hours = episodesChanged && (entry.tmdbKind ?? known.tmdbKind) !== 'movie'
-        ? (entry.episodes && runtime ? Math.max(1, Math.round(entry.episodes * runtime / 60)) : estimateHours(entry))
-        : known.hours;
-      generated[nextKey] = { ...known, tmdbKind: entry.tmdbKind ?? known.tmdbKind, hours };
-    }
-
-    const titles = [...store.titles];
-    titles[index] = entry;
-    await writeStore({ titles, generated, version: store.version });
-    return { ok: true, key: nextKey, message: `${entry.title} saved.` };
+    const update = buildTitleUpdate(store, key, draft);
+    await writeStore(update.store);
+    return { ok: true, key: update.key, message: `${draft.title.trim()} saved.` };
   } catch (error) {
     return { ok: false, message: (error as Error).message };
   }
